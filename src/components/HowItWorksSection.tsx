@@ -1,3 +1,9 @@
+// CDN-Bilder für How-It-Works
+const SO_FUNKTIONIERTS_IMG =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/oyLBgpehxtqfEmgs.png";
+const FUER_JEDES_PRODUKT_IMG =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/nOQBLJJPFwDneuaJ.png";
+
 export default function HowItWorksSection() {
   const steps = [
     {
@@ -37,6 +43,16 @@ export default function HowItWorksSection() {
           </p>
         </div>
 
+        {/* Bild: So funktioniert's */}
+        <div className="max-w-3xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-md">
+          <img
+            src={SO_FUNKTIONIERTS_IMG}
+            alt="So funktioniert das Peptidpen-System"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {steps.map((step, i) => (
             <div key={step.step} className="relative">
@@ -64,8 +80,18 @@ export default function HowItWorksSection() {
           ))}
         </div>
 
+        {/* Bild: Für jedes Produkt */}
+        <div className="max-w-4xl mx-auto mt-16 mb-4 rounded-2xl overflow-hidden shadow-md">
+          <img
+            src={FUER_JEDES_PRODUKT_IMG}
+            alt="Für jedes Peptid-Produkt die passende Patrone"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+
         {/* Comparison */}
-        <div className="mt-20 max-w-4xl mx-auto">
+        <div className="mt-16 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-brand-dark text-center mb-8">
             Klassisch vs. Peptidpen
           </h3>

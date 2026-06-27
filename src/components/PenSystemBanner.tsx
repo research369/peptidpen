@@ -1,10 +1,19 @@
 import { useProducts } from "../hooks/useProducts";
 import { getShopProductUrl, config } from "../lib/config";
 
+// Fallback-Werte wenn API nicht antwortet
+const FALLBACK_PEN_ID = "forschungspen";
+const FALLBACK_PEN_PRICE = 39;
+
+// CDN-Bild: Pen-Aufbau-Infografik
+const PEN_AUFBAU_IMG =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/SXkIterLKvAtviMJ.png";
+
 export default function PenSystemBanner() {
   const { penProduct, loading } = useProducts();
 
-  const penPrice = penProduct?.price ?? null;
+  const penPrice = penProduct?.price ?? (loading ? null : FALLBACK_PEN_PRICE);
+  const penShopId = penProduct?.shopProductId ?? FALLBACK_PEN_ID;
   const surcharge = config.plugplaySurcharge;
 
   return (
@@ -48,16 +57,15 @@ export default function PenSystemBanner() {
                   <span className="text-2xl font-bold text-white">Preis auf Anfrage</span>
                 )}
               </div>
-              {penProduct && (
-                <a
-                  href={getShopProductUrl(penProduct.shopProductId)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-gold w-full text-center"
-                >
-                  Pen jetzt kaufen →
-                </a>
-              )}
+              {/* CTA — immer sichtbar, auch wenn API fehlschlägt */}
+              <a
+                href={getShopProductUrl(penShopId)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-gold w-full text-center"
+              >
+                Pen jetzt kaufen →
+              </a>
             </div>
 
             {/* Patronen */}
@@ -85,12 +93,30 @@ export default function PenSystemBanner() {
             </div>
           </div>
 
+          {/* Pen-Aufbau Infografik */}
+          <div className="mb-12">
+            <div className="text-center mb-6">
+              <h3 className="text-xl font-bold text-white">So ist der Pen aufgebaut</h3>
+              <p className="text-blue-200/60 text-sm mt-2">
+                Präzisionsmechanik für zuverlässige Forschungsergebnisse
+              </p>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+              <img
+                src={PEN_AUFBAU_IMG}
+                alt="Aufbau des Forschungspen — Infografik"
+                className="w-full h-auto object-contain max-h-[500px]"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           {/* Value Proposition */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
                 <div className="text-3xl font-bold text-brand-gold mb-1">
-                  {loading || penPrice === null ? "—" : `${penPrice} €`}
+                  {loading ? "—" : penPrice !== null ? `${penPrice} €` : `${FALLBACK_PEN_PRICE} €`}
                 </div>
                 <div className="text-white font-medium">Einmalige Investition</div>
                 <div className="text-blue-200/50 text-sm mt-1">Forschungspen (dauerhaft)</div>

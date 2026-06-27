@@ -11,8 +11,22 @@ import StickyCtaBar from "./components/StickyCtaBar";
 import AgeGateModal from "./components/AgeGateModal";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import SchemaOrg from "./components/SchemaOrg";
+import Datenschutz from "./pages/Datenschutz";
+import AGB from "./pages/AGB";
+
+/** Einfaches URL-basiertes Routing ohne externe Abhängigkeiten */
+function usePathname(): string {
+  const [pathname, setPathname] = useState(() => window.location.pathname);
+  useEffect(() => {
+    const onPopState = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+  return pathname;
+}
 
 export default function App() {
+  const pathname = usePathname();
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [ageConfirmed, setAgeConfirmed] = useState(() => {
     return localStorage.getItem("peptidpen_age_confirmed") === "true";
@@ -31,6 +45,26 @@ export default function App() {
     setAgeConfirmed(true);
   };
 
+  // Rechtliche Seiten — kein Age-Gate, kein Sticky-Bar
+  if (pathname === "/datenschutz") {
+    return (
+      <>
+        <Datenschutz />
+        <WhatsAppFloat />
+      </>
+    );
+  }
+
+  if (pathname === "/agb") {
+    return (
+      <>
+        <AGB />
+        <WhatsAppFloat />
+      </>
+    );
+  }
+
+  // Hauptseite
   return (
     <>
       <SchemaOrg />

@@ -1,10 +1,19 @@
 import { useProducts } from "../hooks/useProducts";
 import { getShopProductUrl } from "../lib/config";
 
+// Fallback-Werte wenn API nicht antwortet
+const FALLBACK_PEN_ID = "forschungspen";
+const FALLBACK_PEN_PRICE = 39;
+
+// CDN-Bild: Hero — Was ist eine Patrone?
+const HERO_PATRONE_IMG =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/PyNKTLtVvMwSfekq.png";
+
 export default function HeroSection() {
   const { penProduct, loading } = useProducts();
 
-  const penPrice = penProduct?.price ?? null;
+  const penPrice = penProduct?.price ?? (loading ? null : FALLBACK_PEN_PRICE);
+  const penShopId = penProduct?.shopProductId ?? FALLBACK_PEN_ID;
 
   return (
     <section className="relative min-h-screen bg-brand-dark overflow-hidden flex items-center">
@@ -16,6 +25,17 @@ export default function HeroSection() {
                             radial-gradient(circle at 80% 20%, #1a3a6e 0%, transparent 40%)`,
         }}
       />
+
+      {/* Hero-Bild rechts (Desktop) */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block pointer-events-none select-none">
+        <img
+          src={HERO_PATRONE_IMG}
+          alt="Plug&Play Forscherpatrone — Was ist eine Patrone?"
+          className="w-full h-full object-cover object-left opacity-25"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/60 to-transparent" />
+      </div>
 
       {/* Decorative molecule pattern */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none select-none"
@@ -61,21 +81,25 @@ export default function HeroSection() {
               </svg>
               Jetzt Patronen entdecken
             </a>
-            {penProduct && (
-              <a
-                href={getShopProductUrl(penProduct.shopProductId)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary text-lg px-8 py-4 bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy"
-              >
-                Pen kaufen
-                {!loading && penPrice !== null && (
-                  <span className="ml-1 text-brand-gold font-bold">
-                    {penPrice} €
-                  </span>
-                )}
-              </a>
-            )}
+            {/* Pen-CTA — immer sichtbar, auch wenn API fehlschlägt */}
+            <a
+              href={getShopProductUrl(penShopId)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary text-lg px-8 py-4 bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy"
+            >
+              Pen kaufen
+              {penPrice !== null && (
+                <span className="ml-1 text-brand-gold font-bold">
+                  {penPrice} €
+                </span>
+              )}
+              {!loading && penPrice === null && (
+                <span className="ml-1 text-brand-gold font-bold">
+                  {FALLBACK_PEN_PRICE} €
+                </span>
+              )}
+            </a>
           </div>
 
           {/* Quick Stats */}

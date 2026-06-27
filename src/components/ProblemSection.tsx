@@ -1,3 +1,9 @@
+// CDN-Bilder für die Problem-Sektion
+const WARUM_MISCHEN_IMG =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/dageqFDvGHzwRcwb.png";
+const WARUM_KOMPLIZIERT_IMG =
+  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/vjYknEPEmUlXsyEi.png";
+
 export default function ProblemSection() {
   const problems = [
     {
@@ -37,6 +43,16 @@ export default function ProblemSection() {
           </p>
         </div>
 
+        {/* Bild: Warum noch mischen? */}
+        <div className="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-md">
+          <img
+            src={WARUM_MISCHEN_IMG}
+            alt="Warum noch mischen? — Peptid-Forschung vereinfacht"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
           {problems.map((p) => (
             <div key={p.title} className="bg-white rounded-2xl p-6 border border-red-100 shadow-sm">
@@ -45,6 +61,16 @@ export default function ProblemSection() {
               <p className="text-gray-500 text-sm leading-relaxed">{p.description}</p>
             </div>
           ))}
+        </div>
+
+        {/* Bild: Warum kompliziert? */}
+        <div className="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-md">
+          <img
+            src={WARUM_KOMPLIZIERT_IMG}
+            alt="Warum kompliziert wenn es einfach geht? — Peptidpen Lösung"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
         </div>
 
         {/* Agitation */}

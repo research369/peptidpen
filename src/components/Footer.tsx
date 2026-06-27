@@ -67,9 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`${config.shopBaseUrl}/datenschutz`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/datenschutz"
                   className="hover:text-white transition-colors"
                 >
                   Datenschutz
@@ -77,9 +75,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`${config.shopBaseUrl}/agb`}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/agb"
                   className="hover:text-white transition-colors"
                 >
                   AGB
