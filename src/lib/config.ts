@@ -12,7 +12,7 @@ export const config = {
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL as string,
 
   /** Basis-URL des Hauptshops für Produkt-Weiterleitungen */
-  shopBaseUrl: import.meta.env.VITE_SHOP_BASE_URL as string,
+  shopBaseUrl: (import.meta.env.VITE_SHOP_BASE_URL as string) || "https://www.369research.eu",
 
   /** Aufpreis für Plug&Play Patrone in Euro */
   plugplaySurcharge: Number(import.meta.env.VITE_PLUGPLAY_SURCHARGE ?? 15),
