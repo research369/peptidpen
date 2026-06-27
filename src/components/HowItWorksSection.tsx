@@ -1,6 +1,5 @@
-import { getShopProductUrl } from "../lib/config";
+import { PEN_BUY_URL } from "../lib/config";
 
-const FALLBACK_PEN_ID = "forscherpen";
 
 // CDN-Bilder für How-It-Works
 const SO_FUNKTIONIERTS_IMG =
@@ -15,7 +14,7 @@ export default function HowItWorksSection() {
       icon: "🖊️",
       title: "Pen einmalig kaufen",
       description: "Der wiederverwendbare Forschungspen ist die Basis. Einmal angeschafft, hält er dauerhaft und ist mit allen 369 Research Patronen kompatibel.",
-      cta: { label: "Pen kaufen — 39 €", href: getShopProductUrl(FALLBACK_PEN_ID), external: true },
+      cta: { label: "Pen kaufen — 39 €", href: PEN_BUY_URL, external: true },
     },
     {
       step: "02",
@@ -158,7 +157,7 @@ export default function HowItWorksSection() {
         <div className="mt-16 text-center">
           <div className="inline-flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href={getShopProductUrl(FALLBACK_PEN_ID)}
+              href={PEN_BUY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold text-lg px-10 py-4"

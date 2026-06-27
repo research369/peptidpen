@@ -27,6 +27,9 @@ export const config = {
   siteUrl: import.meta.env.VITE_SITE_URL as string,
 } as const;
 
+/** Direkte URL zur Pen-Kaufseite (Plug&Play Landing Page) */
+export const PEN_BUY_URL = `${config.shopBaseUrl}/plug-and-play`;
+
 /** Gibt die vollständige Produkt-URL im Hauptshop zurück */
 export function getShopProductUrl(shopProductId: string): string {
   return `${config.shopBaseUrl}/produkt/${shopProductId}`;

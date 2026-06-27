@@ -1,10 +1,9 @@
-import { getShopProductUrl } from "../lib/config";
+import { PEN_BUY_URL } from "../lib/config";
 
 // CDN-Bild für die Problem-Sektion — NUR EINES
 const WARUM_MISCHEN_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/dageqFDvGHzwRcwb.png";
 
-const FALLBACK_PEN_ID = "forscherpen";
 
 export default function ProblemSection() {
   const problems = [
@@ -95,7 +94,7 @@ export default function ProblemSection() {
               Patronen entdecken →
             </a>
             <a
-              href={getShopProductUrl(FALLBACK_PEN_ID)}
+              href={PEN_BUY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary bg-white/10 text-white border-white/30 hover:bg-white hover:text-brand-navy text-base px-8 py-3"

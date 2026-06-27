@@ -1,8 +1,7 @@
 import { useProducts } from "../hooks/useProducts";
-import { getShopProductUrl, config } from "../lib/config";
+import { PEN_BUY_URL, config } from "../lib/config";
 
 // Fallback-Werte wenn API nicht antwortet
-const FALLBACK_PEN_ID = "forscherpen";
 const FALLBACK_PEN_PRICE = 39;
 
 // CDN-Bild: Pen-Aufbau-Infografik
@@ -13,8 +12,7 @@ export default function PenSystemBanner() {
   const { penProduct, loading } = useProducts();
 
   const penPrice = penProduct?.price ?? (loading ? null : FALLBACK_PEN_PRICE);
-  const penShopId = penProduct?.shopProductId ?? FALLBACK_PEN_ID;
-  const surcharge = config.plugplaySurcharge;
+  const surcharge = config.plugplaySurcharge ?? 15;
 
   return (
     <section className="section-darker py-16 md:py-20">
@@ -59,7 +57,7 @@ export default function PenSystemBanner() {
               </div>
               {/* CTA — immer sichtbar, auch wenn API fehlschlägt */}
               <a
-                href={getShopProductUrl(penShopId)}
+                href={PEN_BUY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-gold w-full text-center"

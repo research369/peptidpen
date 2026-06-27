@@ -1,15 +1,13 @@
 import { useProducts } from "../hooks/useProducts";
-import { getShopProductUrl } from "../lib/config";
+import { PEN_BUY_URL } from "../lib/config";
 
 // Fallback-Werte wenn API nicht antwortet
-const FALLBACK_PEN_ID = "forscherpen";
 const FALLBACK_PEN_PRICE = 39;
 
 export default function HeroSection() {
   const { penProduct, loading } = useProducts();
 
   const penPrice = penProduct?.price ?? (loading ? null : FALLBACK_PEN_PRICE);
-  const penShopId = penProduct?.shopProductId ?? FALLBACK_PEN_ID;
 
   return (
     <section className="relative min-h-screen bg-brand-dark overflow-hidden flex flex-col">
@@ -89,7 +87,7 @@ export default function HeroSection() {
             </a>
             {/* Pen-CTA — immer sichtbar */}
             <a
-              href={getShopProductUrl(penShopId)}
+              href={PEN_BUY_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-lg px-8 py-4 bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy"
