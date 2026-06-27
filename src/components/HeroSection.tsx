@@ -2,7 +2,7 @@ import { useProducts } from "../hooks/useProducts";
 import { getShopProductUrl } from "../lib/config";
 
 // Fallback-Werte wenn API nicht antwortet
-const FALLBACK_PEN_ID = "forschungspen";
+const FALLBACK_PEN_ID = "forscherpen";
 const FALLBACK_PEN_PRICE = 39;
 
 export default function HeroSection() {

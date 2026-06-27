@@ -43,7 +43,7 @@ export const PLUGPLAY_EXCLUDED_IDS = [
   "PEN-ROSA",
   "PEN-KARTUSCHE-5ER",
   "PEN-NADELN-10ER",
-  "forschungspen",
+  "forscherpen",
   "insulinspritzen",
   "pen-nadeln",
   "pen-kartusche",

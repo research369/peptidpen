@@ -1,6 +1,6 @@
 import { getShopProductUrl } from "../lib/config";
 
-const FALLBACK_PEN_ID = "forschungspen";
+const FALLBACK_PEN_ID = "forscherpen";
 
 // CDN-Bilder für How-It-Works
 const SO_FUNKTIONIERTS_IMG =

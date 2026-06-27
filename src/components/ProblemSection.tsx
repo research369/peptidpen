@@ -4,7 +4,7 @@ import { getShopProductUrl } from "../lib/config";
 const WARUM_MISCHEN_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/dageqFDvGHzwRcwb.png";
 
-const FALLBACK_PEN_ID = "forschungspen";
+const FALLBACK_PEN_ID = "forscherpen";
 
 export default function ProblemSection() {
   const problems = [

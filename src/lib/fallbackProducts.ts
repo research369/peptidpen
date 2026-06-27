@@ -64,8 +64,8 @@ export const FALLBACK_PRODUCTS: FallbackProduct[] = [
 ];
 
 export const FALLBACK_PEN = {
-  id: "forschungspen",
-  shopProductId: "forschungspen",
+  id: "forscherpen",
+  shopProductId: "forscherpen",
   name: "Forschungspen",
   price: 39,
   plugPlayPrice: 39,
