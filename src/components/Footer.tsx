@@ -57,16 +57,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-blue-200/70">
               <li>
                 <a
-                  href={`${config.shopBaseUrl}/impressum`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  Impressum
-                </a>
-              </li>
-              <li>
-                <a
                   href="/datenschutz"
                   className="hover:text-white transition-colors"
                 >
