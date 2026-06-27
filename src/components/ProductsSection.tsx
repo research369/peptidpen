@@ -15,9 +15,9 @@ function ProductCard({ product }: { product: ShopProduct }) {
     <div className="product-card group">
       {/* Image */}
       <div className="relative aspect-square bg-gray-50 overflow-hidden">
-        {product.mockupImage ? (
+        {(product.mockupImage || product.image) ? (
           <img
-            src={product.mockupImage}
+            src={product.mockupImage || product.image || ''}
             alt={`${product.name} Peptid-Patrone`}
             className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
@@ -102,7 +102,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
 }
 
 export default function ProductsSection() {
-  const { products, loading, error } = useProducts();
+  const { products, loading } = useProducts();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("Alle");
 
@@ -189,10 +189,6 @@ export default function ProductsSection() {
               </div>
             ))}
           </div>
-        ) : error ? (
-          <div className="text-center py-12 text-red-500">
-            Produkte konnten nicht geladen werden. Bitte versuche es später erneut.
-          </div>
         ) : filtered.length === 0 ? (
           <div className="text-center py-12 text-gray-400">
             Keine Produkte gefunden für "{searchQuery}".
@@ -206,7 +202,7 @@ export default function ProductsSection() {
         )}
 
         {/* Product count */}
-        {!loading && !error && (
+        {!loading && (
           <div className="text-center mt-8 text-gray-400 text-sm">
             {filtered.length} von {products.length} Patronen angezeigt
           </div>

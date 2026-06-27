@@ -1,0 +1,62 @@
+// Auto-generierter Fallback — echte Produktdaten aus der API (Stand: 2026-06-27)
+// Wird verwendet wenn die API nicht erreichbar ist
+
+export interface FallbackProduct {
+  id: string;
+  shopProductId: string;
+  name: string;
+  category: string;
+  price: number;
+  plugPlayPrice: number;
+  image: string | null;
+  purity: string;
+  inStock: boolean;
+  isPlugPlayEligible: boolean;
+}
+
+export const FALLBACK_PRODUCTS: FallbackProduct[] = [
+  { id: "3g-triple-g", shopProductId: "3g-triple-g", name: "3G-TRIPLE G / R3ta", category: "GLP-1", price: 50, plugPlayPrice: 65, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/3G-TripleG10mg-MOCKUP_814fb6ce.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "5-amino-1mq", shopProductId: "5-amino-1mq", name: "5-Amino-1MQ", category: "Metabolisch & K\u00f6rperkomposition", price: 36, plugPlayPrice: 51, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/5-Amino-1MQMOCKUP_c79327db.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "ahk-cu", shopProductId: "ahk-cu", name: "AHK-Cu", category: "Peptide", price: 59, plugPlayPrice: 74, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/logo_34f1666d.jpeg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "aicar", shopProductId: "aicar", name: "AICAR", category: "Mitochondria & Cell Energy", price: 36, plugPlayPrice: 51, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Pbxbt3ufs2MSgiEmtAeTCd/aicar-vial-mockup-c6dfMYpEekQG4tTbXD73eV.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "aod-9604", shopProductId: "aod-9604", name: "AOD-9604", category: "Metabolisch & K\u00f6rperkomposition", price: 30, plugPlayPrice: 45, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/AOD-9604-5mg-MOCKUP_24a97479.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "adipotide", shopProductId: "adipotide", name: "Adipotide / FTTP", category: "Metabolisch & K\u00f6rperkomposition", price: 49, plugPlayPrice: 64, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Adipotide-5mg-MOCKUP_d58f61b1.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "bpc-157", shopProductId: "bpc-157", name: "BPC-157", category: "Regeneration & Healing", price: 29, plugPlayPrice: 44, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/BPC-157-MOCKUP_d6722002.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "cjc-1295-dac", shopProductId: "cjc-1295-dac", name: "CJC-1295 + DAC", category: "Growth Hormone", price: 58, plugPlayPrice: 73, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/CJC-1295-DAC-MOCKUP_70027641.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "cjc-ipamorelin-kombi", shopProductId: "cjc-ipamorelin-kombi", name: "CJC-1295 + Ipamorelin Mix", category: "Growth Hormone", price: 59, plugPlayPrice: 74, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/CJC-Ipamorelin-10mg-MOCKUP_70515858.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "cjc-1295-no-dac", shopProductId: "cjc-1295-no-dac", name: "CJC-1295 no DAC", category: "Growth Hormone", price: 39, plugPlayPrice: 54, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/CJC-1295-noDAC-MOCKUP_973521c1.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "cagrilinitide", shopProductId: "cagrilinitide", name: "Cagrilinitide", category: "GLP-1", price: 39, plugPlayPrice: 54, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Cagrilinitide-10mg-MOCKUP_9e413190.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "epithalon", shopProductId: "epithalon", name: "Epithalon", category: "Longevity & Antioxidant", price: 30, plugPlayPrice: 45, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Epithalon-MOCKUP_cbf87674.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "ghrp-2", shopProductId: "ghrp-2", name: "GHRP-2", category: "Peptide", price: 20, plugPlayPrice: 35, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/GHRP-2-5mg-MOCKUP_14f20ab0.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "ghrp-6", shopProductId: "ghrp-6", name: "GHRP-6", category: "Peptide", price: 20, plugPlayPrice: 35, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/GHRP-6-5mg-MOCKUP_5bf75326.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "glutathione", shopProductId: "glutathione", name: "Glutathione", category: "Longevity & Antioxidant", price: 35, plugPlayPrice: 50, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Glutathione-MOCKUP_833d4d29.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "hcg", shopProductId: "hcg", name: "HCG", category: "Melanocortin & Sexual Health", price: 35, plugPlayPrice: 50, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/HCG-5000IU-MOCKUP_3915064a.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "hexarelin", shopProductId: "hexarelin", name: "Hexarelin", category: "Peptide", price: 26, plugPlayPrice: 41, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Hexarelin-5mg-MOCKUP-6wbnQ8dLQGXgRPEnLJuFFV.webp", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "igf-1-lr3", shopProductId: "igf-1-lr3", name: "IGF-1 LR3", category: "Growth Hormone", price: 65, plugPlayPrice: 80, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/IGF1-LR3-1mg-MOCKUP_bcb199b9.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "ipamorelin", shopProductId: "ipamorelin", name: "Ipamorelin", category: "Growth Hormone", price: 28, plugPlayPrice: 43, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Ipamorelin-MOCKUP_443d73c2.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "kpv", shopProductId: "kpv", name: "KPV", category: "Peptide", price: 40, plugPlayPrice: 55, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/KPV-MOCKUP_2be5d112.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "mots-c", shopProductId: "mots-c", name: "MOTS-c", category: "Mitochondria & Cell Energy", price: 29, plugPlayPrice: 44, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/MOTS-c-MOCKUP_392b0937.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "nad-plus", shopProductId: "nad-plus", name: "NAD+", category: "Mitochondria & Cell Energy", price: 60, plugPlayPrice: 75, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/NAD-plus-MOCKUP_2cf7a58d.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "nexus-iv", shopProductId: "nexus-iv", name: "Nexus IV", category: "Metabolisch & K\u00f6rperkomposition", price: 85, plugPlayPrice: 100, image: "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/KfaipOZpoqlyhJfr.png", purity: "99% HPLC", inStock: true, isPlugPlayEligible: true },
+  { id: "peg-mgf", shopProductId: "peg-mgf", name: "PEG-MGF", category: "Regeneration & Heilung", price: 39, plugPlayPrice: 54, image: "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/TeDwYWVBRQvhzNQH.png", purity: "99% HPLC", inStock: true, isPlugPlayEligible: true },
+  { id: "pinealon", shopProductId: "pinealon", name: "Pinealon", category: "Peptide", price: 50, plugPlayPrice: 65, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Pbxbt3ufs2MSgiEmtAeTCd/Pinealon-10mg-MOCKUP-QyzrfV6Fsh6jf6mzghvqWf.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "slu-pp-332", shopProductId: "slu-pp-332", name: "SLU-PP-332", category: "Metabolisch & K\u00f6rperkomposition", price: 45, plugPlayPrice: 60, image: "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/KlJPOvFxafhcGkuN.jpeg", purity: ">99%", inStock: true, isPlugPlayEligible: true },
+  { id: "ss-31", shopProductId: "ss-31", name: "SS-31 Elamipretide", category: "Peptide", price: 40, plugPlayPrice: 55, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/SS-31-10mg-MOCKUP-ffPs3HLnPnxHkARLhJ9xWq.webp", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "tb-500", shopProductId: "tb-500", name: "TB-500", category: "Regeneration & Healing", price: 29, plugPlayPrice: 44, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/TB-500-MOCKUP_5f43af89.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "tesamorelin", shopProductId: "tesamorelin", name: "Tesamorelin", category: "Growth Hormone", price: 55, plugPlayPrice: 70, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Tesamorelin-MOCKUP_1d76e596.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "thymalin", shopProductId: "thymalin", name: "Thymalin", category: "Peptide", price: 50, plugPlayPrice: 65, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/logo_34f1666d.jpeg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "thymosin-alpha-1", shopProductId: "thymosin-alpha-1", name: "Thymosin Alpha 1", category: "Immune", price: 35, plugPlayPrice: 50, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/ThymosinAlpha1-MOCKUP_e13892d4.jpg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "tirzepatide", shopProductId: "tirzepatide", name: "Tirzepatide", category: "GLP-1", price: 49, plugPlayPrice: 64, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Tirzepatide-20mg-MOCKUP_9999a89a.png", purity: "99%", inStock: true, isPlugPlayEligible: true },
+  { id: "vitamin-b12", shopProductId: "vitamin-b12", name: "Vitamin B12", category: "Peptide", price: 29, plugPlayPrice: 44, image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/logo_34f1666d.jpeg", purity: "99%", inStock: true, isPlugPlayEligible: true },
+];
+
+export const FALLBACK_PEN = {
+  id: "forschungspen",
+  shopProductId: "forschungspen",
+  name: "Forschungspen",
+  price: 39,
+  plugPlayPrice: 39,
+  image: null,
+  inStock: true,
+  isPlugPlayEligible: false,
+};

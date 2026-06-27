@@ -5,10 +5,6 @@ import { getShopProductUrl } from "../lib/config";
 const FALLBACK_PEN_ID = "forschungspen";
 const FALLBACK_PEN_PRICE = 39;
 
-// CDN-Bild: Hero — Was ist eine Patrone?
-const HERO_PATRONE_IMG =
-  "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/PyNKTLtVvMwSfekq.png";
-
 export default function HeroSection() {
   const { penProduct, loading } = useProducts();
 
@@ -16,7 +12,34 @@ export default function HeroSection() {
   const penShopId = penProduct?.shopProductId ?? FALLBACK_PEN_ID;
 
   return (
-    <section className="relative min-h-screen bg-brand-dark overflow-hidden flex items-center">
+    <section className="relative min-h-screen bg-brand-dark overflow-hidden flex flex-col">
+      {/* Trust-Banner ganz oben */}
+      <div className="relative z-20 bg-brand-blue/90 border-b border-brand-blue/50 py-2 px-4">
+        <div className="container mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-xs text-white/90 font-medium">
+            <span className="flex items-center gap-1.5">
+              <span>🇩🇪</span>
+              <span>Entwickelt &amp; produziert in Deutschland</span>
+            </span>
+            <span className="hidden sm:block text-white/30">|</span>
+            <span className="flex items-center gap-1.5">
+              <span>❄️</span>
+              <span>Gekühlter Versand — max. 48h Lieferzeit</span>
+            </span>
+            <span className="hidden sm:block text-white/30">|</span>
+            <span className="flex items-center gap-1.5">
+              <span>✅</span>
+              <span>Über 1.000 zufriedene Kunden</span>
+            </span>
+            <span className="hidden sm:block text-white/30">|</span>
+            <span className="flex items-center gap-1.5">
+              <span>🏆</span>
+              <span>Erfinder der Plug&amp;Play Patrone</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-navy to-blue-950" />
       <div className="absolute inset-0 opacity-20"
@@ -26,17 +49,6 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Hero-Bild rechts (Desktop) */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block pointer-events-none select-none">
-        <img
-          src={HERO_PATRONE_IMG}
-          alt="Plug&Play Forscherpatrone — Was ist eine Patrone?"
-          className="w-full h-full object-cover object-left opacity-25"
-          loading="eager"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/60 to-transparent" />
-      </div>
-
       {/* Decorative molecule pattern */}
       <div className="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none select-none"
         style={{
@@ -45,14 +57,8 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 container mx-auto px-4 py-20 md:py-32">
-        <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-blue/20 border border-brand-blue/40 rounded-full text-brand-blue text-sm font-semibold mb-6 animate-fade-in">
-            <span className="w-2 h-2 bg-brand-blue rounded-full animate-pulse-slow" />
-            Entwickelt &amp; produziert in Deutschland
-          </div>
-
+      <div className="relative z-10 flex-1 flex items-center container mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-3xl w-full">
           {/* H1 */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
             Der erste<br />
@@ -81,7 +87,7 @@ export default function HeroSection() {
               </svg>
               Jetzt Patronen entdecken
             </a>
-            {/* Pen-CTA — immer sichtbar, auch wenn API fehlschlägt */}
+            {/* Pen-CTA — immer sichtbar */}
             <a
               href={getShopProductUrl(penShopId)}
               target="_blank"
@@ -89,16 +95,9 @@ export default function HeroSection() {
               className="btn-secondary text-lg px-8 py-4 bg-transparent text-white border-white/30 hover:bg-white hover:text-brand-navy"
             >
               Pen kaufen
-              {penPrice !== null && (
-                <span className="ml-1 text-brand-gold font-bold">
-                  {penPrice} €
-                </span>
-              )}
-              {!loading && penPrice === null && (
-                <span className="ml-1 text-brand-gold font-bold">
-                  {FALLBACK_PEN_PRICE} €
-                </span>
-              )}
+              <span className="ml-1 text-brand-gold font-bold">
+                {loading ? "..." : `${penPrice ?? FALLBACK_PEN_PRICE} €`}
+              </span>
             </a>
           </div>
 
@@ -107,8 +106,8 @@ export default function HeroSection() {
             {[
               { value: "< 60 Sek.", label: "Anwendungszeit" },
               { value: "99%+", label: "Reinheit" },
-              { value: "Made in DE", label: "Produktion" },
-              { value: "RUO", label: "Research Use Only" },
+              { value: "❄️ 48h", label: "Gekühlter Versand" },
+              { value: "1.000+", label: "Zufriedene Kunden" },
             ].map((stat) => (
               <div key={stat.label} className="card-glass text-center">
                 <div className="text-xl md:text-2xl font-bold text-white">{stat.value}</div>
@@ -120,7 +119,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
+      <div className="relative z-10 pb-8 flex flex-col items-center gap-2 text-white/30 animate-bounce">
         <span className="text-xs uppercase tracking-widest">Mehr entdecken</span>
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

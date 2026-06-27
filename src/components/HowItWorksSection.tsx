@@ -1,3 +1,7 @@
+import { getShopProductUrl } from "../lib/config";
+
+const FALLBACK_PEN_ID = "forschungspen";
+
 // CDN-Bilder für How-It-Works
 const SO_FUNKTIONIERTS_IMG =
   "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/oyLBgpehxtqfEmgs.png";
@@ -11,21 +15,21 @@ export default function HowItWorksSection() {
       icon: "🖊️",
       title: "Pen einmalig kaufen",
       description: "Der wiederverwendbare Forschungspen ist die Basis. Einmal angeschafft, hält er dauerhaft und ist mit allen 369 Research Patronen kompatibel.",
-      cta: null,
+      cta: { label: "Pen kaufen — 39 €", href: getShopProductUrl(FALLBACK_PEN_ID), external: true },
     },
     {
       step: "02",
       icon: "📦",
       title: "Patrone wählen & bestellen",
       description: "Wähle aus unserem Sortiment patronenfähiger Peptide. Jede Patrone ist fertig gemischt, präzise dosiert und versiegelt geliefert.",
-      cta: { label: "Zum Sortiment", href: "#produkte" },
+      cta: { label: "Zum Sortiment →", href: "#produkte", external: false },
     },
     {
       step: "03",
       icon: "⚡",
       title: "Einsetzen & sofort forschen",
       description: "Patrone in den Pen einsetzen. Fertig. Keine Vorbereitung, kein Mischen, kein Warten. Unter 60 Sekunden vom Paket zur Anwendung.",
-      cta: null,
+      cta: { label: "Jetzt bestellen →", href: "#produkte", external: false },
     },
   ];
 
@@ -71,9 +75,15 @@ export default function HowItWorksSection() {
                 <h3 className="text-xl font-bold text-brand-dark mb-3">{step.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-4">{step.description}</p>
                 {step.cta && (
-                  <a href={step.cta.href} className="text-brand-blue font-semibold text-sm hover:underline">
-                    {step.cta.label} →
-                  </a>
+                  step.cta.external ? (
+                    <a href={step.cta.href} target="_blank" rel="noopener noreferrer" className="inline-block mt-2 btn-gold text-sm px-5 py-2">
+                      {step.cta.label}
+                    </a>
+                  ) : (
+                    <a href={step.cta.href} className="inline-block mt-2 btn-primary text-sm px-5 py-2">
+                      {step.cta.label}
+                    </a>
+                  )
                 )}
               </div>
             </div>
@@ -142,6 +152,27 @@ export default function HowItWorksSection() {
               </ul>
             </div>
           </div>
+        </div>
+
+        {/* Final CTA */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={getShopProductUrl(FALLBACK_PEN_ID)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-gold text-lg px-10 py-4"
+            >
+              Pen kaufen — 39 € →
+            </a>
+            <a
+              href="#produkte"
+              className="btn-primary text-lg px-10 py-4"
+            >
+              Patronen entdecken →
+            </a>
+          </div>
+          <p className="mt-4 text-sm text-gray-400">❄️ Gekühlter Versand · Lieferung innerhalb 48h · Über 1.000 Kunden</p>
         </div>
       </div>
     </section>

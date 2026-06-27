@@ -7,12 +7,14 @@
 
 import { useState, useEffect } from "react";
 import { fetchPlugPlayProducts, fetchPenProduct, type ShopProduct } from "../lib/api";
+import { FALLBACK_PRODUCTS, FALLBACK_PEN } from "../lib/fallbackProducts";
 
 interface UseProductsResult {
   products: ShopProduct[];
   penProduct: ShopProduct | null;
   loading: boolean;
   error: string | null;
+  usingFallback: boolean;
 }
 
 export function useProducts(): UseProductsResult {
@@ -20,6 +22,7 @@ export function useProducts(): UseProductsResult {
   const [penProduct, setPenProduct] = useState<ShopProduct | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [usingFallback, setUsingFallback] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -31,12 +34,20 @@ export function useProducts(): UseProductsResult {
           fetchPenProduct(),
         ]);
         if (!cancelled) {
-          setProducts(prods);
-          setPenProduct(pen);
+          if (prods && prods.length > 0) {
+            setProducts(prods);
+          } else {
+            setProducts(FALLBACK_PRODUCTS as unknown as ShopProduct[]);
+            setUsingFallback(true);
+          }
+          setPenProduct(pen ?? (FALLBACK_PEN as unknown as ShopProduct));
         }
-      } catch (err) {
+      } catch (_err) {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : "Fehler beim Laden der Produkte");
+          // API nicht erreichbar — Fallback-Daten verwenden (transparent)
+          setProducts(FALLBACK_PRODUCTS as unknown as ShopProduct[]);
+          setPenProduct(FALLBACK_PEN as unknown as ShopProduct);
+          setUsingFallback(true);
         }
       } finally {
         if (!cancelled) setLoading(false);
@@ -47,5 +58,5 @@ export function useProducts(): UseProductsResult {
     return () => { cancelled = true; };
   }, []);
 
-  return { products, penProduct, loading, error };
+  return { products, penProduct, loading, error, usingFallback };
 }

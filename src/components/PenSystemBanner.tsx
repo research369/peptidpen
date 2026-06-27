@@ -101,11 +101,11 @@ export default function PenSystemBanner() {
                 Präzisionsmechanik für zuverlässige Forschungsergebnisse
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+            <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-2xl">
               <img
                 src={PEN_AUFBAU_IMG}
                 alt="Aufbau des Forschungspen — Infografik"
-                className="w-full h-auto object-contain max-h-[500px]"
+                className="w-full h-auto object-contain"
                 loading="lazy"
               />
             </div>
