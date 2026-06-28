@@ -34,9 +34,7 @@ export default function Datenschutz() {
             </p>
             <div className="mt-3 p-4 bg-gray-50 rounded-xl text-sm">
               <strong>369 Research</strong><br />
-              Betreiber: Pakko Randale<br />
               Deutschland<br />
-              E-Mail: 369peptides@gmail.com<br />
               Website: <a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a>
             </div>
           </section>
@@ -134,10 +132,8 @@ export default function Datenschutz() {
               über die Verarbeitung Ihrer personenbezogenen Daten zu beschweren.
             </p>
             <p className="mt-3">
-              Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:{" "}
-              <a href="mailto:369peptides@gmail.com" className="text-brand-blue hover:underline">
-                369peptides@gmail.com
-              </a>
+              Zur Ausübung Ihrer Rechte wenden Sie sich bitte über das Kontaktformular auf{" "}
+              <a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a> an uns.
             </p>
           </section>
 

@@ -53,7 +53,7 @@ export default function AGB() {
               leitet Bestellungen an den Hauptshop weiter.
             </p>
             <p className="mt-3">
-              Vertragspartner ist 369 Research (Betreiber: Pakko Randale, Deutschland).
+              Vertragspartner ist 369 Research (<a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a>), Deutschland.
               Abweichende Bedingungen des Käufers werden nicht anerkannt, es sei denn,
               wir stimmen ihrer Geltung ausdrücklich schriftlich zu.
             </p>
