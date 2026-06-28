@@ -36,7 +36,7 @@ export default function ProblemSection() {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="badge badge-blue mb-4">Das Problem</span>
           <h2 className="section-title text-brand-dark mb-4">
-            Peptid-Forschung war unnötig kompliziert.
+            Warum noch mischen? Die <span className="text-brand-blue">Peptidpatrone</span> macht es überflüssig.
           </h2>
           <p className="text-lg text-gray-500">
             Jeder der mit Peptiden arbeitet kennt das: Bevor die eigentliche Forschung beginnt,
@@ -78,13 +78,10 @@ export default function ProblemSection() {
         <div className="max-w-3xl mx-auto bg-gradient-to-r from-brand-navy to-brand-blue rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="text-4xl mb-4">💡</div>
           <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">
-            Die Lösung: Komplexität verlagern, nicht vereinfachen.
+            Die Lösung: <span className="text-brand-gold">Plug&amp;Play Patrone für Peptide</span> — fertig, versiegelt, sofort einsatzbereit.
           </h3>
           <p className="text-blue-200 text-lg leading-relaxed mb-8">
-            Statt den Forscher mit der Komplexität allein zu lassen, haben wir sie in unsere
-            kontrollierten Produktionsprozesse verlagert. Das Ergebnis ist eine Patrone,
-            die bereits alles enthält — präzise dosiert, unter Reinraumbedingungen abgefüllt,
-            versiegelt und sofort einsatzbereit.
+            Statt den Forscher mit der Komplexität allein zu lassen, haben wir sie in unsere kontrollierten Produktionsprozesse verlagert. Das Ergebnis ist eine <strong>Peptidpatrone</strong>, die bereits alles enthält — präzise dosiert, unter Reinraumbedingungen abgefüllt, versiegelt und sofort einsatzbereit. Der <strong>Peptidpen</strong> macht den Rest.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

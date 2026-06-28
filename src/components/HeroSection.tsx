@@ -66,12 +66,12 @@ export default function HeroSection() {
             Peptid-Pen Europas.
           </h1>
 
-          {/* Subheadline */}
+          {/* Subheadline — SEO: Peptidpatrone, Plug&Play Patrone für Peptide */}
           <p className="text-xl md:text-2xl text-blue-200/80 font-light mb-4 max-w-2xl">
-            Fertig gemischte Peptid-Patronen. Einfach einsetzen, fertig.
+            Fertig gemischte <strong className="text-white font-semibold">Peptidpatronen</strong> als <strong className="text-brand-gold font-semibold">Plug&amp;Play Patrone für Peptide</strong>. Einfach einsetzen, fertig.
           </p>
           <p className="text-base md:text-lg text-white/50 mb-10 max-w-xl">
-            Kein Mischen. Kein Rechnen. Keine Fehler. Nur Forschung.
+            Kein Mischen. Kein Rechnen. Keine Fehler. Der <strong className="text-white/70">Peptidpen</strong> macht Forschung so einfach wie nie zuvor.
           </p>
 
           {/* CTA Buttons */}

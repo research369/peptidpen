@@ -20,8 +20,8 @@ export default function SchemaOrg() {
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Peptidpen — Der erste wiederverwendbare Peptid-Pen Europas",
-      description: "Fertig gemischte Peptid-Patronen für den wiederverwendbaren Forschungspen. Kein Mischen, kein Rechnen, sofort einsatzbereit.",
+      name: "Peptidpen & Peptidpatronen — Plug&Play Patrone für Peptide | 369 Research",
+      description: "Peptidpen kaufen: Fertig gemischte Peptidpatronen als Plug&Play Patrone für Peptide. Kein Mischen, kein Rechnen — sofort einsatzbereit. Entwickelt & produziert in Deutschland.",
       url: config.siteUrl,
       inLanguage: "de-DE",
       publisher: {
@@ -75,8 +75,8 @@ export default function SchemaOrg() {
     const productSchemas = products.slice(0, 10).map((p) => ({
       "@context": "https://schema.org",
       "@type": "Product",
-      name: `${p.name} Plug&Play Patrone`,
-      description: `${p.name} als fertig gemischte Plug&Play Patrone. Research Use Only.`,
+      name: `Peptidpatrone ${p.name} — Plug&Play Patrone für Peptide | 369 Research`,
+      description: `${p.name} als fertig gemischte Peptidpatrone (Plug&Play Patrone für Peptide). Passend für den 369 Research Peptidpen. Research Use Only.`,
       image: p.mockupImage ?? undefined,
       url: getShopProductUrl(p.shopProductId),
       brand: {
@@ -103,10 +103,10 @@ export default function SchemaOrg() {
       ? {
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "369 Research Forschungspen",
-          description: "Wiederverwendbarer Peptid-Pen für Plug&Play Patronen. Research Use Only.",
+          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Peptidpatronen",
+          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Peptidpatronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
           image: penProduct.mockupImage ?? undefined,
-          url: getShopProductUrl(penProduct.shopProductId),
+          url: "https://www.369research.eu/plug-and-play",
           brand: {
             "@type": "Brand",
             name: "369 Research",
@@ -118,10 +118,24 @@ export default function SchemaOrg() {
             availability: penProduct.inStock
               ? "https://schema.org/InStock"
               : "https://schema.org/OutOfStock",
-            url: getShopProductUrl(penProduct.shopProductId),
+            url: "https://www.369research.eu/plug-and-play",
           },
         }
-      : null;
+      : {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Peptidpatronen",
+          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Peptidpatronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
+          url: "https://www.369research.eu/plug-and-play",
+          brand: { "@type": "Brand", name: "369 Research" },
+          offers: {
+            "@type": "Offer",
+            priceCurrency: "EUR",
+            price: 39,
+            availability: "https://schema.org/InStock",
+            url: "https://www.369research.eu/plug-and-play",
+          },
+        };
 
     // Inject all schemas
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
