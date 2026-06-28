@@ -11,6 +11,7 @@ import StickyCtaBar from "./components/StickyCtaBar";
 import AgeGateModal from "./components/AgeGateModal";
 import WhatsAppFloat from "./components/WhatsAppFloat";
 import SchemaOrg from "./components/SchemaOrg";
+import CookieBanner from "./components/CookieBanner";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 
@@ -86,6 +87,7 @@ export default function App() {
 
       <Footer />
       <WhatsAppFloat />
+      <CookieBanner />
     </>
   );
 }
