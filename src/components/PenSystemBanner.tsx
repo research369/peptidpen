@@ -38,7 +38,7 @@ export default function PenSystemBanner() {
                 <span className="badge bg-brand-gold/20 text-brand-gold text-xs">Einmalig</span>
               </div>
               <div className="text-5xl mb-4">🖊️</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Der Forschungspen</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Der Forscherpen</h3>
               <p className="text-blue-200/70 mb-6 leading-relaxed">
                 Der wiederverwendbare Pen ist die Basis des Systems. Einmal angeschafft,
                 hält er dauerhaft. Kompatibel mit allen 369 Research Patronen.
@@ -74,7 +74,7 @@ export default function PenSystemBanner() {
               <div className="text-5xl mb-4">💊</div>
               <h3 className="text-2xl font-bold text-white mb-2">Die Peptid-Patronen</h3>
               <p className="text-blue-200/70 mb-6 leading-relaxed">
-                Fertig gemischte 3-ml-Patronen, kompatibel mit dem Forschungspen.
+                Fertig gemischte 3-ml-Patronen, kompatibel mit dem Forscherpen.
                 Einfach einsetzen — kein Mischen, kein Rechnen, kein Aufwand.
                 Aufpreis gegenüber dem Standard-Vial:
               </p>
@@ -102,7 +102,7 @@ export default function PenSystemBanner() {
             <div className="rounded-2xl overflow-hidden border border-white/10 bg-white shadow-2xl">
               <img
                 src={PEN_AUFBAU_IMG}
-                alt="Aufbau des Forschungspen — Infografik"
+                alt="Aufbau des Forscherpen — Infografik"
                 className="w-full h-auto object-contain"
                 loading="lazy"
               />
@@ -117,7 +117,7 @@ export default function PenSystemBanner() {
                   {loading ? "—" : penPrice !== null ? `${penPrice} €` : `${FALLBACK_PEN_PRICE} €`}
                 </div>
                 <div className="text-white font-medium">Einmalige Investition</div>
-                <div className="text-blue-200/50 text-sm mt-1">Forschungspen (dauerhaft)</div>
+                <div className="text-blue-200/50 text-sm mt-1">Forscherpen (dauerhaft)</div>
               </div>
               <div className="flex items-center justify-center text-4xl text-white/30">+</div>
               <div>

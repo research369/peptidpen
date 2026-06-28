@@ -13,7 +13,7 @@ export default function HowItWorksSection() {
       step: "01",
       icon: "🖊️",
       title: "Pen einmalig kaufen",
-      description: "Der wiederverwendbare Forschungspen ist die Basis. Einmal angeschafft, hält er dauerhaft und ist mit allen 369 Research Patronen kompatibel.",
+      description: "Der wiederverwendbare Forscherpen ist die Basis. Einmal angeschafft, hält er dauerhaft und ist mit allen 369 Research Patronen kompatibel.",
       cta: { label: "Pen kaufen — 39 €", href: PEN_BUY_URL, external: true },
     },
     {

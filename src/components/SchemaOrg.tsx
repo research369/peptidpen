@@ -49,7 +49,7 @@ export default function SchemaOrg() {
           name: "Was ist eine Plug&Play Patrone?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Eine Plug&Play Patrone ist eine 3-ml-Glaspatrone mit bereits rekonstituiertem Peptid in korrekter Konzentration. Direkt in den Forschungspen einsetzen — kein Mischen erforderlich.",
+            text: "Eine Plug&Play Patrone ist eine 3-ml-Glaspatrone mit bereits rekonstituiertem Peptid in korrekter Konzentration. Direkt in den Forscherpen einsetzen — kein Mischen erforderlich.",
           },
         },
         {

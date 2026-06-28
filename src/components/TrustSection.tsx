@@ -28,7 +28,7 @@ export default function TrustSection() {
     {
       icon: "🔄",
       title: "Wiederverwendbarer Pen",
-      description: "Der Forschungspen ist dauerhaft nutzbar. Nur die Patrone wird gewechselt — wirtschaftlich und nachhaltig.",
+      description: "Der Forscherpen ist dauerhaft nutzbar. Nur die Patrone wird gewechselt — wirtschaftlich und nachhaltig.",
     },
   ];
 

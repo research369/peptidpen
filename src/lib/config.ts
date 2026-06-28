@@ -17,7 +17,7 @@ export const config = {
   /** Aufpreis für Plug&Play Patrone in Euro */
   plugplaySurcharge: Number(import.meta.env.VITE_PLUGPLAY_SURCHARGE ?? 15),
 
-  /** Shop-ID des Forschungspen-Produkts */
+  /** Shop-ID des Forscherpen-Produkts */
   penProductId: import.meta.env.VITE_PEN_PRODUCT_ID as string,
 
   /** WhatsApp-Nummer (ohne +, ohne Leerzeichen) */

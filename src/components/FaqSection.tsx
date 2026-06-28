@@ -3,15 +3,15 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Was ist eine Plug&Play Patrone?",
-    a: "Die Plug&Play Patrone ist eine fertig gemischte 3-ml-Glaspatrone mit einem Peptid in optimaler Konzentration — direkt einsatzbereit, ohne Mischen, ohne Rechnen, ohne Fehler. Einfach in den Forschungspen einsetzen und sofort anwenden. Kein Bacteriostatic Water, keine Spritzen zum Mischen, kein Aufwand. Die Patrone ist kompatibel ausschließlich mit dem 369 Research Forschungspen.",
+    a: "Die Plug&Play Patrone ist eine fertig gemischte 3-ml-Glaspatrone mit einem Peptid in optimaler Konzentration — direkt einsatzbereit, ohne Mischen, ohne Rechnen, ohne Fehler. Einfach in den Forscherpen einsetzen und sofort anwenden. Kein Bacteriostatic Water, keine Spritzen zum Mischen, kein Aufwand. Die Patrone ist kompatibel ausschließlich mit dem 369 Research Forscherpen.",
   },
   {
     q: "Was ist der Peptidpen?",
-    a: "Der Peptidpen (offiziell: 369 Research Forschungspen) ist ein wiederverwendbarer, präzisionsgefertigter Injektionspen speziell für Peptid-Patronen. Er ist kompatibel mit allen 369 Research Plug&Play Patronen und ermöglicht eine reproduzierbare, präzise Dosierung ohne die übliche Vorbereitung mit Vials, Spritzen und Bacteriostatic Water.",
+    a: "Der Peptidpen (offiziell: 369 Research Forscherpen) ist ein wiederverwendbarer, präzisionsgefertigter Injektionspen speziell für Peptid-Patronen. Er ist kompatibel mit allen 369 Research Plug&Play Patronen und ermöglicht eine reproduzierbare, präzise Dosierung ohne die übliche Vorbereitung mit Vials, Spritzen und Bacteriostatic Water.",
   },
   {
     q: "Kann ich den Peptidpen wiederverwenden?",
-    a: "Ja — der Forschungspen ist vollständig wiederverwendbar. Er wurde für den dauerhaften Einsatz konzipiert. Nach Verbrauch einer Patrone wird diese einfach ausgetauscht und eine neue Plug&Play Patrone eingesetzt. Der Pen selbst ist langlebig und muss nur einmalig erworben werden.",
+    a: "Ja — der Forscherpen ist vollständig wiederverwendbar. Er wurde für den dauerhaften Einsatz konzipiert. Nach Verbrauch einer Patrone wird diese einfach ausgetauscht und eine neue Plug&Play Patrone eingesetzt. Der Pen selbst ist langlebig und muss nur einmalig erworben werden.",
   },
   {
     q: "Kann ich die Plug&Play Patrone wiederverwenden?",
@@ -34,8 +34,8 @@ const faqs = [
     a: "Alle Patronen sind direkt im 369 Research Shop auf 369research.eu erhältlich. Wähle dein gewünschtes Peptid auf dieser Seite aus und klicke auf 'Als Patrone bestellen' — du wirst direkt zur Produktseite weitergeleitet.",
   },
   {
-    q: "Wo kann ich den Forschungspen kaufen?",
-    a: "Den Forschungspen gibt es ausschließlich im 369 Research Shop. Klicke auf den 'Pen kaufen' Button oben auf dieser Seite — du wirst direkt zur Plug&Play Seite weitergeleitet.",
+    q: "Wo kann ich den Forscherpen kaufen?",
+    a: "Den Forscherpen gibt es ausschließlich im 369 Research Shop. Klicke auf den 'Pen kaufen' Button oben auf dieser Seite — du wirst direkt zur Plug&Play Seite weitergeleitet.",
   },
 
   {
