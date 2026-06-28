@@ -42,7 +42,7 @@ export const handler: Handler = async () => {
     <g:price>${patronenPreis} EUR</g:price>
     <g:brand>369 Research</g:brand>
     <g:google_product_category>5765</g:google_product_category>
-    <g:product_type>Peptide &gt; Peptidpatronen &gt; Plug&amp;Play Patronen</g:product_type>
+    <g:product_type>Peptide &gt; Plug&Play Patronen &gt; Plug&amp;Play Patronen</g:product_type>
     <g:identifier_exists>no</g:identifier_exists>
     <g:adult>no</g:adult>
     <g:custom_label_0>PlugPlay</g:custom_label_0>
@@ -55,8 +55,8 @@ export const handler: Handler = async () => {
   // Pen-Eintrag immer hinzufügen (unabhängig von API)
   const penItem = `  <item>
     <g:id>forscherpen-369research</g:id>
-    <g:title>Peptidpen 369 Research — Wiederverwendbarer Pen für Peptidpatronen</g:title>
-    <g:description>Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Peptidpatronen (Plug&amp;Play Patrone für Peptide). Einmalig kaufen, dauerhaft nutzen. Entwickelt &amp; produziert in Deutschland. Research Use Only.</g:description>
+    <g:title>Peptidpen 369 Research — Wiederverwendbarer Pen für Plug&Play Patronen</g:title>
+    <g:description>Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Plug&Play Patronen (Plug&amp;Play Patrone für Peptide). Einmalig kaufen, dauerhaft nutzen. Entwickelt &amp; produziert in Deutschland. Research Use Only.</g:description>
     <g:link>${PEN_BUY_URL}</g:link>
     <g:image_link>${PEN_IMAGE}</g:image_link>
     <g:condition>new</g:condition>
@@ -76,9 +76,9 @@ export const handler: Handler = async () => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
-    <title>Peptidpen &amp; Peptidpatronen — Plug&amp;Play Patrone für Peptide | 369 Research</title>
+    <title>Peptidpen &amp; Plug&Play Patronen — Plug&amp;Play Patrone für Peptide | 369 Research</title>
     <link>https://www.peptidpen.de</link>
-    <description>Fertig gemischte Peptidpatronen als Plug&amp;Play Patrone für Peptide. Passend für den 369 Research Peptidpen. Research Use Only.</description>
+    <description>Fertig gemischte Plug&Play Patronen als Plug&amp;Play Patrone für Peptide. Passend für den 369 Research Peptidpen. Research Use Only.</description>
 ${penItem}
 ${items.join("\n")}
   </channel>

@@ -41,7 +41,7 @@ export default function PenSystemBanner() {
               <h3 className="text-2xl font-bold text-white mb-2">Der Forscherpen</h3>
               <p className="text-blue-200/70 mb-6 leading-relaxed">
                 Der wiederverwendbare Pen ist die Basis des Systems. Einmal angeschafft,
-                hält er dauerhaft. Kompatibel mit allen 369 Research Patronen.
+                hält er dauerhaft. Kompatibel mit allen 369 Research Plug&Play Patronen.
               </p>
               <div className="flex items-end gap-2 mb-6">
                 {loading ? (
@@ -66,27 +66,27 @@ export default function PenSystemBanner() {
               </a>
             </div>
 
-            {/* Patronen */}
+            {/* Plug&Play Patronen */}
             <div className="card-glass relative overflow-hidden">
               <div className="absolute top-4 right-4">
                 <span className="badge bg-brand-blue/30 text-blue-300 text-xs">Wiederkehrend</span>
               </div>
               <div className="text-5xl mb-4">💊</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Die Peptid-Patronen</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Die Plug&Play Patronen</h3>
               <p className="text-blue-200/70 mb-6 leading-relaxed">
-                Fertig gemischte 3-ml-Patronen, kompatibel mit dem Forscherpen.
+                Fertig gemischte 3-ml-Plug&Play Patronen, kompatibel mit dem Forscherpen.
                 Einfach einsetzen — kein Mischen, kein Rechnen, kein Aufwand.
                 Aufpreis gegenüber dem Standard-Vial:
               </p>
               <div className="flex items-end gap-2 mb-6">
                 <span className="text-4xl font-bold text-brand-gold">+{surcharge} €</span>
-                <span className="text-blue-200/50 text-sm mb-1">pro Patrone</span>
+                <span className="text-blue-200/50 text-sm mb-1">pro Plug&Play Patrone</span>
               </div>
               <a
                 href="#produkte"
                 className="btn-primary w-full text-center"
               >
-                Alle Patronen ansehen →
+                Alle Plug&Play Patronen ansehen →
               </a>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function PenSystemBanner() {
               <div className="flex items-center justify-center text-4xl text-white/30">+</div>
               <div>
                 <div className="text-3xl font-bold text-brand-blue mb-1">+{surcharge} €</div>
-                <div className="text-white font-medium">Pro Patrone</div>
+                <div className="text-white font-medium">Pro Plug&Play Patrone</div>
                 <div className="text-blue-200/50 text-sm mt-1">Aufpreis auf Produktpreis</div>
               </div>
             </div>

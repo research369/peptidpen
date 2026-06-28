@@ -16,7 +16,7 @@ export default function StickyCtaBar() {
             <span className="text-2xl flex-shrink-0">💊</span>
             <div className="min-w-0">
               <div className="text-white font-semibold text-sm truncate">
-                Peptid-Patronen — fertig gemischt, sofort einsatzbereit
+                Plug&Play Patronen — fertig gemischt, sofort einsatzbereit
               </div>
               <div className="text-blue-300/70 text-xs hidden sm:block">
                 Research Use Only · Entwickelt in Deutschland
@@ -33,7 +33,7 @@ export default function StickyCtaBar() {
                 document.getElementById("produkte")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              Patronen ansehen
+              Plug&Play Patronen ansehen
             </a>
             {penProduct && (
               <a

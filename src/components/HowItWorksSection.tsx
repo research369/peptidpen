@@ -13,21 +13,21 @@ export default function HowItWorksSection() {
       step: "01",
       icon: "🖊️",
       title: "Pen einmalig kaufen",
-      description: "Der wiederverwendbare Forscherpen ist die Basis. Einmal angeschafft, hält er dauerhaft und ist mit allen 369 Research Patronen kompatibel.",
+      description: "Der wiederverwendbare Forscherpen ist die Basis. Einmal angeschafft, hält er dauerhaft und ist mit allen 369 Research Plug&Play Patronen kompatibel.",
       cta: { label: "Pen kaufen — 39 €", href: PEN_BUY_URL, external: true },
     },
     {
       step: "02",
       icon: "📦",
-      title: "Patrone wählen & bestellen",
-      description: "Wähle aus unserem Sortiment patronenfähiger Peptide. Jede Patrone ist fertig gemischt, präzise dosiert und versiegelt geliefert.",
+      title: "Plug&Play Patrone wählen & bestellen",
+      description: "Wähle aus unserem Sortiment Plug&Play-fähiger Peptide. Jede Plug&Play Patrone ist fertig gemischt, präzise dosiert und versiegelt geliefert.",
       cta: { label: "Zum Sortiment →", href: "#produkte", external: false },
     },
     {
       step: "03",
       icon: "⚡",
       title: "Einsetzen & sofort forschen",
-      description: "Patrone in den Pen einsetzen. Fertig. Keine Vorbereitung, kein Mischen, kein Warten. Unter 60 Sekunden vom Paket zur Anwendung.",
+      description: "Plug&Play Patrone in den Pen einsetzen. Fertig. Keine Vorbereitung, kein Mischen, kein Warten. Unter 60 Sekunden vom Paket zur Anwendung.",
       cta: { label: "Jetzt bestellen →", href: "#produkte", external: false },
     },
   ];
@@ -93,7 +93,7 @@ export default function HowItWorksSection() {
         <div className="max-w-4xl mx-auto mt-16 mb-4 rounded-2xl overflow-hidden shadow-md">
           <img
             src={FUER_JEDES_PRODUKT_IMG}
-            alt="Für jedes Peptid-Produkt die passende Patrone"
+            alt="Für jedes Peptid-Produkt die passende Plug&Play Patrone"
             className="w-full h-auto object-cover"
             loading="lazy"
           />
@@ -135,7 +135,7 @@ export default function HowItWorksSection() {
               </div>
               <ul className="space-y-2 text-sm text-gray-600">
                 {[
-                  "Patrone einsetzen — fertig",
+                  "Plug&Play Patrone einsetzen — fertig",
                   "Dosierung bereits korrekt eingestellt",
                   "Unter Reinraumbedingungen abgefüllt",
                   "Sofort einsatzbereit",
@@ -168,7 +168,7 @@ export default function HowItWorksSection() {
               href="#produkte"
               className="btn-primary text-lg px-10 py-4"
             >
-              Patronen entdecken →
+              Plug&Play Patronen entdecken →
             </a>
           </div>
           <p className="mt-4 text-sm text-gray-400">❄️ Gekühlter Versand · Lieferung innerhalb 48h · Über 1.000 Kunden</p>

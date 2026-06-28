@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="text-xl font-bold mb-3">Peptidpen.de</div>
             <p className="text-blue-200/60 text-sm leading-relaxed mb-4">
               Der erste wiederverwendbare Peptid-Pen Europas.
-              Fertig gemischte Patronen für maximale Forschungseffizienz.
+              Fertig gemischte Plug&Play Patronen für maximale Forschungseffizienz.
             </p>
             <div className="text-xs text-blue-200/40">
               Ein Angebot von 369 Research
@@ -25,7 +25,7 @@ export default function Footer() {
               Schnellzugriff
             </div>
             <ul className="space-y-2 text-sm text-blue-200/70">
-              <li><a href="#produkte" className="hover:text-white transition-colors">Alle Patronen</a></li>
+              <li><a href="#produkte" className="hover:text-white transition-colors">Alle Plug&Play Patronen</a></li>
               <li>
                 <a
                   href={config.shopBaseUrl}

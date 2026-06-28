@@ -20,8 +20,8 @@ export default function SchemaOrg() {
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Peptidpen & Peptidpatronen — Plug&Play Patrone für Peptide | 369 Research",
-      description: "Peptidpen kaufen: Fertig gemischte Peptidpatronen als Plug&Play Patrone für Peptide. Kein Mischen, kein Rechnen — sofort einsatzbereit. Entwickelt & produziert in Deutschland.",
+      name: "Peptidpen & Plug&Play Patronen — Plug&Play Patrone für Peptide | 369 Research",
+      description: "Peptidpen kaufen: Fertig gemischte Plug&Play Patronen als Plug&Play Patrone für Peptide. Kein Mischen, kein Rechnen — sofort einsatzbereit. Entwickelt & produziert in Deutschland.",
       url: config.siteUrl,
       inLanguage: "de-DE",
       publisher: {
@@ -41,7 +41,7 @@ export default function SchemaOrg() {
           name: "Was ist ein Peptidpen?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Ein Peptidpen ist ein wiederverwendbares Pen-System für fertig gemischte Peptid-Patronen. Er ersetzt die klassische Insulinspritze und ermöglicht präzise Anwendung ohne Vorbereitung.",
+            text: "Ein Peptidpen ist ein wiederverwendbares Pen-System für fertig gemischte Plug&Play Patronen. Er ersetzt die klassische Insulinspritze und ermöglicht präzise Anwendung ohne Vorbereitung.",
           },
         },
         {
@@ -54,7 +54,7 @@ export default function SchemaOrg() {
         },
         {
           "@type": "Question",
-          name: "Wie viel kostet der Aufpreis für eine Patrone?",
+          name: "Wie viel kostet der Aufpreis für eine Plug&Play Patrone?",
           acceptedAnswer: {
             "@type": "Answer",
             text: `Der Aufpreis für die Plug&Play Patrone beträgt ${config.plugplaySurcharge} € gegenüber dem Standard-Vial. Dieser Aufpreis deckt Reinraum-Abfüllung und pharmazeutische Verpackung ab.`,
@@ -103,8 +103,8 @@ export default function SchemaOrg() {
       ? {
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Peptidpatronen",
-          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Peptidpatronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
+          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Plug&Play Patronen",
+          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Plug&Play Patronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
           image: penProduct.mockupImage ?? undefined,
           url: "https://www.369research.eu/plug-and-play",
           brand: {
@@ -124,8 +124,8 @@ export default function SchemaOrg() {
       : {
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Peptidpatronen",
-          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Peptidpatronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
+          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Plug&Play Patronen",
+          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Plug&Play Patronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
           url: "https://www.369research.eu/plug-and-play",
           brand: { "@type": "Brand", name: "369 Research" },
           offers: {

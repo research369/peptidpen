@@ -36,7 +36,7 @@ export default function ProblemSection() {
         <div className="max-w-3xl mx-auto text-center mb-12">
           <span className="badge badge-blue mb-4">Das Problem</span>
           <h2 className="section-title text-brand-dark mb-4">
-            Warum noch mischen? Die <span className="text-brand-blue">Peptidpatrone</span> macht es überflüssig.
+            Warum noch mischen? Die <span className="text-brand-blue">Plug&amp;Play Patrone</span> macht es überflüssig.
           </h2>
           <p className="text-lg text-gray-500">
             Jeder der mit Peptiden arbeitet kennt das: Bevor die eigentliche Forschung beginnt,
@@ -81,14 +81,14 @@ export default function ProblemSection() {
             Die Lösung: <span className="text-brand-gold">Plug&amp;Play Patrone für Peptide</span> — fertig, versiegelt, sofort einsatzbereit.
           </h3>
           <p className="text-blue-200 text-lg leading-relaxed mb-8">
-            Statt den Forscher mit der Komplexität allein zu lassen, haben wir sie in unsere kontrollierten Produktionsprozesse verlagert. Das Ergebnis ist eine <strong>Peptidpatrone</strong>, die bereits alles enthält — präzise dosiert, unter Reinraumbedingungen abgefüllt, versiegelt und sofort einsatzbereit. Der <strong>Peptidpen</strong> macht den Rest.
+            Statt den Forscher mit der Komplexität allein zu lassen, haben wir sie in unsere kontrollierten Produktionsprozesse verlagert. Das Ergebnis ist eine <strong>Plug&amp;Play Patrone</strong>, die bereits alles enthält — präzise dosiert, unter Reinraumbedingungen abgefüllt, versiegelt und sofort einsatzbereit. Der <strong>Peptidpen</strong> macht den Rest.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="#produkte"
               className="btn-gold text-base px-8 py-3"
             >
-              Patronen entdecken →
+              Plug&Play Plug&amp;Play Patronen entdecken →
             </a>
             <a
               href={PEN_BUY_URL}

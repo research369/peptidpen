@@ -14,7 +14,7 @@
 
 ## Was ist dieses Projekt?
 
-`peptidpen.de` ist die deutsche Produkt-Landingpage für den **369 Research Peptidpen** — einen wiederverwendbaren Forscherpen mit Plug&Play-Peptidpatronen. Die Seite präsentiert das Produktsystem, listet alle kompatiblen Peptidpatronen (synchronisiert mit dem Hauptshop) und leitet Käufer auf [369research.eu/plug-and-play](https://www.369research.eu/plug-and-play) weiter.
+`peptidpen.de` ist die deutsche Produkt-Landingpage für den **369 Research Peptidpen** — einen wiederverwendbaren Forscherpen mit Plug&Play-Plug&Play Patronen. Die Seite präsentiert das Produktsystem, listet alle kompatiblen Plug&Play Patronen (synchronisiert mit dem Hauptshop) und leitet Käufer auf [369research.eu/plug-and-play](https://www.369research.eu/plug-and-play) weiter.
 
 **Dies ist eine reine Marketing-Landingpage.** Kein Checkout, keine Benutzerkonten, kein CMS. Alle Käufe laufen über [369research.eu](https://www.369research.eu).
 

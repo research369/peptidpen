@@ -3,19 +3,19 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Was ist eine Plug&Play Patrone?",
-    a: "Die Plug&Play Patrone ist eine fertig gemischte 3-ml-Glaspatrone mit einem Peptid in optimaler Konzentration — direkt einsatzbereit, ohne Mischen, ohne Rechnen, ohne Fehler. Einfach in den Forscherpen einsetzen und sofort anwenden. Kein Bacteriostatic Water, keine Spritzen zum Mischen, kein Aufwand. Die Patrone ist kompatibel ausschließlich mit dem 369 Research Forscherpen.",
+    a: "Die Plug&Play Patrone ist eine fertig gemischte 3-ml-Glaspatrone mit einem Peptid in optimaler Konzentration — direkt einsatzbereit, ohne Mischen, ohne Rechnen, ohne Fehler. Einfach in den Forscherpen einsetzen und sofort anwenden. Kein Bacteriostatic Water, keine Spritzen zum Mischen, kein Aufwand. Die Plug&Play Patrone ist kompatibel ausschließlich mit dem 369 Research Forscherpen.",
   },
   {
     q: "Was ist der Peptidpen?",
-    a: "Der Peptidpen (offiziell: 369 Research Forscherpen) ist ein wiederverwendbarer, präzisionsgefertigter Injektionspen speziell für Peptid-Patronen. Er ist kompatibel mit allen 369 Research Plug&Play Patronen und ermöglicht eine reproduzierbare, präzise Dosierung ohne die übliche Vorbereitung mit Vials, Spritzen und Bacteriostatic Water.",
+    a: "Der Peptidpen (offiziell: 369 Research Forscherpen) ist ein wiederverwendbarer, präzisionsgefertigter Injektionspen speziell für Plug&Play Patronen. Er ist kompatibel mit allen 369 Research Plug&Play Patronen und ermöglicht eine reproduzierbare, präzise Dosierung ohne die übliche Vorbereitung mit Vials, Spritzen und Bacteriostatic Water.",
   },
   {
     q: "Kann ich den Peptidpen wiederverwenden?",
-    a: "Ja — der Forscherpen ist vollständig wiederverwendbar. Er wurde für den dauerhaften Einsatz konzipiert. Nach Verbrauch einer Patrone wird diese einfach ausgetauscht und eine neue Plug&Play Patrone eingesetzt. Der Pen selbst ist langlebig und muss nur einmalig erworben werden.",
+    a: "Ja — der Forscherpen ist vollständig wiederverwendbar. Er wurde für den dauerhaften Einsatz konzipiert. Nach Verbrauch einer Plug&Play Patrone wird diese einfach ausgetauscht und eine neue Plug&Play Patrone eingesetzt. Der Pen selbst ist langlebig und muss nur einmalig erworben werden.",
   },
   {
     q: "Kann ich die Plug&Play Patrone wiederverwenden?",
-    a: "Nein — die Patronen sind Einwegprodukte und für den einmaligen Gebrauch bestimmt. Jede Patrone enthält eine definierte Menge eines Peptids in fertiger Lösung. Nach vollständiger Verwendung wird die leere Patrone entsorgt und durch eine neue ersetzt.",
+    a: "Nein — die Plug&Play Patronen sind Einwegprodukte und für den einmaligen Gebrauch bestimmt. Jede Plug&Play Patrone enthält eine definierte Menge eines Peptids in fertiger Lösung. Nach vollständiger Verwendung wird die leere Plug&Play Patrone entsorgt und durch eine neue ersetzt.",
   },
   {
     q: "Wie läuft der gekühlte Versand ab?",
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: "Wie bestelle ich eine Plug&Play Patrone?",
-    a: "Alle Patronen sind direkt im 369 Research Shop auf 369research.eu erhältlich. Wähle dein gewünschtes Peptid auf dieser Seite aus und klicke auf 'Als Patrone bestellen' — du wirst direkt zur Produktseite weitergeleitet.",
+    a: "Alle Plug&Play Patronen sind direkt im 369 Research Shop auf 369research.eu erhältlich. Wähle dein gewünschtes Peptid auf dieser Seite aus und klicke auf 'Als Plug&Play Patrone bestellen' — du wirst direkt zur Produktseite weitergeleitet.",
   },
   {
     q: "Wo kann ich den Forscherpen kaufen?",
@@ -40,7 +40,7 @@ const faqs = [
 
   {
     q: "Kann ich verschiedene Peptide im selben Pen verwenden?",
-    a: "Ja, der Pen ist mit allen 369 Research Plug&Play Patronen kompatibel. Patronen können gewechselt werden. Es wird empfohlen, den Pen zwischen verschiedenen Peptiden zu reinigen. Patronen verschiedener Peptide sollten nicht gemischt oder kombiniert werden.",
+    a: "Ja, der Pen ist mit allen 369 Research Plug&Play Patronen kompatibel. Plug&Play Patronen können gewechselt werden. Es wird empfohlen, den Pen zwischen verschiedenen Peptiden zu reinigen. Plug&Play Patronen verschiedener Peptide sollten nicht gemischt oder kombiniert werden.",
   },
 ];
 

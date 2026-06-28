@@ -68,7 +68,7 @@ Die erste sichtbare Sektion der Landingpage. Enthält:
 - **Trust Banner** (oben): `🇩🇪 Entwickelt in DE · ❄️ 48h Gekühlter Versand · 1.000+ Kunden · Erfinder der Plug&Play Patrone`
 - **Headline** und Subheadline
 - **Hero-Bild** (CDN)
-- **CTA-Buttons:** "Pen kaufen" → `PEN_BUY_URL` | "Patronen entdecken" → `#products`
+- **CTA-Buttons:** "Pen kaufen" → `PEN_BUY_URL` | "Plug&Play Patronen entdecken" → `#products`
 
 **Wichtig:** Alle CTA-Buttons müssen auf `PEN_BUY_URL` aus `config.ts` zeigen, niemals auf direkte URLs.
 
@@ -88,7 +88,7 @@ Erklärt das Problem (herkömmliche Peptid-Anwendung ist kompliziert) und positi
 
 **Pfad:** `src/components/PenSystemBanner.tsx`
 
-Vollbreite Banner-Sektion mit einer Infografik, die das Pen-System visualisiert (Pen + Patrone = fertig). Enthält einen "Pen kaufen"-Button → `PEN_BUY_URL`.
+Vollbreite Banner-Sektion mit einer Infografik, die das Pen-System visualisiert (Pen + Plug&Play Patrone = fertig). Enthält einen "Pen kaufen"-Button → `PEN_BUY_URL`.
 
 ---
 
@@ -96,7 +96,7 @@ Vollbreite Banner-Sektion mit einer Infografik, die das Pen-System visualisiert 
 
 **Pfad:** `src/components/HowItWorksSection.tsx`
 
-3-Schritt-Anleitung: Pen kaufen → Patrone wählen → Einsetzen & fertig. Jeder Schritt hat einen CTA-Button.
+3-Schritt-Anleitung: Pen kaufen → Plug&Play Patrone wählen → Einsetzen & fertig. Jeder Schritt hat einen CTA-Button.
 
 **Schritt 1 und 3:** Buttons → `PEN_BUY_URL`  
 **Schritt 2:** Button → `#products` (Anker zur Produktsektion)
@@ -107,17 +107,17 @@ Vollbreite Banner-Sektion mit einer Infografik, die das Pen-System visualisiert 
 
 **Pfad:** `src/components/ProductsSection.tsx`
 
-Die zentrale Produktsektion. Zeigt alle Plug&Play-fähigen Peptidpatronen in einem Raster mit Kategorie-Filter.
+Die zentrale Produktsektion. Zeigt alle Plug&Play-fähigen Plug&Play Patronen in einem Raster mit Kategorie-Filter.
 
 **Datenquelle:** `useProducts`-Hook (API + Fallback)
 
 **Features:**
 - Kategorie-Filter-Tabs (dynamisch aus Produktdaten)
 - Produktkarten mit Name, Preis, Kategorie-Badge
-- "Patrone kaufen"-Button pro Produkt → `getShopProductUrl(shopProductId)` aus `config.ts`
+- "Plug&Play Patrone kaufen"-Button pro Produkt → `getShopProductUrl(shopProductId)` aus `config.ts`
 - Fallback-Banner wenn API nicht erreichbar
 
-**Wichtig:** Produkte werden immer als "Patrone" dargestellt — nie als Vial oder Pulver. Der angezeigte Preis ist immer `Basispreis + plugplaySurcharge`.
+**Wichtig:** Produkte werden immer als "Plug&Play Patrone" dargestellt — nie als Vial oder Pulver. Der angezeigte Preis ist immer `Basispreis + plugplaySurcharge`.
 
 ---
 
@@ -141,7 +141,7 @@ Akkordeon-FAQ mit allen wichtigen Fragen zum Peptidpen-System. Aktuelle Fragen:
 |---|---|
 | Was ist der Peptidpen? | Produkt |
 | Wie funktioniert die Plug&Play Patrone? | Produkt |
-| Welche Peptide sind als Patrone verfügbar? | Produkt |
+| Welche Peptide sind als Plug&Play Patrone verfügbar? | Produkt |
 | Wie wird der Pen geliefert? | Versand |
 | Gekühlter Versand — wie funktioniert das? | Versand |
 | Welche Zahlungsarten werden akzeptiert? | Zahlung |

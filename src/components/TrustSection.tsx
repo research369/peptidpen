@@ -8,7 +8,7 @@ export default function TrustSection() {
     {
       icon: "🔬",
       title: "Reinraum-Abfüllung",
-      description: "Jede Patrone wird unter kontrollierten Reinraumbedingungen abgefüllt und hermetisch versiegelt. Pharmazeutische Primärverpackung.",
+      description: "Jede Plug&Play Patrone wird unter kontrollierten Reinraumbedingungen abgefüllt und hermetisch versiegelt. Pharmazeutische Primärverpackung.",
     },
     {
       icon: "⚗️",
@@ -23,12 +23,12 @@ export default function TrustSection() {
     {
       icon: "📐",
       title: "Reproduzierbare Konzentration",
-      description: "Jede Patrone enthält exakt die angegebene Wirkstoffmenge. Keine Abweichungen durch manuelle Herstellung.",
+      description: "Jede Plug&Play Patrone enthält exakt die angegebene Wirkstoffmenge. Keine Abweichungen durch manuelle Herstellung.",
     },
     {
       icon: "🔄",
       title: "Wiederverwendbarer Pen",
-      description: "Der Forscherpen ist dauerhaft nutzbar. Nur die Patrone wird gewechselt — wirtschaftlich und nachhaltig.",
+      description: "Der Forscherpen ist dauerhaft nutzbar. Nur die Plug&Play Patrone wird gewechselt — wirtschaftlich und nachhaltig.",
     },
   ];
 
@@ -42,7 +42,7 @@ export default function TrustSection() {
             Qualität, die man nicht sieht — aber spürt.
           </h2>
           <p className="section-subtitle mx-auto text-center">
-            Hinter jeder Patrone steckt ein Produktionsprozess, der für maximale
+            Hinter jeder Plug&Play Patrone steckt ein Produktionsprozess, der für maximale
             Reproduzierbarkeit und Zuverlässigkeit ausgelegt ist.
           </p>
         </div>
@@ -63,7 +63,7 @@ export default function TrustSection() {
         <div className="max-w-3xl mx-auto bg-gradient-to-br from-brand-dark to-brand-navy rounded-3xl p-8 md:p-12 text-white text-center">
           <div className="text-5xl mb-6">🏆</div>
           <h3 className="text-2xl md:text-3xl font-display font-bold mb-4">
-            369 Research hat die Plug&amp;Play Forscherpatrone in Europa etabliert.
+            369 Research hat die Plug&amp;Play Patrone in Europa etabliert.
           </h3>
           <p className="text-blue-200/70 text-lg leading-relaxed mb-6">
             Was heute als Standard gilt, war einmal eine Idee: Die Komplexität der

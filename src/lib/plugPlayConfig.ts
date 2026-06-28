@@ -8,7 +8,7 @@
  * KEINE Hardcodes hier — nur Ausschluss-Listen.
  */
 
-/** Kategorien, die KEINE Plug&Play-Patrone bekommen */
+/** Kategorien, die KEINE Plug&Play-Plug&Play Patrone bekommen */
 export const PLUGPLAY_EXCLUDED_CATEGORIES = [
   "Forscher-Bundles",
   "369 BeautyLine",
@@ -21,7 +21,7 @@ export const PLUGPLAY_EXCLUDED_CATEGORIES = [
 ];
 
 /**
- * Produkt-IDs, die KEINE Plug&Play-Patrone bekommen.
+ * Produkt-IDs, die KEINE Plug&Play-Plug&Play Patrone bekommen.
  * Muss synchron mit dem Hauptshop gehalten werden.
  */
 export const PLUGPLAY_EXCLUDED_IDS = [
@@ -46,7 +46,7 @@ export const PLUGPLAY_EXCLUDED_IDS = [
   "forscherpen",
   "insulinspritzen",
   "pen-nadeln",
-  "pen-kartusche",
+  "pen-plug-and-play-patrone",
   "bac-wasser-3ml",
 ];
 

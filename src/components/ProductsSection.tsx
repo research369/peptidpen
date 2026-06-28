@@ -18,7 +18,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
         {(product.mockupImage || product.image) ? (
           <img
             src={product.mockupImage || product.image || ''}
-            alt={`${product.name} Peptid-Patrone`}
+            alt={`${product.name} Plug&Play Patrone`}
             className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
@@ -27,7 +27,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
             💊
           </div>
         )}
-        {/* Patrone Badge */}
+        {/* Plug&Play Patrone Badge */}
         <div className="absolute top-3 left-3">
           <span className="badge bg-brand-blue text-white text-xs shadow-md">
             Plug&amp;Play Patrone
@@ -60,7 +60,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
           <span className="text-2xl font-bold text-brand-dark">
             ab {hasVariants ? patronenPreis : patronenPreis} €
           </span>
-          <span className="text-sm text-gray-400">als Patrone</span>
+          <span className="text-sm text-gray-400">als Plug&Play Patrone</span>
         </div>
 
         {/* Variants preview */}
@@ -94,7 +94,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
           rel="noopener noreferrer"
           className={`btn-primary w-full text-center text-sm py-3 ${!product.inStock ? "opacity-60 pointer-events-none" : ""}`}
         >
-          Als Patrone bestellen →
+          Als Plug&Play Patrone bestellen →
         </a>
       </div>
     </div>
@@ -131,13 +131,13 @@ export default function ProductsSection() {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge badge-blue mb-4">Alle Patronen</span>
+          <span className="badge badge-blue mb-4">Alle Plug&Play Patronen</span>
           <h2 className="section-title text-brand-dark mb-4">
-            Das komplette Patronen-Sortiment
+            Das komplette Plug&Play Patronen-Sortiment
           </h2>
           <p className="section-subtitle mx-auto text-center">
             Alle Produkte fertig gemischt, präzise dosiert und versiegelt.
-            Nur patronenfähige Peptide — keine Kompromisse.
+            Nur Plug&amp;Play-fähige Peptide — keine Kompromisse.
           </p>
         </div>
 
@@ -204,7 +204,7 @@ export default function ProductsSection() {
         {/* Product count */}
         {!loading && (
           <div className="text-center mt-8 text-gray-400 text-sm">
-            {filtered.length} von {products.length} Patronen angezeigt
+            {filtered.length} von {products.length} Plug&Play Patronen angezeigt
           </div>
         )}
 

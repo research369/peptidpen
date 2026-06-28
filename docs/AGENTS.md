@@ -86,7 +86,7 @@ Alle User-facing Texte sind direkt in den Komponenten als JSX-Strings. Keine i18
 
 **Datei:** `src/lib/plugPlayConfig.ts`
 
-Wenn neue Produkte im Hauptshop hinzugefügt werden, die KEINE Patrone bekommen sollen:
+Wenn neue Produkte im Hauptshop hinzugefügt werden, die KEINE Plug&Play Patrone bekommen sollen:
 ```typescript
 export const PLUGPLAY_EXCLUDED_IDS = [
   // Neue ID hier hinzufügen:

@@ -161,10 +161,10 @@ export const PEN_BUY_URL = `${config.shopBaseUrl}/plug-and-play`;
 
 ## Plug&Play-Eligibility-Logik
 
-Die Logik, welche Produkte als Patronen angeboten werden, ist in `src/lib/plugPlayConfig.ts` definiert und muss **exakt identisch** mit dem Hauptshop `369research.eu` sein:
+Die Logik, welche Produkte als Plug&Play Patronen angeboten werden, ist in `src/lib/plugPlayConfig.ts` definiert und muss **exakt identisch** mit dem Hauptshop `369research.eu` sein:
 
 ```typescript
-// Ausgeschlossene Kategorien (keine Patrone)
+// Ausgeschlossene Kategorien (keine Plug&Play Patrone)
 export const PLUGPLAY_EXCLUDED_CATEGORIES = [
   "Forscher-Bundles", "369 BeautyLine", "Fertigpens",
   "Forscherpens", "Tabletten", "Kapseln / Tabletten",
