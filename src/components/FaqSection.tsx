@@ -7,7 +7,7 @@ const faqs = [
   },
   {
     q: "Was ist der Peptidpen?",
-    a: "Der Peptidpen (offiziell: 369 Research Forschungspen) ist ein wiederverwendbarer, präzisionsgefertigter Injektionspen speziell für Peptid-Patronen. Er wurde von 369 Research entwickelt und ist der erste seiner Art in Europa. Der Pen ist kompatibel mit allen 369 Research Plug&Play Patronen und ermöglicht eine reproduzierbare, präzise Dosierung ohne die übliche Vorbereitung mit Vials, Spritzen und Bacteriostatic Water.",
+    a: "Der Peptidpen (offiziell: 369 Research Forschungspen) ist ein wiederverwendbarer, präzisionsgefertigter Injektionspen speziell für Peptid-Patronen. Er ist kompatibel mit allen 369 Research Plug&Play Patronen und ermöglicht eine reproduzierbare, präzise Dosierung ohne die übliche Vorbereitung mit Vials, Spritzen und Bacteriostatic Water.",
   },
   {
     q: "Kann ich den Peptidpen wiederverwenden?",
@@ -37,10 +37,7 @@ const faqs = [
     q: "Wo kann ich den Forschungspen kaufen?",
     a: "Den Forschungspen gibt es ausschließlich im 369 Research Shop. Klicke auf den 'Pen kaufen' Button oben auf dieser Seite — du wirst direkt zur Plug&Play Seite weitergeleitet.",
   },
-  {
-    q: "Gibt es Analysezertifikate für die Produkte?",
-    a: "Ja — für alle Produkte sind Analysezertifikate (CoA) unabhängiger Labore verfügbar. Diese bestätigen Reinheit (≥99% HPLC) und Identität des jeweiligen Peptids. Die Zertifikate sind auf den jeweiligen Produktseiten im Shop einsehbar.",
-  },
+
   {
     q: "Kann ich verschiedene Peptide im selben Pen verwenden?",
     a: "Ja, der Pen ist mit allen 369 Research Plug&Play Patronen kompatibel. Patronen können gewechselt werden. Es wird empfohlen, den Pen zwischen verschiedenen Peptiden zu reinigen. Patronen verschiedener Peptide sollten nicht gemischt oder kombiniert werden.",
