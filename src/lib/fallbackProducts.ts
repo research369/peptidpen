@@ -41,3 +41,30 @@ export const FALLBACK_PRODUCTS: ShopProduct[] = [
   { id: "tirzepatide", shopProductId: "tirzepatide", name: "Tirzepatide", category: "Metabolisch & K\u00f6rperkomposition", categories: ["Metabolisch & Körperkomposition"], price: 49, salePrice: null, salePriceLabel: null, mockupImage: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Tirzepatide-20mg-MOCKUP_9999a89a.png", image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/Tirzepatide-20mg-MOCKUP_9999a89a.png", casNumber: '', molecularWeight: '', purity: "99%", badge: null, labReportImage: null, galleryImages: null, shortDescription: null, description: null, stock: 100, inStock: true, variants: null, plugPlayPrice: 64, isPlugPlayEligible: true },
   { id: "vitamin-b12", shopProductId: "vitamin-b12", name: "Vitamin B12", category: "Longevity & Mitochondrien", categories: ["Longevity & Mitochondrien"], price: 29, salePrice: null, salePriceLabel: null, mockupImage: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/logo_34f1666d.jpeg", image: "https://d2xsxph8kpxj0f.cloudfront.net/119871539/Awj6fZmg8vnUEspbv65erN/logo_34f1666d.jpeg", casNumber: '', molecularWeight: '', purity: "99%", badge: null, labReportImage: null, galleryImages: null, shortDescription: null, description: null, stock: 100, inStock: true, variants: null, plugPlayPrice: 44, isPlugPlayEligible: true }
 ];
+
+/** Fallback für den Forscherpen falls API nicht erreichbar */
+export const FALLBACK_PEN: ShopProduct = {
+  id: "forscherpen",
+  shopProductId: "forscherpen",
+  name: "Der Forscherpen",
+  category: "Zubehör",
+  categories: ["Zubehör"],
+  price: 39,
+  salePrice: null,
+  salePriceLabel: null,
+  mockupImage: null,
+  image: null,
+  casNumber: "",
+  molecularWeight: "",
+  purity: "",
+  badge: null,
+  labReportImage: null,
+  galleryImages: null,
+  shortDescription: "Der wiederverwendbare Peptidpen — kompatibel mit allen 369 Research Plug&Play Patronen.",
+  description: null,
+  stock: 100,
+  inStock: true,
+  variants: null,
+  plugPlayPrice: 39,
+  isPlugPlayEligible: false,
+};
