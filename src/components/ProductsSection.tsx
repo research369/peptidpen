@@ -21,6 +21,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
             alt={`${product.name} Plug&Play Patrone`}
             className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
+            onError={(event) => { event.currentTarget.style.display = "none"; }}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-gray-300 text-6xl">
