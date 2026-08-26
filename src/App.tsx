@@ -77,10 +77,10 @@ export default function App() {
 
       <main>
         <HeroSection />
+        <ProductsSection />
         <ProblemSection />
         <PenSystemBanner />
         <HowItWorksSection />
-        <ProductsSection />
         <TrustSection />
         <FaqSection />
       </main>

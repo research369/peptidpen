@@ -15,7 +15,7 @@ export default function PenSystemBanner() {
   const surcharge = config.plugplaySurcharge ?? 15;
 
   return (
-    <section className="section-darker py-16 md:py-20">
+    <section id="system" className="section-darker py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           {/* Header */}

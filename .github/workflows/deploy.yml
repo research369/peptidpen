@@ -25,15 +25,19 @@ jobs:
         run: npm run build
         env:
           VITE_API_BASE_URL: ${{ secrets.VITE_API_BASE_URL }}
-          VITE_SHOP_URL: ${{ secrets.VITE_SHOP_URL }}
+          VITE_SHOP_BASE_URL: ${{ secrets.VITE_SHOP_BASE_URL }}
           VITE_SITE_URL: ${{ secrets.VITE_SITE_URL }}
           VITE_WHATSAPP_NUMBER: ${{ secrets.VITE_WHATSAPP_NUMBER }}
+          VITE_PLUGPLAY_SURCHARGE: ${{ secrets.VITE_PLUGPLAY_SURCHARGE }}
+          VITE_PEN_PRODUCT_ID: ${{ secrets.VITE_PEN_PRODUCT_ID }}
 
       - name: Deploy to Netlify (Production)
         if: github.ref == 'refs/heads/main'
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './dist'
+          functions-dir: './netlify/functions'
+          netlify-config-path: './netlify.toml'
           production-deploy: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions - ${{ github.sha }}"
@@ -48,6 +52,8 @@ jobs:
         uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: './dist'
+          functions-dir: './netlify/functions'
+          netlify-config-path: './netlify.toml'
           production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Preview Deploy - ${{ github.sha }}"

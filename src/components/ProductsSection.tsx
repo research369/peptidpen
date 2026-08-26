@@ -12,14 +12,14 @@ function ProductCard({ product }: { product: ShopProduct }) {
   const hasVariants = product.variants && product.variants.length > 1;
 
   return (
-    <div className="product-card group">
+    <article className="product-card group">
       {/* Image */}
-      <div className="relative aspect-square bg-gray-50 overflow-hidden">
+      <div className="relative aspect-[4/3] bg-gradient-to-br from-white via-[#f4f9ff] to-[#e8f4ff] overflow-hidden border-b border-blue-100">
         {(product.mockupImage || product.image) ? (
           <img
             src={product.mockupImage || product.image || ''}
             alt={`${product.name} Plug&Play Patrone`}
-            className="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
         ) : (
@@ -57,8 +57,8 @@ function ProductCard({ product }: { product: ShopProduct }) {
 
         {/* Price */}
         <div className="flex items-baseline gap-2 mb-4">
-          <span className="text-2xl font-bold text-brand-dark">
-            ab {hasVariants ? patronenPreis : patronenPreis} €
+          <span className="text-2xl font-black text-[#062a68]">
+            ab {patronenPreis} €
           </span>
           <span className="text-sm text-gray-400">als Plug&Play Patrone</span>
         </div>
@@ -92,12 +92,12 @@ function ProductCard({ product }: { product: ShopProduct }) {
           href={getShopProductUrl(product.shopProductId)}
           target="_blank"
           rel="noopener noreferrer"
-          className={`btn-primary w-full text-center text-sm py-3 ${!product.inStock ? "opacity-60 pointer-events-none" : ""}`}
+          className={`btn-primary w-full text-center text-sm py-3 !rounded-full ${!product.inStock ? "opacity-60 pointer-events-none" : ""}`}
         >
-          Als Plug&Play Patrone bestellen →
+          Produkt &amp; Variante wählen →
         </a>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -127,17 +127,17 @@ export default function ProductsSection() {
   });
 
   return (
-    <section id="produkte" className="py-20 md:py-28 bg-gray-50">
+    <section id="produkte" className="relative py-20 md:py-28 bg-[linear-gradient(180deg,#f7fbff_0%,#ffffff_45%,#eef7ff_100%)] overflow-hidden">
+      <div className="molecule-field molecule-field-right !top-20 !opacity-10" aria-hidden="true" />
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge badge-blue mb-4">Alle Plug&Play Patronen</span>
+          <span className="badge badge-blue mb-4">Direkt aus dem 369 Live-Sortiment</span>
           <h2 className="section-title text-brand-dark mb-4">
-            Das komplette Plug&Play Patronen-Sortiment
+            Wähle deine Plug&amp;Play-Patrone
           </h2>
           <p className="section-subtitle mx-auto text-center">
-            Alle Produkte fertig gemischt, präzise dosiert und versiegelt.
-            Nur Plug&amp;Play-fähige Peptide — keine Kompromisse.
+            Aktuelle Produkte, Varianten, Preise und Verfügbarkeit kommen aus der zentralen 369 Warenwirtschaft. Die Bestellung läuft anschließend sicher über den bestehenden 369 Checkout.
           </p>
         </div>
 
@@ -176,7 +176,7 @@ export default function ProductsSection() {
 
         {/* Products Grid */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {Array.from({ length: 8 }).map((_, i) => (
               <div key={i} className="product-card animate-pulse">
                 <div className="aspect-square bg-gray-200" />

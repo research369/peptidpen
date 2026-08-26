@@ -18,7 +18,7 @@ export const config = {
   plugplaySurcharge: Number(import.meta.env.VITE_PLUGPLAY_SURCHARGE ?? 15),
 
   /** Shop-ID des Forscherpen-Produkts */
-  penProductId: import.meta.env.VITE_PEN_PRODUCT_ID as string,
+  penProductId: (import.meta.env.VITE_PEN_PRODUCT_ID as string) || "forscherpen",
 
   /** WhatsApp-Nummer (ohne +, ohne Leerzeichen) */
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER as string,
