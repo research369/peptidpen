@@ -19,9 +19,8 @@ export default function HeroSection() {
 
       <div className="lab-topline">
         <div className="container mx-auto px-4 flex flex-wrap justify-center gap-x-8 gap-y-1">
-          <span>Entwickelt in Deutschland</span>
-          <span>Gekühlter Versand</span>
-          <span>Dynamische Live-Bestände</span>
+          <span>369 Research</span>
+          <span>Pen &amp; Patronen</span>
           <span>Research Use Only</span>
         </div>
       </div>
@@ -32,8 +31,8 @@ export default function HeroSection() {
             <img src="/assets/369-research-logo.png" alt="369 Research" className="h-12 md:h-16 w-auto" />
           </a>
           <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-[#0a327b]">
-            <a href="#produkte" className="hover:text-[#0878ee] transition-colors">Patronen</a>
-            <a href="#system" className="hover:text-[#0878ee] transition-colors">Das System</a>
+            <a href="#system" className="hover:text-[#0878ee] transition-colors">So funktioniert es</a>
+            <a href="#produkte" className="hover:text-[#0878ee] transition-colors">Produkte</a>
             <a href="#faq" className="hover:text-[#0878ee] transition-colors">FAQ</a>
           </nav>
           <a href="#produkte" className="btn-primary !rounded-full !px-5 md:!px-7 !py-3 text-sm whitespace-nowrap">
@@ -45,29 +44,29 @@ export default function HeroSection() {
       <div className="relative z-10 container mx-auto px-4 pt-12 pb-14 md:pt-16 md:pb-20">
         <div className="grid lg:grid-cols-[1.02fr_.98fr] gap-10 lg:gap-14 items-center">
           <div>
-            <div className="eyebrow"><span /> DAS 369 PLUG&amp;PLAY-SYSTEM</div>
+            <div className="eyebrow"><span /> DAS 369 PEN-SYSTEM</div>
             <h1 className="hero-title">
-              Forschungspen.<br />
-              <span>Patrone einsetzen.</span><br />
-              Direkt starten.
+              Pen + Patronen.<br />
+              <span>Fertig gemischt</span><br />
+              oder Mix &amp; Go.
             </h1>
             <p className="hero-copy">
-              Wiederverwendbarer 369 Research Pen und fertig vorbereitete Plug&amp;Play-Patronen – zentral aus dem aktuellen Shopbestand, ohne Mischen und ohne manuelle Konzentrationsberechnung.
+              Ein wiederverwendbarer Forschungs-Pen, zwei einfache Patronen-Optionen:
+              fertig vorbereitet als Plug &amp; Play oder zum selbst Anmischen als Mix &amp; Go.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <a href="#produkte" className="btn-primary text-base md:text-lg !rounded-full !px-8 !py-4">
-                Patronen direkt auswählen <span aria-hidden="true">→</span>
+                Produkt auswählen <span aria-hidden="true">→</span>
               </a>
               <a href={PEN_BUY_URL} target="_blank" rel="noopener noreferrer" className="btn-secondary text-base !rounded-full !px-7 !py-4">
                 Pen kaufen · {loading ? "…" : `${penPrice} €`}
               </a>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 mt-9 max-w-2xl">
-              <div className="hero-proof"><strong>3 ml</strong><span>Standardpatrone</span></div>
-              <div className="hero-proof"><strong>Live</strong><span>Preis &amp; Bestand</span></div>
-              <div className="hero-proof"><strong>48 h</strong><span>gekühlter Versand</span></div>
+            <div className="grid grid-cols-2 gap-3 mt-9 max-w-xl">
+              <div className="hero-proof"><strong>Mix &amp; Go</strong><span>selbst anmischen</span></div>
+              <div className="hero-proof"><strong>Plug &amp; Play</strong><span>fertig gemischt</span></div>
             </div>
           </div>
 
@@ -76,21 +75,21 @@ export default function HeroSection() {
             <div className="hero-image-card">
               <img src="/assets/research-pen.png" alt="369 Research Pen im Etui mit Zubehör" className="hero-product-image" />
               <div className="hero-image-label">
-                <small>WIEDERVERWENDBAR</small>
+                <small>EIN PEN · ZWEI OPTIONEN</small>
                 <strong>369 Research Pen</strong>
-                <span>kompatibel mit allen 369 Plug&amp;Play-Patronen</span>
+                <span>für Mix &amp; Go und fertig gemischte Patronen</span>
               </div>
             </div>
-            <div className="floating-badge floating-badge-top"><Icon>✓</Icon><span><b>Ein System</b><small>für alle Patronen</small></span></div>
-            <div className="floating-badge floating-badge-bottom"><Icon>❄</Icon><span><b>Kühl versendet</b><small>sicher verpackt</small></span></div>
+            <div className="floating-badge floating-badge-top"><Icon>1</Icon><span><b>Mix &amp; Go</b><small>selbst anmischen</small></span></div>
+            <div className="floating-badge floating-badge-bottom"><Icon>2</Icon><span><b>Fertig gemischt</b><small>direkt einsetzen</small></span></div>
           </div>
         </div>
 
         <div className="benefit-strip">
           {[
-            ["01", "Patrone wählen", "Produkt und Variante aus dem Live-Sortiment"],
-            ["02", "Im Shop bestellen", "Weiter in den bewährten 369 Checkout"],
-            ["03", "Einsetzen & forschen", "Kein Mischen, kein Umfüllen"],
+            ["01", "Pen einmal kaufen", "Wiederverwendbar für passende Patronen"],
+            ["02", "Produkt wählen", "Stärke und Verfügbarkeit im Shop prüfen"],
+            ["03", "Patronen-Art wählen", "Mix & Go oder fertig gemischt"],
           ].map(([number, title, text]) => (
             <div className="benefit-step" key={number}>
               <span>{number}</span><div><b>{title}</b><small>{text}</small></div>
