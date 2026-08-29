@@ -36,7 +36,7 @@ export const handler: Handler = async () => {
     <g:title>Peptidpatrone ${escapeXml(p.name)} — Plug&amp;Play Patrone für Peptide | 369 Research</g:title>
     <g:description>${escapeXml(`${p.name} als fertig gemischte Plug&Play-Patrone für den 369 Research Peptidpen, mit gekühltem Versand. Research Use Only.`)}</g:description>
     <g:link>${productUrl}</g:link>
-    <g:image_link>${escapeXml(p.mockupImage || PEN_IMAGE)}</g:image_link>
+    <g:image_link>${escapeXml(p.image || p.mockupImage || PEN_IMAGE)}</g:image_link>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:price>${patronenPreis} EUR</g:price>

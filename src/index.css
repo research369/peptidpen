@@ -295,7 +295,7 @@
 .floating-badge b { color: #07357d; font-size: .78rem; }
 .floating-badge small { color: #708399; font-size: .65rem; }
 .floating-badge-top { right: -1rem; top: 2.5rem; }
-.floating-badge-bottom { left: -1rem; bottom: 4rem; }
+.floating-badge-bottom { left: -2.5rem; bottom: 8rem; }
 .lab-icon { display:grid; place-items:center; width:2.2rem; height:2.2rem; border-radius:.7rem; color:white; background:linear-gradient(135deg,#0342a5,#0b8ef4); }
 
 .benefit-strip {

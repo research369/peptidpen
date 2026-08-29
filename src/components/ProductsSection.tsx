@@ -15,13 +15,20 @@ function ProductCard({ product, mode }: { product: ShopProduct; mode: CartridgeM
   return (
     <article className="product-card group">
       <div className="relative aspect-[4/3] bg-gradient-to-br from-white via-[#f4f9ff] to-[#e8f4ff] overflow-hidden border-b border-blue-100">
-        {(product.mockupImage || product.image) ? (
+        {(product.image || product.mockupImage) ? (
           <img
-            src={product.mockupImage || product.image || ""}
+            src={product.image || product.mockupImage || ""}
             alt={product.name}
             className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
-            onError={(event) => { event.currentTarget.style.display = "none"; }}
+            onError={(event) => {
+              const fallback = product.mockupImage;
+              if (fallback && event.currentTarget.src !== fallback) {
+                event.currentTarget.src = fallback;
+              } else {
+                event.currentTarget.style.display = "none";
+              }
+            }}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center text-[#0a64c7] text-4xl font-black">369</div>
