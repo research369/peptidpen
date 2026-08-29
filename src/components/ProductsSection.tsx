@@ -64,11 +64,11 @@ function ProductCard({ product, mode }: { product: ShopProduct; mode: CartridgeM
 
         <div className="grid grid-cols-2 gap-2 mb-4">
           <div className={`rounded-xl border p-3 ${mode === "mixgo" ? "border-[#0878ee] bg-blue-50 ring-2 ring-blue-100" : "border-blue-100 bg-white"}`}>
-            <span className="block text-xs font-bold text-[#0a64c7]">Mix &amp; Go {mode === "mixgo" && "· gewählt"}</span>
+            <span className="block text-xs font-bold text-[#0a64c7]">Mix &amp; Go {mode === "mixgo" && "· empfohlen"}</span>
             <strong className="block mt-1 text-lg text-[#062a68]">ab {mixAndGoPrice} €</strong>
           </div>
           <div className={`rounded-xl border p-3 ${mode === "plugplay" ? "border-[#0878ee] bg-blue-50 ring-2 ring-blue-100" : "border-blue-100 bg-white"}`}>
-            <span className="block text-xs font-bold text-[#0a64c7]">Plug &amp; Play {mode === "plugplay" && "· gewählt"}</span>
+            <span className="block text-xs font-bold text-[#0a64c7]">Plug &amp; Play {mode === "plugplay" && "· gekühlt"}</span>
             <strong className="block mt-1 text-lg text-[#062a68]">ab {readyMixedPrice} €</strong>
           </div>
         </div>
@@ -125,7 +125,7 @@ export default function ProductsSection() {
           </p>
         </div>
 
-        <div className="mode-switch" aria-label="Patronen-Art auswählen">
+        <div className="mode-switch" aria-label="Preisansicht der Patronen-Art">
           <button type="button" onClick={() => setMode("mixgo")} className={mode === "mixgo" ? "active" : ""}>
             <span>Empfohlen</span><b>Mix &amp; Go</b><small>Pulver in Patrone · BAC-Wasser ergänzen</small>
           </button>
