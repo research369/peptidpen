@@ -3,9 +3,7 @@ import { useProducts } from "../hooks/useProducts";
 import { getShopProductUrl, config } from "../lib/config";
 import type { ShopProduct } from "../lib/api";
 
-type CartridgeMode = "mixgo" | "plugplay";
-
-function ProductCard({ product, mode }: { product: ShopProduct; mode: CartridgeMode }) {
+function ProductCard({ product }: { product: ShopProduct }) {
   const mixAndGoPrice = product.variants && product.variants.length > 0
     ? Math.min(...product.variants.map((variant) => variant.price))
     : product.price;
@@ -34,7 +32,7 @@ function ProductCard({ product, mode }: { product: ShopProduct; mode: CartridgeM
           <div className="w-full h-full flex items-center justify-center text-[#0a64c7] text-4xl font-black">369</div>
         )}
         <div className="absolute top-3 left-3">
-          <span className="badge bg-brand-blue text-white text-xs shadow-md">Zwei Patronen-Optionen</span>
+          <span className="badge bg-brand-blue text-white text-xs shadow-md">Für das 369 Pen-System</span>
         </div>
         {product.purity && (
           <div className="absolute top-3 right-3">
@@ -63,12 +61,12 @@ function ProductCard({ product, mode }: { product: ShopProduct; mode: CartridgeM
         )}
 
         <div className="grid grid-cols-2 gap-2 mb-4">
-          <div className={`rounded-xl border p-3 ${mode === "mixgo" ? "border-[#0878ee] bg-blue-50 ring-2 ring-blue-100" : "border-blue-100 bg-white"}`}>
-            <span className="block text-xs font-bold text-[#0a64c7]">Mix &amp; Go {mode === "mixgo" && "· empfohlen"}</span>
+          <div className="rounded-xl border border-blue-100 bg-blue-50/70 p-3">
+            <span className="block text-xs font-bold text-[#0a64c7]">Mix &amp; Go</span>
             <strong className="block mt-1 text-lg text-[#062a68]">ab {mixAndGoPrice} €</strong>
           </div>
-          <div className={`rounded-xl border p-3 ${mode === "plugplay" ? "border-[#0878ee] bg-blue-50 ring-2 ring-blue-100" : "border-blue-100 bg-white"}`}>
-            <span className="block text-xs font-bold text-[#0a64c7]">Plug &amp; Play {mode === "plugplay" && "· gekühlt"}</span>
+          <div className="rounded-xl border border-blue-200 bg-white p-3">
+            <span className="block text-xs font-bold text-[#0a64c7]">Plug &amp; Play</span>
             <strong className="block mt-1 text-lg text-[#062a68]">ab {readyMixedPrice} €</strong>
           </div>
         </div>
@@ -84,7 +82,7 @@ function ProductCard({ product, mode }: { product: ShopProduct; mode: CartridgeM
           rel="noopener noreferrer"
           className={`btn-primary w-full text-center text-sm py-3 !rounded-full ${!product.inStock ? "opacity-60 pointer-events-none" : ""}`}
         >
-          Im 369 Research Shop öffnen →
+          Produkt &amp; Patrone auswählen →
         </a>
       </div>
     </article>
@@ -95,7 +93,6 @@ export default function ProductsSection() {
   const { products, loading } = useProducts();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("Alle");
-  const [mode, setMode] = useState<CartridgeMode>("mixgo");
 
   const categories = ["Alle", ...Array.from(
     new Set(products.flatMap((product) =>
@@ -117,21 +114,21 @@ export default function ProductsSection() {
       <div className="molecule-field molecule-field-right !top-20 !opacity-10" aria-hidden="true" />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="badge badge-blue mb-4">Direkte Produktauswahl</span>
-          <h2 className="section-title text-brand-dark mb-4">Injizierbares Produkt wählen</h2>
+          <span className="badge badge-blue mb-4">Jetzt auswählen</span>
+          <h2 className="section-title text-brand-dark mb-4">Welches Produkt soll in deine Patrone?</h2>
           <p className="section-subtitle mx-auto text-center">
-            Preise, Varianten und Bestand werden zentral aus dem 369 Research Shop geladen.
-            Nasale und orale Produkte wie Semax oder Adamax sind ausgeschlossen.
+            Wähle zuerst das Forschungsprodukt. Anschließend entscheidest du dich für
+            Mix &amp; Go oder eine fertig gemischte Plug-&amp;-Play-Patrone.
           </p>
         </div>
 
-        <div className="mode-switch" aria-label="Preisansicht der Patronen-Art">
-          <button type="button" onClick={() => setMode("mixgo")} className={mode === "mixgo" ? "active" : ""}>
-            <span>Empfohlen</span><b>Mix &amp; Go</b><small>Pulver in Patrone · BAC-Wasser ergänzen</small>
-          </button>
-          <button type="button" onClick={() => setMode("plugplay")} className={mode === "plugplay" ? "active" : ""}>
-            <span>Komfort</span><b>Plug &amp; Play</b><small>Fertig gemischt · gekühlter Versand</small>
-          </button>
+        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-3 mb-9">
+          <div className="choice-summary">
+            <b>Mix &amp; Go</b><span>Du ergänzt BAC-Wasser und bereitest die Patrone selbst vor.</span>
+          </div>
+          <div className="choice-summary">
+            <b>Plug &amp; Play</b><span>Fertig gemischt und mit gekühltem Versand geliefert.</span>
+          </div>
         </div>
 
         <div className="max-w-md mx-auto mb-8">
@@ -183,13 +180,13 @@ export default function ProductsSection() {
           <div className="text-center py-12 text-gray-400">Keine Produkte gefunden für „{searchQuery}“.</div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filtered.map((product) => <ProductCard key={product.id} product={product} mode={mode} />)}
+            {filtered.map((product) => <ProductCard key={product.id} product={product} />)}
           </div>
         )}
 
         {!loading && (
           <div className="text-center mt-8 text-gray-400 text-sm">
-            {filtered.length} von {products.length} Produkten angezeigt
+            {filtered.length} passende Produkte
           </div>
         )}
 

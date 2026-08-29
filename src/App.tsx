@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import HeroSection from "./components/HeroSection";
+import SystemExplainer from "./components/SystemExplainer";
 import PenSystemBanner from "./components/PenSystemBanner";
 import ProductsSection from "./components/ProductsSection";
 import FaqSection from "./components/FaqSection";
@@ -56,6 +57,7 @@ export default function App() {
 
       <main>
         <HeroSection />
+        <SystemExplainer />
         <PenSystemBanner />
         <ProductsSection />
         <FaqSection />

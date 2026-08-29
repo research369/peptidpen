@@ -17,8 +17,8 @@ export default function SchemaOrg() {
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "369 Research Peptidpen | Mix & Go oder Plug & Play",
-      description: "Peptidpen mit Case und 3 Nadeln sowie passende Patronen: Mix & Go bevorzugt oder fertig gemischt mit gekühltem Versand.",
+      name: "369 Research Peptidpen mit wechselbaren Produktpatronen",
+      description: "Wiederverwendbarer Peptidpen mit Case und 3 Nadeln. Forschungsprodukte als Mix & Go zum selbst Vorbereiten oder fertig gemischt mit gekühltem Versand.",
       url: config.siteUrl,
       inLanguage: "de-DE",
       publisher: {
@@ -29,8 +29,9 @@ export default function SchemaOrg() {
     };
 
     const faqItems = [
-      ["Was ist der Unterschied zwischen Mix & Go und Plug & Play?", "Bei Mix & Go befindet sich das Pulver bereits in der Patrone und BAC-Wasser wird ergänzt. Plug & Play wird fertig gemischt und gekühlt versendet."],
-      ["Brauche ich für beide Optionen denselben Pen?", "Ja. Der 369 Research Pen ist wiederverwendbar; nur die Patrone wird gewechselt."],
+      ["Was ist das 369 Pen-System?", "Das System besteht aus einem wiederverwendbaren Peptidpen und wechselbaren 3-ml-Patronen für passende Forschungsprodukte."],
+      ["Was ist der Unterschied zwischen Mix & Go und Plug & Play?", "Bei Mix & Go befindet sich das gefriergetrocknete Produkt bereits in der Patrone und BAC-Wasser wird ergänzt. Plug & Play wird fertig gemischt und gekühlt versendet."],
+      ["Brauche ich für jedes Produkt einen neuen Pen?", "Nein. Der Pen wird wiederverwendet; nur die passende Produktpatrone wird gewechselt."],
       ["Sind die Produkte für den menschlichen Gebrauch bestimmt?", "Nein. Alle Produkte sind ausschließlich für Forschungszwecke bestimmt."],
     ];
 
@@ -48,7 +49,7 @@ export default function SchemaOrg() {
       "@context": "https://schema.org",
       "@type": "Product",
       name: `${product.name} Patrone | 369 Research`,
-      description: `${product.name} für den 369 Research Pen, erhältlich als Mix & Go oder fertig gemischt. Research Use Only.`,
+      description: `${product.name} als Patrone für den wiederverwendbaren 369 Research Peptidpen, erhältlich als Mix & Go oder fertig gemischt. Research Use Only.`,
       image: product.mockupImage ?? undefined,
       url: getShopProductUrl(product.shopProductId),
       brand: { "@type": "Brand", name: "369 Research" },
@@ -66,7 +67,7 @@ export default function SchemaOrg() {
       "@context": "https://schema.org",
       "@type": "Product",
       name: "369 Research Pen",
-      description: "Wiederverwendbarer Forschungs-Pen inklusive Case und 3 Pen-Nadeln für passende 369 Research Patronen. Research Use Only.",
+      description: "Wiederverwendbarer Peptidpen inklusive Case und 3 Pen-Nadeln für wechselbare 369 Research Produktpatronen. Research Use Only.",
       image: penProduct?.mockupImage ?? "https://www.369research.eu/products/peptidpen-case-1.png",
       url: "https://www.369research.eu/plug-and-play",
       brand: { "@type": "Brand", name: "369 Research" },

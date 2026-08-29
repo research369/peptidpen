@@ -14,9 +14,9 @@ export default function StickyCtaBar() {
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="text-white font-semibold text-sm truncate">
-              Mix &amp; Go bevorzugt · Plug &amp; Play gekühlt
+              Ein Pen · wechselbare Produktpatronen
             </div>
-            <div className="text-blue-300/70 text-xs hidden sm:block">Ein Pen · zwei Optionen</div>
+            <div className="text-blue-300/70 text-xs hidden sm:block">Mix &amp; Go oder fertig gemischt</div>
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
@@ -25,7 +25,7 @@ export default function StickyCtaBar() {
               className="btn-primary text-sm py-2 px-4 whitespace-nowrap"
               onClick={() => document.getElementById("produkte")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Produkt wählen
+              Patrone wählen
             </a>
             <a
                 href={getPenBuyUrl()}

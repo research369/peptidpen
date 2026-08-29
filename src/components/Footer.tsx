@@ -11,8 +11,8 @@ export default function Footer() {
           <div>
             <div className="text-xl font-bold mb-3">Peptidpen.de</div>
             <p className="text-blue-200/60 text-sm leading-relaxed mb-4">
-              Der erste wiederverwendbare Peptid-Pen Europas.
-              Fertig gemischte Plug&Play Patronen für maximale Forschungseffizienz.
+              Der wiederverwendbare 369 Research Peptidpen mit wechselbaren Patronen:
+              selbst vorbereitet als Mix &amp; Go oder fertig gemischt als Plug &amp; Play.
             </p>
             <div className="text-xs text-blue-200/40">
               Ein Angebot von 369 Research
@@ -25,7 +25,8 @@ export default function Footer() {
               Schnellzugriff
             </div>
             <ul className="space-y-2 text-sm text-blue-200/70">
-              <li><a href="#produkte" className="hover:text-white transition-colors">Alle Plug&Play Patronen</a></li>
+              <li><a href="#system" className="hover:text-white transition-colors">Das Pen-System verstehen</a></li>
+              <li><a href="#produkte" className="hover:text-white transition-colors">Passende Patronen auswählen</a></li>
               <li>
                 <a
                   href={config.shopBaseUrl}
@@ -33,7 +34,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  369 Research Shop →
+                  Alle Forschungsprodukte →
                 </a>
               </li>
               <li>
@@ -43,7 +44,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"
                 >
-                  Plug&amp;Play Erklärung →
+                  Peptidpen kaufen →
                 </a>
               </li>
             </ul>

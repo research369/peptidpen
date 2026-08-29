@@ -2,28 +2,32 @@ import { useState } from "react";
 
 const faqs = [
   {
-    q: "Was ist der Unterschied zwischen Mix & Go und fertig gemischt?",
-    a: "Bei Mix & Go befindet sich das Produktpulver bereits in der Patrone und du ergänzt BAC-Wasser. Plug & Play wird fertig gemischt und gekühlt versendet.",
+    q: "Was genau ist das 369 Pen-System?",
+    a: "Das System besteht aus einem wiederverwendbaren Peptidpen und wechselbaren 3-ml-Patronen. Die Patrone enthält das gewählte Forschungsprodukt, während am Pen die benötigten Einheiten eingestellt werden.",
   },
   {
-    q: "Brauche ich für beide Optionen denselben Pen?",
-    a: "Ja. Der 369 Research Pen ist wiederverwendbar. Du wechselst nur die passende Patrone.",
+    q: "Wie funktioniert Mix & Go?",
+    a: "Das gefriergetrocknete Produkt befindet sich bereits in der passenden Patrone. Du ergänzt BAC-Wasser, wartest bis sich das Produkt vollständig gelöst hat und setzt die vorbereitete Patrone in den Pen ein.",
   },
   {
-    q: "Was brauche ich zum Start?",
-    a: "Du brauchst den wiederverwendbaren Pen und eine passende Patrone. Der Peptidpen kostet 49 € und kommt inklusive Case und 3 Pen-Nadeln.",
+    q: "Wie funktioniert Plug & Play?",
+    a: "Die Patrone wird bereits fertig gemischt vorbereitet und gekühlt versendet. Nach Erhalt wird sie in den Pen eingesetzt; ein vorheriges Anmischen entfällt.",
   },
   {
-    q: "Wie wähle ich Produkt, Stärke und Patronen-Art?",
-    a: "Wähle hier ein injizierbares Produkt und öffne es im 369 Research Shop. Dort werden die aktuellen Stärken, Preise und Bestände verbindlich angezeigt.",
+    q: "Was ist beim Peptidpen für 49 € enthalten?",
+    a: "Du erhältst den wiederverwendbaren 369 Research Peptidpen, das passende Case und 3 Pen-Nadeln. Die Produktpatrone wird separat ausgewählt.",
   },
   {
-    q: "Welche Produkte sind für das Pen-System verfügbar?",
-    a: "Grundsätzlich kommen injizierbare Produkte infrage. Nasale oder orale Produkte wie Semax und Adamax sowie Zubehör und Fertigpens sind ausgeschlossen.",
+    q: "Brauche ich für jedes Produkt einen neuen Pen?",
+    a: "Nein. Der Pen bleibt derselbe. Für ein anderes Produkt oder eine neue Stärke wird nur die passende Patrone gewechselt.",
   },
   {
-    q: "Kann ich später zwischen den beiden Optionen wechseln?",
-    a: "Ja. Der Pen bleibt derselbe. Bei jeder neuen Bestellung kannst du erneut zwischen Mix & Go und fertig gemischt wählen.",
+    q: "Welche Produkte sind als Pen-Patrone erhältlich?",
+    a: "Das Pen-System ist für passende injizierbare Forschungsprodukte vorgesehen. Nasale und orale Produkte, beispielsweise Semax oder Adamax, werden deshalb nicht als Pen-Patrone angezeigt.",
+  },
+  {
+    q: "Braucht Mix & Go gekühlten Versand?",
+    a: "Nein. Bei Mix & Go wird das Produkt als gefriergetrocknetes Pulver in der Patrone geliefert. Der gekühlte Versand gehört zur bereits fertig gemischten Plug-&-Play-Variante.",
   },
   {
     q: "Für wen sind die Produkte bestimmt?",
