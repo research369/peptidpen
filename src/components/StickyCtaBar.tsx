@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useProducts } from "../hooks/useProducts";
-import { getShopProductUrl } from "../lib/config";
+import { getPenBuyUrl } from "../lib/config";
 
 export default function StickyCtaBar() {
   const [dismissed, setDismissed] = useState(false);
@@ -14,7 +14,7 @@ export default function StickyCtaBar() {
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="text-white font-semibold text-sm truncate">
-              Pen + Patronen: Mix &amp; Go oder fertig gemischt
+              Mix &amp; Go bevorzugt · Plug &amp; Play gekühlt
             </div>
             <div className="text-blue-300/70 text-xs hidden sm:block">Ein Pen · zwei Optionen</div>
           </div>
@@ -27,16 +27,14 @@ export default function StickyCtaBar() {
             >
               Produkt wählen
             </a>
-            {penProduct && (
-              <a
-                href={getShopProductUrl(penProduct.shopProductId)}
+            <a
+                href={getPenBuyUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:flex btn-gold text-sm py-2 px-4 whitespace-nowrap"
               >
-                Pen kaufen
+                Pen · {penProduct?.price ?? 49} €
               </a>
-            )}
             <button
               onClick={() => setDismissed(true)}
               className="text-white/40 hover:text-white/80 transition-colors p-1"

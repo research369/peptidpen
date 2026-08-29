@@ -3,7 +3,7 @@ import { useState } from "react";
 const faqs = [
   {
     q: "Was ist der Unterschied zwischen Mix & Go und fertig gemischt?",
-    a: "Bei Mix & Go mischst du die Patrone selbst an. Die fertig gemischte Patrone wird vorbereitet geliefert und kann direkt in den Pen eingesetzt werden.",
+    a: "Bei Mix & Go befindet sich das Produktpulver bereits in der Patrone und du ergänzt BAC-Wasser. Plug & Play wird fertig gemischt und gekühlt versendet.",
   },
   {
     q: "Brauche ich für beide Optionen denselben Pen?",
@@ -11,11 +11,15 @@ const faqs = [
   },
   {
     q: "Was brauche ich zum Start?",
-    a: "Du brauchst den wiederverwendbaren Pen und eine passende Patrone. Beim Produkt wählst du Mix & Go oder fertig gemischt.",
+    a: "Du brauchst den wiederverwendbaren Pen und eine passende Patrone. Der Peptidpen kostet 49 € und kommt inklusive Case und 3 Pen-Nadeln.",
   },
   {
     q: "Wie wähle ich Produkt, Stärke und Patronen-Art?",
-    a: "Wähle auf dieser Seite zuerst das Produkt. Im 369 Research Shop wählst du danach die verfügbare Stärke und die gewünschte Patronen-Art.",
+    a: "Wähle hier ein injizierbares Produkt und öffne es im 369 Research Shop. Dort werden die aktuellen Stärken, Preise und Bestände verbindlich angezeigt.",
+  },
+  {
+    q: "Welche Produkte sind für das Pen-System verfügbar?",
+    a: "Grundsätzlich kommen injizierbare Produkte infrage. Nasale oder orale Produkte wie Semax und Adamax sowie Zubehör und Fertigpens sind ausgeschlossen.",
   },
   {
     q: "Kann ich später zwischen den beiden Optionen wechseln?",

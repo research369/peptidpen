@@ -17,8 +17,8 @@ export default function SchemaOrg() {
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "369 Research Pen und Patronen | Mix & Go oder fertig gemischt",
-      description: "Ein wiederverwendbarer Forschungs-Pen mit zwei Patronen-Optionen: Mix & Go zum selbst Anmischen oder fertig gemischt.",
+      name: "369 Research Peptidpen | Mix & Go oder Plug & Play",
+      description: "Peptidpen mit Case und 3 Nadeln sowie passende Patronen: Mix & Go bevorzugt oder fertig gemischt mit gekühltem Versand.",
       url: config.siteUrl,
       inLanguage: "de-DE",
       publisher: {
@@ -29,7 +29,7 @@ export default function SchemaOrg() {
     };
 
     const faqItems = [
-      ["Was ist der Unterschied zwischen Mix & Go und fertig gemischt?", "Bei Mix & Go wird die Patrone selbst angemischt. Die fertig gemischte Patrone wird vorbereitet geliefert."],
+      ["Was ist der Unterschied zwischen Mix & Go und Plug & Play?", "Bei Mix & Go befindet sich das Pulver bereits in der Patrone und BAC-Wasser wird ergänzt. Plug & Play wird fertig gemischt und gekühlt versendet."],
       ["Brauche ich für beide Optionen denselben Pen?", "Ja. Der 369 Research Pen ist wiederverwendbar; nur die Patrone wird gewechselt."],
       ["Sind die Produkte für den menschlichen Gebrauch bestimmt?", "Nein. Alle Produkte sind ausschließlich für Forschungszwecke bestimmt."],
     ];
@@ -66,14 +66,14 @@ export default function SchemaOrg() {
       "@context": "https://schema.org",
       "@type": "Product",
       name: "369 Research Pen",
-      description: "Wiederverwendbarer Forschungs-Pen für Mix & Go und fertig gemischte Patronen. Research Use Only.",
-      image: penProduct?.mockupImage ?? undefined,
+      description: "Wiederverwendbarer Forschungs-Pen inklusive Case und 3 Pen-Nadeln für passende 369 Research Patronen. Research Use Only.",
+      image: penProduct?.mockupImage ?? "https://www.369research.eu/products/peptidpen-case-1.png",
       url: "https://www.369research.eu/plug-and-play",
       brand: { "@type": "Brand", name: "369 Research" },
       offers: {
         "@type": "Offer",
         priceCurrency: "EUR",
-        price: penProduct?.price ?? 39,
+        price: penProduct?.price ?? 49,
         availability: penProduct?.inStock === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
         url: "https://www.369research.eu/plug-and-play",
       },
