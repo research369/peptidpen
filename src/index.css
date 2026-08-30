@@ -320,12 +320,12 @@
   box-shadow: 0 14px 34px rgba(12, 72, 144, .16);
 }
 
-.floating-badge span, .floating-badge small { display: block; }
+.floating-badge .badge-copy, .floating-badge small { display: block; }
 .floating-badge b { color: #07357d; font-size: .78rem; }
 .floating-badge small { color: #708399; font-size: .7rem; line-height: 1.35; }
 .floating-badge-top { right: -1rem; top: 2.5rem; }
 .floating-badge-bottom { left: -2.5rem; top: 45%; bottom: auto; }
-.lab-icon { display:grid; place-items:center; width:2.2rem; height:2.2rem; border-radius:.7rem; color:white; background:linear-gradient(135deg,#0342a5,#0b8ef4); }
+.floating-badge > .lab-icon { display:grid; place-items:center; flex:0 0 2.2rem; width:2.2rem; height:2.2rem; border-radius:.7rem; color:white; background:linear-gradient(135deg,#0342a5,#0b8ef4); }
 
 .benefit-strip {
   display: grid;

@@ -37,7 +37,7 @@ export default function HeroSection() {
             <img src="/assets/369-research-logo.png" alt="369 Research" className="h-12 md:h-16 w-auto" />
           </a>
           <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-[#0a327b]">
-            <a href="#system" className="hover:text-[#0878ee] transition-colors">So funktioniert es</a>
+            <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-[#0878ee] transition-colors">Pen-System</a>
             <a href="#produkte" className="hover:text-[#0878ee] transition-colors">Produkte</a>
             <a href="#faq" className="hover:text-[#0878ee] transition-colors">FAQ</a>
           </nav>
@@ -78,19 +78,25 @@ export default function HeroSection() {
 
           <div className="hero-visual">
             <div className="hero-visual-glow" aria-hidden="true" />
-            <div className="hero-image-card">
+            <a
+              href={getPenBuyUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Peptidpen mit Case und 3 Nadeln kaufen"
+              className="hero-image-card"
+            >
               <img src={PEN_IMAGES[0]} alt="369 Research Peptidpen mit Case und Zubehör" className="hero-product-image" />
               <div className="hero-image-label">
                 <small>WIEDERVERWENDBAR · KOMPLETTES SET</small>
                 <strong>Peptidpen · 49 €</strong>
                 <span>inklusive Case und 3 Pen-Nadeln</span>
               </div>
-            </div>
+            </a>
             <div className="hero-thumbnails" aria-label="Weitere Produktansichten">
               {PEN_IMAGES.slice(1).map((src, index) => <img key={src} src={src} alt={`Peptidpen Produktansicht ${index + 2}`} />)}
             </div>
-            <div className="floating-badge floating-badge-top"><Icon>1</Icon><span><b>Patrone einsetzen</b><small>Produkt direkt in der Patrone</small></span></div>
-            <div className="floating-badge floating-badge-bottom"><Icon>2</Icon><span><b>Einheiten einstellen</b><small>am wiederverwendbaren Pen</small></span></div>
+            <div className="floating-badge floating-badge-top"><Icon>1</Icon><span className="badge-copy"><b>Patrone einsetzen</b><small>Produkt direkt in der Patrone</small></span></div>
+            <div className="floating-badge floating-badge-bottom"><Icon>2</Icon><span className="badge-copy"><b>Einheiten einstellen</b><small>am wiederverwendbaren Pen</small></span></div>
           </div>
         </div>
 

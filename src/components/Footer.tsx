@@ -25,7 +25,7 @@ export default function Footer() {
               Schnellzugriff
             </div>
             <ul className="space-y-2 text-sm text-blue-200/70">
-              <li><a href="#system" className="hover:text-white transition-colors">Das Pen-System verstehen</a></li>
+              <li><a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Pen-System kaufen →</a></li>
               <li><a href="#produkte" className="hover:text-white transition-colors">Passende Patronen auswählen</a></li>
               <li>
                 <a
@@ -35,16 +35,6 @@ export default function Footer() {
                   className="hover:text-white transition-colors"
                 >
                   Alle Forschungsprodukte →
-                </a>
-              </li>
-              <li>
-                <a
-                  href={getPenBuyUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-white transition-colors"
-                >
-                  Peptidpen kaufen →
                 </a>
               </li>
             </ul>
