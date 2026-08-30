@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
 import HeroSection from "./components/HeroSection";
-import ProblemSection from "./components/ProblemSection";
+import SystemExplainer from "./components/SystemExplainer";
 import PenSystemBanner from "./components/PenSystemBanner";
-import HowItWorksSection from "./components/HowItWorksSection";
 import ProductsSection from "./components/ProductsSection";
-import TrustSection from "./components/TrustSection";
 import FaqSection from "./components/FaqSection";
 import Footer from "./components/Footer";
 import StickyCtaBar from "./components/StickyCtaBar";
@@ -15,7 +13,6 @@ import CookieBanner from "./components/CookieBanner";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 
-/** Einfaches URL-basiertes Routing ohne externe Abhängigkeiten */
 function usePathname(): string {
   const [pathname, setPathname] = useState(() => window.location.pathname);
   useEffect(() => {
@@ -34,9 +31,7 @@ export default function App() {
   });
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowStickyBar(window.scrollY > 400);
-    };
+    const handleScroll = () => setShowStickyBar(window.scrollY > 400);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -46,42 +41,25 @@ export default function App() {
     setAgeConfirmed(true);
   };
 
-  // Rechtliche Seiten — kein Age-Gate, kein Sticky-Bar
   if (pathname === "/datenschutz") {
-    return (
-      <>
-        <Datenschutz />
-        <WhatsAppFloat />
-      </>
-    );
+    return <><Datenschutz /><WhatsAppFloat /></>;
   }
 
   if (pathname === "/agb") {
-    return (
-      <>
-        <AGB />
-        <WhatsAppFloat />
-      </>
-    );
+    return <><AGB /><WhatsAppFloat /></>;
   }
 
-  // Hauptseite
   return (
     <>
       <SchemaOrg />
-
       {!ageConfirmed && <AgeGateModal onConfirm={handleAgeConfirm} />}
-
-      {/* Sticky CTA — erscheint nach 400px Scroll */}
       {showStickyBar && <StickyCtaBar />}
 
       <main>
         <HeroSection />
-        <ProblemSection />
+        <SystemExplainer />
         <PenSystemBanner />
-        <HowItWorksSection />
         <ProductsSection />
-        <TrustSection />
         <FaqSection />
       </main>
 

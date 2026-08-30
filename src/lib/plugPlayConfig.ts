@@ -35,19 +35,13 @@ export const PLUGPLAY_EXCLUDED_IDS = [
   "semax-selank",
   "melanotan-1",
   "melanotan-2",
-  "pt-141",
   "dsip",
-  "PEN-BLAU",
-  "PEN-GOLD",
-  "PEN-LILA",
-  "PEN-ROSA",
+  "snap-8",
+  "snap8",
+  "SNAP-8",
+  "PEPTIDPEN-CASE",
   "PEN-KARTUSCHE-5ER",
   "PEN-NADELN-10ER",
-  "forscherpen",
-  "insulinspritzen",
-  "pen-nadeln",
-  "pen-plug-and-play-patrone",
-  "bac-wasser-3ml",
 ];
 
 /**

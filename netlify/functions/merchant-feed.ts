@@ -3,18 +3,18 @@ import type { Handler } from "@netlify/functions";
 const API_BASE = process.env.VITE_API_BASE_URL || "https://369-research-backend-production.up.railway.app";
 const SHOP_BASE = process.env.VITE_SHOP_BASE_URL || "https://www.369research.eu";
 const PLUG_PLAY_SURCHARGE = parseFloat(process.env.VITE_PLUGPLAY_SURCHARGE || "15");
-const PEN_BUY_URL = "https://www.369research.eu/plug-and-play";
-const PEN_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/119871539/KlJPOvFxafhcGkuN.jpeg";
+const PEN_BUY_URL = "https://www.369research.eu/product/forscherpen";
+const PEN_IMAGE = "https://www.369research.eu/products/peptidpen-case-1.png";
 
 export const handler: Handler = async () => {
   let products: any[] = [];
 
   try {
-    const res = await fetch(`${API_BASE}/api/shop/products`);
+    const res = await fetch(`${API_BASE}/api/trpc/article.shopProducts`);
     if (res.ok) {
       const data = await res.json();
-      const all = Array.isArray(data) ? data : data.products ?? [];
-      products = all.filter((p: any) => p.isPlugPlayEligible && p.inStock);
+      const all = data.result?.data?.json ?? [];
+      products = all.filter((p: any) => p.inStock && isEligible(p));
     }
   } catch {
     return {
@@ -28,15 +28,15 @@ export const handler: Handler = async () => {
       ? Math.min(...p.variants.map((v: any) => v.price))
       : p.price;
     const patronenPreis = (basePrice + PLUG_PLAY_SURCHARGE).toFixed(2);
-    const productUrl = `${SHOP_BASE}/produkt/${p.shopProductId}`;
+    const productUrl = `${SHOP_BASE}/product/${p.shopProductId}`;
     const category = (p.categories || []).slice(0, 1).join("") || "Peptide";
 
     return `  <item>
     <g:id>${p.shopProductId}-patrone</g:id>
     <g:title>Peptidpatrone ${escapeXml(p.name)} — Plug&amp;Play Patrone für Peptide | 369 Research</g:title>
-    <g:description>${escapeXml(`${p.name} als fertig gemischte Peptidpatrone (Plug&Play Patrone für Peptide). Passend für den 369 Research Peptidpen. Kein Mischen, kein Rechnen — sofort einsatzbereit. Research Use Only.`)}</g:description>
+    <g:description>${escapeXml(`${p.name} als fertig gemischte Plug&Play-Patrone für den 369 Research Peptidpen, mit gekühltem Versand. Research Use Only.`)}</g:description>
     <g:link>${productUrl}</g:link>
-    <g:image_link>${escapeXml(p.mockupImage || PEN_IMAGE)}</g:image_link>
+    <g:image_link>${escapeXml(p.image || p.mockupImage || PEN_IMAGE)}</g:image_link>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
     <g:price>${patronenPreis} EUR</g:price>
@@ -55,13 +55,13 @@ export const handler: Handler = async () => {
   // Pen-Eintrag immer hinzufügen (unabhängig von API)
   const penItem = `  <item>
     <g:id>forscherpen-369research</g:id>
-    <g:title>Peptidpen 369 Research — Wiederverwendbarer Pen für Plug&Play Patronen</g:title>
-    <g:description>Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Plug&Play Patronen (Plug&amp;Play Patrone für Peptide). Einmalig kaufen, dauerhaft nutzen. Entwickelt &amp; produziert in Deutschland. Research Use Only.</g:description>
+    <g:title>Peptidpen 369 Research mit Case und 3 Pen-Nadeln</g:title>
+    <g:description>Wiederverwendbarer 369 Research Peptidpen inklusive Case und 3 Pen-Nadeln für passende Mix &amp; Go und Plug&amp;Play-Patronen. Research Use Only.</g:description>
     <g:link>${PEN_BUY_URL}</g:link>
     <g:image_link>${PEN_IMAGE}</g:image_link>
     <g:condition>new</g:condition>
     <g:availability>in_stock</g:availability>
-    <g:price>39.00 EUR</g:price>
+    <g:price>49.00 EUR</g:price>
     <g:brand>369 Research</g:brand>
     <g:google_product_category>5765</g:google_product_category>
     <g:product_type>Peptide &gt; Peptidpen</g:product_type>
@@ -70,7 +70,7 @@ export const handler: Handler = async () => {
     <g:custom_label_0>Pen</g:custom_label_0>
     <g:custom_label_1>Peptidpen</g:custom_label_1>
     <g:custom_label_2>Plug-and-Play-System</g:custom_label_2>
-    <g:custom_label_3>Made-in-Germany</g:custom_label_3>
+    <g:custom_label_3>Case-und-3-Nadeln</g:custom_label_3>
   </item>`;
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -101,4 +101,13 @@ function escapeXml(str: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
+}
+
+function isEligible(product: any): boolean {
+  const excludedCategories = ["Forscher-Bundles", "369 BeautyLine", "Fertigpens", "Forscherpens", "Tabletten", "Kapseln / Tabletten", "Zubehör"];
+  const excludedIds = ["selank", "semax", "oxytocin", "adamax", "semax-selank", "melanotan-1", "melanotan-2", "dsip", "snap-8", "snap8", "SNAP-8"];
+  const categories = product.categories ?? (product.category ? [product.category] : []);
+  return !excludedIds.includes(product.id ?? product.sku ?? "")
+    && !categories.some((category: string) => excludedCategories.includes(category))
+    && !["nasal", "tablet", "capsule"].includes(product.type);
 }
