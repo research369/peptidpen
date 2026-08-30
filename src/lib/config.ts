@@ -32,8 +32,8 @@ export const config = {
   siteUrl: import.meta.env.VITE_SITE_URL as string,
 } as const;
 
-/** Direkte URL zur Pen-Kaufseite (Plug&Play Landing Page) */
-export const PEN_BUY_URL = `${config.shopBaseUrl}/plug-and-play`;
+/** Direkte URL zum Peptidpen-Produkt */
+export const PEN_BUY_URL = `${config.shopBaseUrl}/product/forscherpen`;
 
 const ATTRIBUTION_PARAMS = [
   "_qr", "qr_code", "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",

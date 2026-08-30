@@ -37,7 +37,7 @@ export default function HeroSection() {
             <img src="/assets/369-research-logo.png" alt="369 Research" className="h-12 md:h-16 w-auto" />
           </a>
           <nav className="hidden lg:flex items-center gap-8 text-sm font-bold text-[#0a327b]">
-            <a href="#system" className="hover:text-[#0878ee] transition-colors">Das Pen-System</a>
+            <a href="#system" className="hover:text-[#0878ee] transition-colors">So funktioniert es</a>
             <a href="#produkte" className="hover:text-[#0878ee] transition-colors">Produkte</a>
             <a href="#faq" className="hover:text-[#0878ee] transition-colors">FAQ</a>
           </nav>
@@ -63,10 +63,10 @@ export default function HeroSection() {
 
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <a href="#produkte" className="btn-primary text-base md:text-lg !rounded-full !px-8 !py-4">
-                Patronen auswählen <span aria-hidden="true">→</span>
+                Patronen wählen <span aria-hidden="true">→</span>
               </a>
-              <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="btn-secondary text-base !rounded-full !px-7 !py-4">
-                Pen + Case + 3 Nadeln · {loading ? "…" : `${penPrice} €`}
+              <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="btn-secondary text-base !rounded-full !px-6 !py-4 whitespace-nowrap">
+                Pen-Set kaufen · {loading ? "…" : `${penPrice} €`}
               </a>
             </div>
 

@@ -3,7 +3,7 @@ import type { Handler } from "@netlify/functions";
 const API_BASE = process.env.VITE_API_BASE_URL || "https://369-research-backend-production.up.railway.app";
 const SHOP_BASE = process.env.VITE_SHOP_BASE_URL || "https://www.369research.eu";
 const PLUG_PLAY_SURCHARGE = parseFloat(process.env.VITE_PLUGPLAY_SURCHARGE || "15");
-const PEN_BUY_URL = "https://www.369research.eu/plug-and-play";
+const PEN_BUY_URL = "https://www.369research.eu/product/forscherpen";
 const PEN_IMAGE = "https://www.369research.eu/products/peptidpen-case-1.png";
 
 export const handler: Handler = async () => {

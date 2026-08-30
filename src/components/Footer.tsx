@@ -1,4 +1,4 @@
-import { config } from "../lib/config";
+import { config, getPenBuyUrl } from "../lib/config";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -39,7 +39,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href={`${config.shopBaseUrl}/plug-and-play`}
+                  href={getPenBuyUrl()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white transition-colors"

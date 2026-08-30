@@ -69,14 +69,14 @@ export default function SchemaOrg() {
       name: "369 Research Pen",
       description: "Wiederverwendbarer Peptidpen inklusive Case und 3 Pen-Nadeln für wechselbare 369 Research Produktpatronen. Research Use Only.",
       image: penProduct?.mockupImage ?? "https://www.369research.eu/products/peptidpen-case-1.png",
-      url: "https://www.369research.eu/plug-and-play",
+      url: `${config.shopBaseUrl}/product/forscherpen`,
       brand: { "@type": "Brand", name: "369 Research" },
       offers: {
         "@type": "Offer",
         priceCurrency: "EUR",
         price: penProduct?.price ?? 49,
         availability: penProduct?.inStock === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
-        url: "https://www.369research.eu/plug-and-play",
+        url: `${config.shopBaseUrl}/product/forscherpen`,
       },
     };
 
