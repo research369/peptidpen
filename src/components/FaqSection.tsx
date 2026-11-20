@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Gelten die Mengenrabatte auch für Patronen?",
-    a: "Ja. Der Mengenrabatt gilt für den gesamten Warenkorb: 20 % ab 5 Stück, 25 % ab 10 Stück und 35 % ab 20 Stück. Er ist nicht mit anderen Rabatten kombinierbar.",
+    a: "20 % ab 5 Stück, 25 % ab 10 Stück und 35 % ab 20 Stück.",
   },
   {
     q: "Wie funktionieren Bestellung und Banküberweisung?",

@@ -14,10 +14,6 @@ export default function DiscountSection() {
             <h2 id="discount-title" className="staging-heading">
               MEHR PATRONEN.<br /><span>MEHR RABATT.</span>
             </h2>
-            <p className="discount-copy">
-              Gilt für den gesamten Warenkorb und ist nicht mit anderen Rabatten kombinierbar.
-              Wird automatisch im Warenkorb abgezogen.
-            </p>
           </div>
           <div className="discount-tiers">
             {discounts.map((item) => (
