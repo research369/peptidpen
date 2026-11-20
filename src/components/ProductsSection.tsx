@@ -1,41 +1,19 @@
 import { useState } from "react";
-import { useProducts } from "../hooks/useProducts";
-import { getShopProductUrl } from "../lib/config";
-import type { ShopProduct } from "../lib/api";
+import { cartridgePreviewCatalog, type CartridgePreviewProduct } from "../lib/cartridgePreviewCatalog";
 
-function ProductCard({ product }: { product: ShopProduct }) {
-  const cartridgePrice = product.plugPlayPrice;
-  const hasVariants = product.variants && product.variants.length > 1;
+function ProductCard({ product }: { product: CartridgePreviewProduct }) {
 
   return (
     <article className="product-card group">
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-white via-[#f4f9ff] to-[#e8f4ff] overflow-hidden border-b border-blue-100">
-        {(product.image || product.mockupImage) ? (
-          <img
-            src={product.image || product.mockupImage || ""}
-            alt={product.name}
-            className="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-            onError={(event) => {
-              const fallback = product.mockupImage;
-              if (fallback && event.currentTarget.src !== fallback) {
-                event.currentTarget.src = fallback;
-              } else {
-                event.currentTarget.style.display = "none";
-              }
-            }}
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center text-[#0a64c7] text-4xl font-black">369</div>
-        )}
-        <div className="absolute top-3 left-3">
-          <span className="badge bg-brand-blue text-white text-xs shadow-md">369 Plug&amp;Play Patrone</span>
-        </div>
-        {product.purity && (
-          <div className="absolute top-3 right-3">
-            <span className="badge bg-green-100 text-green-700 text-xs">{product.purity} Reinheit</span>
+      <div className="relative bg-gradient-to-br from-white via-[#f4f9ff] to-[#e8f4ff] border-b border-blue-100">
+        <div className="catalog-label-stage">
+          <div className="catalog-label" role="img" aria-label={`${product.name} – weiß-blaues 369 Produktlabel`}>
+            <img src="/assets/369-research-logo.png" alt="369 Research" />
+            <span className="catalog-label-format">369 Plug&amp;Play Patrone</span>
+            <strong>{product.name}</strong>
+            <span className="catalog-label-footer">RESEARCH USE ONLY</span>
           </div>
-        )}
+        </div>
       </div>
 
       <div className="p-5">
@@ -44,43 +22,15 @@ function ProductCard({ product }: { product: ShopProduct }) {
         </div>
         <h3 className="font-bold text-brand-dark text-lg mb-3 leading-tight">{product.name}</h3>
 
-        {hasVariants && (
-          <div className="flex flex-wrap gap-1 mb-4">
-            {product.variants!.slice(0, 4).map((variant) => (
-              <span key={variant.label} className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full">{variant.label}</span>
-            ))}
-            {product.variants!.length > 4 && (
-              <span className="text-xs px-2 py-1 bg-gray-100 text-gray-500 rounded-full">
-                +{product.variants!.length - 4} weitere
-              </span>
-            )}
-          </div>
-        )}
-
-        <div className="fixed-product-price mb-4">
-          <strong>{hasVariants ? "ab " : ""}{cartridgePrice} €</strong>
-        </div>
-
-        <div className="flex items-center gap-1.5 mb-4">
-          <span className={`w-2 h-2 rounded-full ${product.inStock ? "bg-green-500" : "bg-red-400"}`} />
-          <span className="text-xs text-gray-500">{product.inStock ? "Auf Lager" : "Derzeit nicht verfügbar"}</span>
-        </div>
-
-        <a
-          href={getShopProductUrl(product.shopProductId)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`btn-primary w-full text-center text-sm py-3 !rounded-full ${!product.inStock ? "opacity-60 pointer-events-none" : ""}`}
-        >
-          PATRONE AUSWÄHLEN
-        </a>
+        <p className="text-sm text-brand-blue">Bald erhältlich</p>
       </div>
     </article>
   );
 }
 
 export default function ProductsSection() {
-  const { products, loading } = useProducts();
+  const products = cartridgePreviewCatalog;
+  const loading = false;
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("Alle");
 
@@ -105,7 +55,7 @@ export default function ProductsSection() {
         <div className="text-center mb-12">
           <h2 className="staging-heading">369 Plug&amp;Play Patrone</h2>
           <p className="section-subtitle mx-auto text-center mt-5">
-            Entdecke die Auswahl und wähle dein Produkt in der gewünschten Stärke.
+            Entdecke die kommende Auswahl.
           </p>
         </div>
 
@@ -171,7 +121,6 @@ export default function ProductsSection() {
         <div className="mt-12 max-w-2xl mx-auto text-center">
           <p className="text-xs text-gray-400 leading-relaxed">
             Ausschließlich für Forschungszwecke (Research Use Only). Nicht zur menschlichen Anwendung.
-            Preise zzgl. Versandkosten.
           </p>
         </div>
       </div>

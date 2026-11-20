@@ -1,7 +1,8 @@
 const discounts = [
-  { quantity: "5", discount: "−20%" },
-  { quantity: "10", discount: "−25%" },
-  { quantity: "20", discount: "−35%" },
+  { quantity: "5", discount: "−15%" },
+  { quantity: "10", discount: "−20%" },
+  { quantity: "20", discount: "−25%" },
+  { quantity: "40", discount: "−35%" },
 ];
 
 export default function DiscountSection() {

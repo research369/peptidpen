@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useProducts } from "../hooks/useProducts";
-import { config, getShopProductUrl } from "../lib/config";
+import { config } from "../lib/config";
 
 export default function SchemaOrg() {
-  const { products, penProduct } = useProducts();
+  const { penProduct } = useProducts();
 
   useEffect(() => {
     const orgSchema = {
@@ -45,24 +45,6 @@ export default function SchemaOrg() {
       })),
     };
 
-    const productSchemas = products.slice(0, 10).map((product) => ({
-      "@context": "https://schema.org",
-      "@type": "Product",
-      name: `${product.name} 369 Plug&Play Patrone`,
-      description: `${product.name} als 369 Plug&Play Patrone für den 369 Peptid-Pen. Research Use Only.`,
-      image: product.mockupImage ?? undefined,
-      url: getShopProductUrl(product.shopProductId),
-      brand: { "@type": "Brand", name: "369 Research" },
-      offers: {
-        "@type": "Offer",
-        priceCurrency: "EUR",
-        price: product.plugPlayPrice,
-        availability: product.inStock ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
-        url: getShopProductUrl(product.shopProductId),
-        seller: { "@type": "Organization", name: "369 Research" },
-      },
-    }));
-
     const penSchema = {
       "@context": "https://schema.org",
       "@type": "Product",
@@ -80,7 +62,8 @@ export default function SchemaOrg() {
       },
     };
 
-    const schemas = [orgSchema, webPageSchema, faqSchema, ...productSchemas, penSchema];
+    // Preview cartridges are not saleable WaWi articles and must not expose offers.
+    const schemas = [orgSchema, webPageSchema, faqSchema, penSchema];
 
     schemas.forEach((schema, index) => {
       const id = `schema-org-${index}`;
@@ -97,7 +80,7 @@ export default function SchemaOrg() {
     return () => {
       schemas.forEach((_, index) => document.getElementById(`schema-org-${index}`)?.remove());
     };
-  }, [products, penProduct]);
+  }, [penProduct]);
 
   return null;
 }

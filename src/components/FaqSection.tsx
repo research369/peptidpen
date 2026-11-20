@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "Gelten die Mengenrabatte auch für Patronen?",
-    a: "20 % ab 5 Stück, 25 % ab 10 Stück und 35 % ab 20 Stück.",
+    a: "15 % ab 5 Stück, 20 % ab 10 Stück, 25 % ab 20 Stück und 35 % ab 40 Stück.",
   },
   {
     q: "Wie funktionieren Bestellung und Banküberweisung?",
