@@ -97,7 +97,7 @@ export interface ShopProduct {
   inStock: boolean;
   variants: ProductVariant[] | null;
   // Berechnete Felder (client-side):
-  plugPlayPrice: number;         // Basispreis + plugplaySurcharge
+  plugPlayPrice: number;         // Fester WaWi-Preis ohne lokalen Aufschlag
   isPlugPlayEligible: boolean;
 }
 ```
@@ -121,13 +121,13 @@ export async function fetchPlugPlayProducts(): Promise<ShopProduct[]> {
       plugPlayPrice:
         (p.variants && p.variants.length > 0
           ? Math.min(...p.variants.map((v) => v.price))
-          : p.price) + config.plugplaySurcharge,
+          : p.price),
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }
 ```
 
-**Preis-Berechnung:** `min(Variantenpreise) + plugplaySurcharge` oder `Produktpreis + plugplaySurcharge`
+**Preis-Berechnung:** günstigster verbindlicher Variantenpreis oder Produktpreis aus der WaWi; kein lokaler Patronen-Aufschlag.
 
 ### `fetchPenProduct()`
 
@@ -158,7 +158,7 @@ try {
     .filter(isPlugPlayEligible)
     .map(p => ({
       ...p,
-      plugPlayPrice: p.price + config.plugplaySurcharge,
+      plugPlayPrice: p.price,
     }));
   setProducts(fallback);
   setUsingFallback(true);
@@ -216,7 +216,6 @@ Alle API-URLs kommen aus `src/lib/config.ts`:
 export const config = {
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL,
   shopBaseUrl: import.meta.env.VITE_SHOP_BASE_URL || "https://www.369research.eu",
-  plugplaySurcharge: Number(import.meta.env.VITE_PLUGPLAY_SURCHARGE ?? 15),
   penProductId: import.meta.env.VITE_PEN_PRODUCT_ID,
   // ...
 };

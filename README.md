@@ -85,9 +85,6 @@ VITE_SITE_URL=https://peptidpen.de
 # WhatsApp-Kontaktnummer (ohne +, ohne Leerzeichen, z.B. 4915112345678)
 VITE_WHATSAPP_NUMBER=<nummer>
 
-# Plug&Play-Aufpreis auf den Peptid-Basispreis in Euro (Standard: 15)
-VITE_PLUGPLAY_SURCHARGE=15
-
 # Shop-Produkt-ID des Pens (für dynamische Pen-Preisanzeige)
 VITE_PEN_PRODUCT_ID=forscherpen
 ```

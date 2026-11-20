@@ -4,11 +4,11 @@
  * Zentrale Konfiguration für Plug&Play Patronen.
  * Identische Logik wie im 369research.eu Frontend — kein Divergieren.
  * 
- * Aufpreis kommt aus config.plugplaySurcharge (Umgebungsvariable).
- * KEINE Hardcodes hier — nur Ausschluss-Listen.
+ * Preise kommen ohne lokale Aufschläge aus der zentralen WaWi.
+ * KEINE Preis-Hardcodes hier — nur Ausschluss-Listen.
  */
 
-/** Kategorien, die KEINE Plug&Play-Plug&Play Patrone bekommen */
+/** Kategorien, die KEINE Plug&Play Patrone bekommen */
 export const PLUGPLAY_EXCLUDED_CATEGORIES = [
   "Forscher-Bundles",
   "369 BeautyLine",
@@ -21,7 +21,7 @@ export const PLUGPLAY_EXCLUDED_CATEGORIES = [
 ];
 
 /**
- * Produkt-IDs, die KEINE Plug&Play-Plug&Play Patrone bekommen.
+ * Produkt-IDs, die KEINE Plug&Play Patrone bekommen.
  * Muss synchron mit dem Hauptshop gehalten werden.
  */
 export const PLUGPLAY_EXCLUDED_IDS = [

@@ -14,9 +14,9 @@ export default function StickyCtaBar() {
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="text-white font-semibold text-sm truncate">
-              Ein Pen · wechselbare Produktpatronen
+              Der erste echte Peptid-Pen Europas
             </div>
-            <div className="text-blue-300/70 text-xs hidden sm:block">Mix &amp; Go oder fertig gemischt</div>
+            <div className="text-blue-300/70 text-xs hidden sm:block">Mit 369 Plug&amp;Play Doppelkammerpatronen</div>
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
@@ -25,7 +25,7 @@ export default function StickyCtaBar() {
               className="btn-primary text-sm py-2 px-4 whitespace-nowrap"
               onClick={() => document.getElementById("produkte")?.scrollIntoView({ behavior: "smooth" })}
             >
-              Patrone wählen
+              PATRONE WÄHLEN
             </a>
             <a
                 href={getPenBuyUrl()}
@@ -33,7 +33,7 @@ export default function StickyCtaBar() {
                 rel="noopener noreferrer"
                 className="hidden sm:flex btn-gold text-sm py-2 px-4 whitespace-nowrap"
               >
-                Pen · {penProduct?.price ?? 49} €
+                PEN · {penProduct?.price ?? 49} €
               </a>
             <button
               onClick={() => setDismissed(true)}

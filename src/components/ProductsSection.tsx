@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { useProducts } from "../hooks/useProducts";
-import { getShopProductUrl, config } from "../lib/config";
+import { getShopProductUrl } from "../lib/config";
 import type { ShopProduct } from "../lib/api";
 
 function ProductCard({ product }: { product: ShopProduct }) {
-  const mixAndGoPrice = product.variants && product.variants.length > 0
-    ? Math.min(...product.variants.map((variant) => variant.price))
-    : product.price;
-  const readyMixedPrice = mixAndGoPrice + config.plugplaySurcharge;
+  const cartridgePrice = product.plugPlayPrice;
   const hasVariants = product.variants && product.variants.length > 1;
 
   return (
@@ -32,7 +29,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
           <div className="w-full h-full flex items-center justify-center text-[#0a64c7] text-4xl font-black">369</div>
         )}
         <div className="absolute top-3 left-3">
-          <span className="badge bg-brand-blue text-white text-xs shadow-md">Für das 369 Pen-System</span>
+          <span className="badge bg-brand-blue text-white text-xs shadow-md">369 Plug&amp;Play Patrone</span>
         </div>
         {product.purity && (
           <div className="absolute top-3 right-3">
@@ -60,15 +57,9 @@ function ProductCard({ product }: { product: ShopProduct }) {
           </div>
         )}
 
-        <div className="grid grid-cols-2 gap-2 mb-4">
-          <div className="rounded-xl border border-blue-100 bg-blue-50/70 p-3">
-            <span className="block text-xs font-bold text-[#0a64c7]">Mix &amp; Go</span>
-            <strong className="block mt-1 text-lg text-[#062a68]">ab {mixAndGoPrice} €</strong>
-          </div>
-          <div className="rounded-xl border border-blue-200 bg-white p-3">
-            <span className="block text-xs font-bold text-[#0a64c7]">Plug &amp; Play</span>
-            <strong className="block mt-1 text-lg text-[#062a68]">ab {readyMixedPrice} €</strong>
-          </div>
+        <div className="fixed-product-price mb-4">
+          <span>FESTER PATRONENPREIS</span>
+          <strong>ab {cartridgePrice} €</strong>
         </div>
 
         <div className="flex items-center gap-1.5 mb-4">
@@ -82,7 +73,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
           rel="noopener noreferrer"
           className={`btn-primary w-full text-center text-sm py-3 !rounded-full ${!product.inStock ? "opacity-60 pointer-events-none" : ""}`}
         >
-          Produkt &amp; Patrone auswählen →
+          PATRONE AUSWÄHLEN
         </a>
       </div>
     </article>
@@ -110,25 +101,15 @@ export default function ProductsSection() {
   });
 
   return (
-    <section id="produkte" className="relative py-20 md:py-28 bg-[linear-gradient(180deg,#f7fbff_0%,#ffffff_45%,#eef7ff_100%)] overflow-hidden">
-      <div className="molecule-field molecule-field-right !top-20 !opacity-10" aria-hidden="true" />
+    <section id="produkte" className="products-lab-section">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="badge badge-blue mb-4">Jetzt auswählen</span>
-          <h2 className="section-title text-brand-dark mb-4">Welches Produkt soll in deine Patrone?</h2>
-          <p className="section-subtitle mx-auto text-center">
-            Wähle zuerst das Forschungsprodukt. Anschließend entscheidest du dich für
-            Mix &amp; Go oder eine fertig gemischte Plug-&amp;-Play-Patrone.
+          <span className="staging-kicker">DIREKTE PRODUKTAUSWAHL</span>
+          <h2 className="staging-heading">DEIN PRODUKT.<br /><span>DEINE PLUG&amp;PLAY PATRONE.</span></h2>
+          <p className="section-subtitle mx-auto text-center mt-5">
+            Wähle das gewünschte Forschungsprodukt und die verfügbare Stärke.
+            Angezeigt werden ausschließlich passende injizierbare Forschungsprodukte.
           </p>
-        </div>
-
-        <div className="max-w-3xl mx-auto grid sm:grid-cols-2 gap-3 mb-9">
-          <div className="choice-summary">
-            <b>Mix &amp; Go</b><span>Du ergänzt BAC-Wasser und bereitest die Patrone selbst vor.</span>
-          </div>
-          <div className="choice-summary">
-            <b>Plug &amp; Play</b><span>Fertig gemischt und mit gekühltem Versand geliefert.</span>
-          </div>
         </div>
 
         <div className="max-w-md mx-auto mb-8">
@@ -186,7 +167,7 @@ export default function ProductsSection() {
 
         {!loading && (
           <div className="text-center mt-8 text-gray-400 text-sm">
-            {filtered.length} passende Produkte
+            {filtered.length} passende Plug&amp;Play Patronen
           </div>
         )}
 

@@ -7,20 +7,12 @@
  * Für Netlify: Variablen unter Site Settings → Environment Variables eintragen.
  */
 
-function positiveNumber(value: unknown, fallback: number): number {
-  const parsed = Number(value);
-  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
-}
-
 export const config = {
   /** Basis-URL des Railway-Backends */
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL as string,
 
   /** Basis-URL des Hauptshops für Produkt-Weiterleitungen */
   shopBaseUrl: (import.meta.env.VITE_SHOP_BASE_URL as string) || "https://www.369research.eu",
-
-  /** Aufpreis für Plug&Play Patrone in Euro */
-  plugplaySurcharge: positiveNumber(import.meta.env.VITE_PLUGPLAY_SURCHARGE, 15),
 
   /** Shop-ID des Forscherpen-Produkts */
   penProductId: (import.meta.env.VITE_PEN_PRODUCT_ID as string) || "forscherpen",

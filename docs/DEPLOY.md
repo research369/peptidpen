@@ -102,7 +102,7 @@ Diese Secrets müssen im GitHub Repository unter **Settings → Secrets and vari
 | `NETLIFY_AUTH_TOKEN` | Netlify Personal Access Token | `nfp_...` |
 | `NETLIFY_SITE_ID` | Netlify Site ID | `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx` |
 
-> **Hinweis:** `VITE_PLUGPLAY_SURCHARGE` und `VITE_PEN_PRODUCT_ID` sind optional — es gibt Standardwerte in `config.ts`.
+> **Hinweis:** `VITE_PEN_PRODUCT_ID` ist optional — es gibt einen Standardwert in `config.ts`. Patronenpreise kommen ohne lokalen Aufschlag aus der zentralen WaWi.
 
 ---
 

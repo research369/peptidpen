@@ -3,6 +3,8 @@ import HeroSection from "./components/HeroSection";
 import SystemExplainer from "./components/SystemExplainer";
 import PenSystemBanner from "./components/PenSystemBanner";
 import ProductsSection from "./components/ProductsSection";
+import DiscountSection from "./components/DiscountSection";
+import CheckoutSection from "./components/CheckoutSection";
 import FaqSection from "./components/FaqSection";
 import Footer from "./components/Footer";
 import StickyCtaBar from "./components/StickyCtaBar";
@@ -59,7 +61,9 @@ export default function App() {
         <HeroSection />
         <SystemExplainer />
         <PenSystemBanner />
+        <DiscountSection />
         <ProductsSection />
+        <CheckoutSection />
         <FaqSection />
       </main>
 
