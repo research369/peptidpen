@@ -16,7 +16,7 @@ export default function DiscountSection() {
             </h2>
             <p className="discount-copy">
               Gilt für den gesamten Warenkorb und ist nicht mit anderen Rabatten kombinierbar.
-              Der Rabatt wird im Hauptshop automatisch berücksichtigt.
+              Wird automatisch im Warenkorb abgezogen.
             </p>
           </div>
           <div className="discount-tiers">

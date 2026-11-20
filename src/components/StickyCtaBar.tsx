@@ -14,9 +14,9 @@ export default function StickyCtaBar() {
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <div className="text-white font-semibold text-sm truncate">
-              Der erste echte Peptid-Pen Europas
+              369 Research
             </div>
-            <div className="text-blue-300/70 text-xs hidden sm:block">Mit 369 Plug&amp;Play Doppelkammerpatronen</div>
+            <div className="text-blue-300/70 text-xs hidden sm:block">369 Plug&amp;Play Patrone</div>
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">

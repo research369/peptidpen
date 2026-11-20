@@ -13,8 +13,7 @@ export default function PenSystemBanner() {
             <div className="staging-kicker staging-kicker-light">AUFBAU 369</div>
             <h2>DER PEN BLEIBT.<br /><span>DIE PATRONE WECHSELT.</span></h2>
             <p>
-              Der 369 Peptid-Pen ist wiederverwendbar und mit den austauschbaren
-              369 Plug&amp;Play Patronen kompatibel.
+              Dein wiederverwendbarer 369 Peptid-Pen. Mit Case und drei Pen-Nadeln.
             </p>
             <div className="pen-price-card">
               <span>PEPTID-PEN SET</span>
@@ -24,16 +23,12 @@ export default function PenSystemBanner() {
             <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="staging-light-button">
               PEPTID-PEN KAUFEN
             </a>
-            <div className="fixed-price-note">
-              <strong>FESTE PATRONENPREISE</strong>
-              <span>Kein Aufpreis-Modell. Jede Patrone hat ihren eigenen verbindlichen Produktpreis.</span>
-            </div>
           </div>
 
           <div className="pen-infographic">
             <img
               src="/assets/aufbau-369-plugplay.webp"
-              alt="Aufbau des 369 Plug&Play Pen-Systems mit Doppelkammerpatrone"
+              alt="Aufbau des 369 Peptid-Pens mit 369 Plug&Play Patrone"
               loading="lazy"
             />
           </div>

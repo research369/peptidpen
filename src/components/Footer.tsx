@@ -11,8 +11,7 @@ export default function Footer() {
           <div>
             <div className="text-xl font-bold mb-3">Peptidpen.de</div>
             <p className="text-blue-200/60 text-sm leading-relaxed mb-4">
-              Der erste echte Peptid-Pen Europas mit austauschbaren
-              369 Plug&amp;Play Doppelkammerpatronen.
+              369 Peptid-Pen und 369 Plug&amp;Play Patrone.
             </p>
             <div className="text-xs text-blue-200/40">
               Ein Angebot von 369 Research

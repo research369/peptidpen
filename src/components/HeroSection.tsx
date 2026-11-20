@@ -41,15 +41,13 @@ export default function HeroSection() {
               EUROPAS.
             </h1>
             <p className="staging-hero-copy">
-              Mit austauschbaren <strong>369 Plug&amp;Play Doppelkammerpatronen.</strong>
-              Forschungsprodukt und BAC-Wasser bleiben getrennt. Ein Klick verbindet beide
-              Kammern und mischt den Inhalt direkt in der Patrone.
+              Mit der austauschbaren <strong>369 Plug&amp;Play Patrone.</strong>{" "}
+              Ein Klick. Pulver und BAC-Wasser vermischen sich direkt in der Patrone.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 mt-8">
               <a href="#produkte" className="staging-primary-button">PATRONEN ENTDECKEN</a>
               <a href="#system" className="staging-outline-button">SO FUNKTIONIERT PLUG&amp;PLAY</a>
             </div>
-            <div className="staging-note">Ein Pen. Austauschbare Patronen. Feste Patronenpreise.</div>
           </div>
 
           <div className="staging-product-stage">

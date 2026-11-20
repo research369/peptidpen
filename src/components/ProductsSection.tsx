@@ -58,8 +58,7 @@ function ProductCard({ product }: { product: ShopProduct }) {
         )}
 
         <div className="fixed-product-price mb-4">
-          <span>FESTER PATRONENPREIS</span>
-          <strong>ab {cartridgePrice} €</strong>
+          <strong>{hasVariants ? "ab " : ""}{cartridgePrice} €</strong>
         </div>
 
         <div className="flex items-center gap-1.5 mb-4">
@@ -104,11 +103,9 @@ export default function ProductsSection() {
     <section id="produkte" className="products-lab-section">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="staging-kicker">DIREKTE PRODUKTAUSWAHL</span>
-          <h2 className="staging-heading">DEIN PRODUKT.<br /><span>DEINE PLUG&amp;PLAY PATRONE.</span></h2>
+          <h2 className="staging-heading">369 Plug&amp;Play Patrone</h2>
           <p className="section-subtitle mx-auto text-center mt-5">
-            Wähle das gewünschte Forschungsprodukt und die verfügbare Stärke.
-            Angezeigt werden ausschließlich passende injizierbare Forschungsprodukte.
+            Entdecke die Auswahl und wähle dein Produkt in der gewünschten Stärke.
           </p>
         </div>
 
@@ -167,7 +164,7 @@ export default function ProductsSection() {
 
         {!loading && (
           <div className="text-center mt-8 text-gray-400 text-sm">
-            {filtered.length} passende Plug&amp;Play Patronen
+            {filtered.length} Produkte
           </div>
         )}
 

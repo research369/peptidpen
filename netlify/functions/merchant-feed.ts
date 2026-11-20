@@ -32,8 +32,8 @@ export const handler: Handler = async () => {
 
     return `  <item>
     <g:id>${p.shopProductId}-patrone</g:id>
-    <g:title>${escapeXml(p.name)} — 369 Plug&amp;Play Doppelkammerpatrone</g:title>
-    <g:description>${escapeXml(`${p.name} als austauschbare 369 Plug&Play Doppelkammerpatrone. Forschungsprodukt und BAC-Wasser bleiben bis zur Aktivierung getrennt. Research Use Only.`)}</g:description>
+    <g:title>${escapeXml(p.name)} — 369 Plug&amp;Play Patrone</g:title>
+    <g:description>${escapeXml(`${p.name} als 369 Plug&Play Patrone. Pulver und BAC-Wasser bleiben bis zur Aktivierung getrennt. Research Use Only.`)}</g:description>
     <g:link>${productUrl}</g:link>
     <g:image_link>${escapeXml(p.image || p.mockupImage || PEN_IMAGE)}</g:image_link>
     <g:condition>new</g:condition>
@@ -41,7 +41,7 @@ export const handler: Handler = async () => {
     <g:price>${patronenPreis} EUR</g:price>
     <g:brand>369 Research</g:brand>
     <g:google_product_category>5765</g:google_product_category>
-    <g:product_type>Peptide &gt; Plug&Play Patronen &gt; Plug&amp;Play Patronen</g:product_type>
+    <g:product_type>Peptide &gt; 369 Plug&amp;Play Patrone</g:product_type>
     <g:identifier_exists>no</g:identifier_exists>
     <g:adult>no</g:adult>
     <g:custom_label_0>PlugPlay</g:custom_label_0>
@@ -55,7 +55,7 @@ export const handler: Handler = async () => {
   const penItem = `  <item>
     <g:id>forscherpen-369research</g:id>
     <g:title>Peptidpen 369 Research mit Case und 3 Pen-Nadeln</g:title>
-    <g:description>Wiederverwendbarer 369 Research Peptid-Pen inklusive Case und 3 Pen-Nadeln für austauschbare Plug&amp;Play Doppelkammerpatronen. Research Use Only.</g:description>
+    <g:description>369 Peptid-Pen inklusive Case und 3 Pen-Nadeln. Kompatibel mit der 369 Plug&amp;Play Patrone. Research Use Only.</g:description>
     <g:link>${PEN_BUY_URL}</g:link>
     <g:image_link>${PEN_IMAGE}</g:image_link>
     <g:condition>new</g:condition>
@@ -75,9 +75,9 @@ export const handler: Handler = async () => {
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
   <channel>
-    <title>Peptidpen &amp; Plug&Play Patronen — Plug&amp;Play Patrone für Peptide | 369 Research</title>
+    <title>369 Peptid-Pen &amp; 369 Plug&amp;Play Patrone | 369 Research</title>
     <link>https://www.peptidpen.de</link>
-    <description>369 Plug&amp;Play Doppelkammerpatronen für den wiederverwendbaren Peptid-Pen. Research Use Only.</description>
+    <description>369 Plug&amp;Play Patrone für den 369 Peptid-Pen. Research Use Only.</description>
 ${penItem}
 ${items.join("\n")}
   </channel>

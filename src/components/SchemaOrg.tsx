@@ -18,7 +18,7 @@ export default function SchemaOrg() {
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: "Der erste echte Peptid-Pen Europas | 369 Research",
-      description: "Wiederverwendbarer 369 Peptid-Pen mit austauschbaren Plug&Play Doppelkammerpatronen. Forschungsprodukt und BAC-Wasser werden erst per Klick direkt in der Patrone gemischt.",
+      description: "369 Peptid-Pen mit austauschbarer 369 Plug&Play Patrone. Ein Klick verbindet Pulver und BAC-Wasser direkt in der Patrone.",
       url: config.siteUrl,
       inLanguage: "de-DE",
       publisher: {
@@ -29,10 +29,9 @@ export default function SchemaOrg() {
     };
 
     const faqItems = [
-      ["Was ist eine 369 Plug&Play Patrone?", "Eine Doppelkammerpatrone, in der Forschungsprodukt und BAC-Wasser bis zur Aktivierung getrennt bleiben."],
+      ["Was ist eine 369 Plug&Play Patrone?", "Die 369 Plug&Play Patrone enthält Pulver und BAC-Wasser in zwei getrennten Kammern. Ein Klick verbindet beide Inhalte direkt in der Glaspatrone."],
       ["Wie funktioniert die Aktivierung?", "Ein Klick verbindet beide Kammern und mischt den Inhalt direkt in der Patrone."],
-      ["Ist gekühlter Versand erforderlich?", "Nein. Die ungeöffnete Doppelkammerpatrone wird erst bei der Aktivierung gemischt."],
-      ["Brauche ich für jedes Produkt einen neuen Pen?", "Nein. Der Pen wird wiederverwendet; nur die Plug&Play Patrone wird gewechselt."],
+      ["Kann ich den Pen wiederverwenden?", "Ja. Du behältst den 369 Peptid-Pen und wechselst die 369 Plug&Play Patrone."],
       ["Sind die Produkte für den menschlichen Gebrauch bestimmt?", "Nein. Alle Produkte sind ausschließlich für Forschungszwecke bestimmt."],
     ];
 
@@ -50,7 +49,7 @@ export default function SchemaOrg() {
       "@context": "https://schema.org",
       "@type": "Product",
       name: `${product.name} 369 Plug&Play Patrone`,
-      description: `${product.name} als austauschbare 369 Plug&Play Doppelkammerpatrone für den wiederverwendbaren Peptid-Pen. Research Use Only.`,
+      description: `${product.name} als 369 Plug&Play Patrone für den 369 Peptid-Pen. Research Use Only.`,
       image: product.mockupImage ?? undefined,
       url: getShopProductUrl(product.shopProductId),
       brand: { "@type": "Brand", name: "369 Research" },
@@ -68,7 +67,7 @@ export default function SchemaOrg() {
       "@context": "https://schema.org",
       "@type": "Product",
       name: "369 Research Pen",
-      description: "Wiederverwendbarer 369 Peptid-Pen inklusive neuem Case und 3 Pen-Nadeln für austauschbare Plug&Play Doppelkammerpatronen. Research Use Only.",
+      description: "369 Peptid-Pen inklusive Case und 3 Pen-Nadeln. Kompatibel mit der 369 Plug&Play Patrone. Research Use Only.",
       image: penProduct?.mockupImage ?? "https://www.369research.eu/products/peptidpen-case-1.png",
       url: `${config.shopBaseUrl}/product/forscherpen`,
       brand: { "@type": "Brand", name: "369 Research" },
