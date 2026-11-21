@@ -13,6 +13,7 @@ function ProductCard({ product }: { product: CartridgePreviewProduct }) {
             <img src="/assets/369-research-logo.png" alt="369 Research" />
             <span className="catalog-label-format">369 Plug&amp;Play Patrone</span>
             <strong>{product.name}</strong>
+            {product.composition && <span className="catalog-label-composition">{product.composition}</span>}
             <span className="catalog-label-footer">RESEARCH USE ONLY</span>
           </div>
         </div>
