@@ -49,11 +49,12 @@ export default function AGB() {
             <p>
               Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen,
               die über den Onlineshop unter <a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a> aufgegeben werden.
-              Die Website peptidpen.de dient ausschließlich der Produktpräsentation und
-              leitet Bestellungen an den Hauptshop weiter.
+              Die Website peptidpen.de zeigt derzeit einen Produktkatalog mit einem
+              eigenen, noch nicht bestellbaren Checkout als Vorschau.
             </p>
             <p className="mt-3">
-              Vertragspartner ist 369 Research (<a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a>), Deutschland.
+              Anbieter dieser Website ist 369 Research Sp. z o.o., ul. Hoża 86/210, 00-682 Warszawa, Polen.
+              Der eigene Checkout auf peptidpen.de ist derzeit eine nicht bestellbare Vorschau.
               Abweichende Bedingungen des Käufers werden nicht anerkannt, es sei denn,
               wir stimmen ihrer Geltung ausdrücklich schriftlich zu.
             </p>

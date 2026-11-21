@@ -29,11 +29,13 @@ export function useProducts(): UseProductsResult {
 
     async function load() {
       try {
-        const [prods, pen] = await Promise.all([
+        const [productsResult, penResult] = await Promise.allSettled([
           fetchPlugPlayProducts(),
           fetchPenProduct(),
         ]);
         if (!cancelled) {
+          const prods = productsResult.status === "fulfilled" ? productsResult.value : null;
+          const pen = penResult.status === "fulfilled" ? penResult.value : null;
           if (prods && prods.length > 0) {
             setProducts(prods);
           } else {
@@ -41,6 +43,7 @@ export function useProducts(): UseProductsResult {
             setUsingFallback(true);
           }
           setPenProduct(pen ?? (FALLBACK_PEN as unknown as ShopProduct));
+          setUsingFallback(productsResult.status === "rejected" || penResult.status === "rejected");
         }
       } catch (_err) {
         if (!cancelled) {
