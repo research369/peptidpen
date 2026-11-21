@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { readPreviewCart, setPreviewCart, addPreviewItem } from "../lib/previewCart";
+import { readPreviewCart, setPreviewCart, addPreviewItem, freeTravelTubeCount, TRAVEL_TUBE_UNIT_PRICE } from "../lib/previewCart";
 import "../checkout.css";
 
 export default function Checkout() {
   const [items,setItems] = useState(readPreviewCart);
+  const freeTubes = freeTravelTubeCount(items);
   const [delivery,setDelivery] = useState("home");
   const [company,setCompany] = useState(false);
   const [payment,setPayment] = useState("bunq");
@@ -43,9 +44,10 @@ export default function Checkout() {
         </section>
       </div>
       <aside className="checkout-v2-summary"><div className="checkout-v2-summary-head"><span>Deine Auswahl</span><em>{items.reduce((n,i)=>n+i.quantity,0)} Stück</em></div>
-        <div className="checkout-v2-lines">{items.length===0?<p>Noch keine Produkte vorgemerkt. <a href="/#produkte" className="underline">Auswahl entdecken</a></p>:items.map(item=><div key={item.id}><div><strong>{item.name}</strong><small>Preis folgt</small><label className="block mt-2 text-sm">Menge <input className="w-16 border rounded p-1" type="number" min="0" max="99" value={item.quantity} onChange={e=>updateQuantity(item.id,Number(e.target.value))} /></label></div><button type="button" aria-label={`${item.name} entfernen`} onClick={()=>updateQuantity(item.id,0)}>Entfernen</button></div>)}</div>
+        <div className="checkout-v2-lines">{items.length===0?<p>Noch keine Produkte vorgemerkt. <a href="/#produkte" className="underline">Auswahl entdecken</a></p>:items.map(item=><div key={item.id}><div><strong>{item.name}</strong><small>{item.id==="preview-travel-tube" ? `${TRAVEL_TUBE_UNIT_PRICE} € pro Stück · ${item.quantity*TRAVEL_TUBE_UNIT_PRICE} €` : "Preis folgt"}</small><label className="block mt-2 text-sm">Menge <input className="w-16 border rounded p-1" type="number" min="0" max="99" value={item.quantity} onChange={e=>updateQuantity(item.id,Number(e.target.value))} /></label></div><button type="button" aria-label={`${item.name} entfernen`} onClick={()=>updateQuantity(item.id,0)}>Entfernen</button></div>)}</div>
+        {freeTubes>0 && <div className="checkout-v2-info mb-5"><p><strong>{freeTubes} × 369 Travel Tube · kostenlos</strong><br />Eine pro 369 Plug&amp;Play Patrone. Schützt deine Patrone beim Versand.</p></div>}
         {!items.some(i=>i.id==="preview-pen")&&<button className="staging-outline-button w-full mb-3" onClick={()=>add("preview-pen","369 Pen mit Case und 3 Pen-Nadeln")}>369 Pen ergänzen</button>}
-        {!items.some(i=>i.id==="preview-travel-tube")&&<button className="staging-outline-button w-full mb-3" onClick={()=>add("preview-travel-tube","369 Travel Tube")}>Travel Tube ergänzen</button>}
+        {!items.some(i=>i.id==="preview-travel-tube")&&<button className="staging-outline-button w-full mb-3" onClick={()=>add("preview-travel-tube","369 Travel Tube")}>Zusätzliche Travel Tube · 5 €</button>}
         <div className="checkout-v2-totals"><p><span>Produktpreise</span><span>folgen</span></p><p><span>Versand</span><span>folgt</span></p><p className="total"><span>Gesamt</span><b>–</b></p></div>
         <div className="checkout-v2-summary-trust"><p>Die Vorschau speichert nur deine Produktauswahl auf diesem Gerät. Kontakt- und Adressdaten werden hier nicht gespeichert oder gesendet.</p></div>
       </aside></div>

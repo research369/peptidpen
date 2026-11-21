@@ -25,7 +25,16 @@ Shop/Staging für die neuen Patronen prüfen; bestehende globale Rabattregeln ni
 ohne Freigabe verändern. Testbestellungen einschließlich Checkout, Zahlung,
 Lagerabzug und Varianten-Zuordnung prüfen.
 
-## Freigabe
+## Travel Tube
+
+Verbindlich bestätigt: eine Travel Tube kostenlos pro 369 Plug&Play Patrone als
+Versandschutz. Zusätzlich einzeln: 5 EUR pro Stück. Die Preview leitet kostenlose
+Tubes aus der Patronenmenge ab, speichert sie nicht als bezahlte Position und
+unterscheidet sie von zusätzlich gewählten Tubes. Vor Verkaufsfreigabe muss der
+Server dieselbe Regel prüfen und kostenlose wie bezahlte Tubes gegen den echten
+Tube-Artikelbestand buchen. Die Preview löst keinerlei Lagerbewegung aus.
+
+## Abschlussprüfung
 
 Nach erfolgter WaWi-Zuordnung Preise/Bestände/Kauflinks aktivieren und anschließend
 strukturierte Produktangebote und Merchant-Feed ausschließlich aus diesen

@@ -1,4 +1,9 @@
 export type PreviewCartItem = { id: string; name: string; quantity: number };
+export const TRAVEL_TUBE_UNIT_PRICE = 5;
+/** Gifts are derived, never stored as paid cart rows. One tube per cartridge. */
+export function freeTravelTubeCount(items: PreviewCartItem[]) {
+  return items.filter(i => i.id.startsWith("preview-cartridge-")).reduce((sum,i) => sum+i.quantity,0);
+}
 const KEY = "peptidpen_preview_cart_v1";
 export function readPreviewCart(): PreviewCartItem[] {
   try { const raw = JSON.parse(localStorage.getItem(KEY) || "[]");
