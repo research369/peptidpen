@@ -11,10 +11,10 @@ export default function Footer() {
           <div>
             <div className="text-xl font-bold mb-3">Peptidpen.de</div>
             <p className="text-blue-200/60 text-sm leading-relaxed mb-4">
-              369 Peptid-Pen und 369 Plug&amp;Play Patrone.
+              369 Plug&amp;Play und Peptidpen – zwei Marken der 369 Research Sp. z o.o.
             </p>
             <div className="text-xs text-blue-200/40">
-              Ein Angebot von 369 Research
+              369 Research Sp. z o.o. · Warszawa, Polen
             </div>
           </div>
 
@@ -45,6 +45,7 @@ export default function Footer() {
               Rechtliches
             </div>
             <ul className="space-y-2 text-sm text-blue-200/70">
+              <li><a href="/impressum" className="hover:text-white">Impressum</a></li>
               <li>
                 <a
                   href="/datenschutz"

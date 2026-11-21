@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { cartridgePreviewCatalog, type CartridgePreviewProduct } from "../lib/cartridgePreviewCatalog";
+import { addPreviewItem } from "../lib/previewCart";
 
 function ProductCard({ product }: { product: CartridgePreviewProduct }) {
+  const [added, setAdded] = useState(false);
 
   return (
     <article className="product-card group">
@@ -23,6 +25,8 @@ function ProductCard({ product }: { product: CartridgePreviewProduct }) {
         <h3 className="font-bold text-brand-dark text-lg mb-3 leading-tight">{product.name}</h3>
 
         <p className="text-sm text-brand-blue">Bald erhältlich</p>
+        <button className="staging-outline-button w-full mt-4" onClick={() => { addPreviewItem(product.id, product.name); setAdded(true); }}>{added ? "VORGEMERKT" : "VORMERKEN"}</button>
+        {added && <a className="block mt-3 text-brand-blue underline" href="/checkout">Auswahl ansehen</a>}
       </div>
     </article>
   );

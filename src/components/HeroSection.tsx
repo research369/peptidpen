@@ -24,6 +24,7 @@ export default function HeroSection() {
             <a href="#system">PEN-SYSTEM ERKLÄRT</a>
             <a href="#rabatte">RABATTE</a>
             <a href="#produkte">PATRONEN</a>
+            <a href="/checkout">DEINE AUSWAHL</a>
           </nav>
           <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="staging-outline-button">
             PEN KAUFEN

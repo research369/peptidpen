@@ -9,7 +9,9 @@ export default function SchemaOrg() {
     const orgSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "369 Research",
+      name: "369 Research Sp. z o.o.",
+      legalName: "369 RESEARCH Spółka z ograniczoną odpowiedzialnością",
+      address: { "@type": "PostalAddress", streetAddress: "ul. Hoża 86/210", postalCode: "00-682", addressLocality: "Warszawa", addressCountry: "PL" },
       url: config.shopBaseUrl,
       sameAs: [config.shopBaseUrl],
     };

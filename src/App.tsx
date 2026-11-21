@@ -14,6 +14,9 @@ import SchemaOrg from "./components/SchemaOrg";
 import CookieBanner from "./components/CookieBanner";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
+import Impressum from "./pages/Impressum";
+import Checkout from "./pages/Checkout";
+import TravelTubeSection from "./components/TravelTubeSection";
 
 function usePathname(): string {
   const [pathname, setPathname] = useState(() => window.location.pathname);
@@ -50,6 +53,8 @@ export default function App() {
   if (pathname === "/agb") {
     return <><AGB /><WhatsAppFloat /></>;
   }
+  if (pathname === "/impressum") return <Impressum />;
+  if (pathname === "/checkout") return <Checkout />;
 
   return (
     <>
@@ -61,6 +66,7 @@ export default function App() {
         <HeroSection />
         <SystemExplainer />
         <PenSystemBanner />
+        <TravelTubeSection />
         <DiscountSection />
         <ProductsSection />
         <CheckoutSection />
