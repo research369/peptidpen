@@ -8,6 +8,7 @@
  */
 
 import { config } from "./config";
+import { publicTrpcQuery } from "./publicTrpc";
 import { isPlugPlayEligible } from "./plugPlayConfig";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -54,18 +55,7 @@ async function trpcQuery<T>(
   path: string,
   input?: Record<string, unknown>
 ): Promise<T> {
-  const url = new URL(
-    `${config.apiBaseUrl}/api/trpc/${path}`
-  );
-  if (input) {
-    url.searchParams.set("input", JSON.stringify(input));
-  }
-  const res = await fetch(url.toString(), {
-    headers: { "Content-Type": "application/json" },
-  });
-  if (!res.ok) throw new Error(`API error: ${res.status}`);
-  const json = await res.json();
-  return json.result?.data?.json as T;
+  return publicTrpcQuery<T>(config.apiBaseUrl, path, input);
 }
 
 // ─── Products API ─────────────────────────────────────────────────────────────
