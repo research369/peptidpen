@@ -1,9 +1,4 @@
-const discounts = [
-  { quantity: "5", discount: "−15%" },
-  { quantity: "10", discount: "−20%" },
-  { quantity: "20", discount: "−25%" },
-  { quantity: "40", discount: "−35%" },
-];
+import { DISCOUNT_TIERS } from "../lib/commerceRules";
 
 export default function DiscountSection() {
   return (
@@ -17,9 +12,9 @@ export default function DiscountSection() {
             </h2>
           </div>
           <div className="discount-tiers">
-            {discounts.map((item) => (
+            {DISCOUNT_TIERS.map((item) => (
               <div className="discount-tier" key={item.quantity}>
-                <strong>{item.discount}</strong>
+                <strong>−{item.percent}%</strong>
                 <span>AB {item.quantity} STÜCK</span>
               </div>
             ))}

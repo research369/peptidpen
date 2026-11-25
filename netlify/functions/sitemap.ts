@@ -1,19 +1,18 @@
 import type { Handler } from "@netlify/functions";
 
-const SITE_URL = process.env.VITE_SITE_URL || "https://www.peptidpen.de";
+const SITE_URL = "https://peptidpen.de";
 
 export const handler: Handler = async () => {
-  const now = new Date().toISOString().split("T")[0];
 
   const pages = [
     { path: "/", priority: "1.0", changefreq: "weekly" },
     { path: "/datenschutz", priority: "0.3", changefreq: "yearly" },
     { path: "/agb", priority: "0.3", changefreq: "yearly" },
+    { path: "/impressum", priority: "0.3", changefreq: "yearly" },
   ];
 
   const urls = pages.map(({ path, priority, changefreq }) => `  <url>
     <loc>${SITE_URL}${path}</loc>
-    <lastmod>${now}</lastmod>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
   </url>`);

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useProducts } from "../hooks/useProducts";
 import { config } from "../lib/config";
+import { faqs } from "./FaqSection";
 
 export default function SchemaOrg() {
   const { penProduct } = useProducts();
@@ -30,12 +31,7 @@ export default function SchemaOrg() {
       },
     };
 
-    const faqItems = [
-      ["Was ist eine 369 Plug&Play Patrone?", "Die 369 Plug&Play Patrone enthält Pulver und BAC-Wasser in zwei getrennten Kammern. Ein Klick verbindet beide Inhalte direkt in der Glaspatrone."],
-      ["Wie funktioniert die Aktivierung?", "Ein Klick verbindet beide Kammern und mischt den Inhalt direkt in der Patrone."],
-      ["Kann ich den Pen wiederverwenden?", "Ja. Du behältst den 369 Peptid-Pen und wechselst die 369 Plug&Play Patrone."],
-      ["Sind die Produkte für den menschlichen Gebrauch bestimmt?", "Nein. Alle Produkte sind ausschließlich für Forschungszwecke bestimmt."],
-    ];
+    const faqItems = faqs.map(({ q, a }) => [q, a]);
 
     const faqSchema = {
       "@context": "https://schema.org",
@@ -55,13 +51,13 @@ export default function SchemaOrg() {
       image: penProduct?.mockupImage ?? "https://www.369research.eu/products/peptidpen-case-1.png",
       url: `${config.shopBaseUrl}/product/forscherpen`,
       brand: { "@type": "Brand", name: "369 Research" },
-      offers: {
+      ...(penProduct ? { offers: {
         "@type": "Offer",
         priceCurrency: "EUR",
         price: penProduct?.price ?? 49,
         availability: penProduct?.inStock === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
         url: `${config.shopBaseUrl}/product/forscherpen`,
-      },
+      } } : {}),
     };
 
     // Preview cartridges are not saleable WaWi articles and must not expose offers.

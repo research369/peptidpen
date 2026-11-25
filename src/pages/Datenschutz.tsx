@@ -73,7 +73,8 @@ export default function Datenschutz() {
             <p className="mt-3">
               Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
               (berechtigtes Interesse an der sicheren und stabilen Bereitstellung der Website).
-              Die Daten werden nach 30 Tagen automatisch gelöscht.
+              Die tatsächlich eingerichteten Aufbewahrungsfristen und die vertraglichen
+              Datenschutzgarantien des Hosting-Anbieters werden vor dem Verkaufsstart abschließend geprüft.
             </p>
           </section>
 
@@ -111,10 +112,14 @@ export default function Datenschutz() {
             <h3 className="text-base font-semibold text-brand-dark mt-4 mb-2">5.2 API-Verbindung zum Backend</h3>
             <p className="text-sm">
               Zur Anzeige von Produktinformationen und Preisen verbindet sich diese Website
-              mit unserem Backend-Server (Railway.app). Dabei werden keine personenbezogenen
-              Daten übertragen — es handelt sich ausschließlich um öffentlich zugängliche
-              Produktdaten (Preise, Namen, Beschreibungen).
+              mit unserem Backend-Server (Railway.app). Abgefragt werden öffentlich zugängliche
+              Produktdaten. Dabei fallen technisch bedingt Verbindungsdaten wie IP-Adresse
+              und Browserinformationen beim Server an. Es werden keine ausgefüllten
+              Checkout-Kontakt- oder Adressdaten an diesen Dienst gesendet.
             </p>
+            <h3 className="text-base font-semibold text-brand-dark mt-4 mb-2">5.3 Bilder und Schriftarten</h3>
+            <p className="text-sm">Schriftarten werden direkt über diese Website ausgeliefert, nicht über Google Fonts.
+              Einzelne Pen-Bilder werden von www.369research.eu geladen. Auch dort fallen bei einem Abruf technische Verbindungsdaten an.</p>
           </section>
 
           <section>
@@ -144,7 +149,7 @@ export default function Datenschutz() {
           <section>
             <h2 className="text-xl font-bold text-brand-dark mb-3">7. Aktualität und Änderungen</h2>
             <p>
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2025.
+              Diese Hinweise beschreiben den Vorschauzustand vom 25. November 2026.
               Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund
               geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es
               notwendig werden, diese Datenschutzerklärung zu ändern.

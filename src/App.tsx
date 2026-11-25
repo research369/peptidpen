@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-import HeroSection from "./components/HeroSection";
-import SystemExplainer from "./components/SystemExplainer";
-import PenSystemBanner from "./components/PenSystemBanner";
-import ProductsSection from "./components/ProductsSection";
-import DiscountSection from "./components/DiscountSection";
-import CheckoutSection from "./components/CheckoutSection";
-import FaqSection from "./components/FaqSection";
-import Footer from "./components/Footer";
+import HomeContent from "./components/HomeContent";
 import StickyCtaBar from "./components/StickyCtaBar";
 import AgeGateModal from "./components/AgeGateModal";
 import WhatsAppFloat from "./components/WhatsAppFloat";
@@ -16,7 +9,6 @@ import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Impressum from "./pages/Impressum";
 import Checkout from "./pages/Checkout";
-import TravelTubeSection from "./components/TravelTubeSection";
 
 function usePathname(): string {
   const [pathname, setPathname] = useState(() => window.location.pathname);
@@ -29,10 +21,17 @@ function usePathname(): string {
 }
 
 export default function App() {
-  const pathname = usePathname();
+  const pathname = usePathname().replace(/\/+$/, "") || "/";
+  const [storageError, setStorageError] = useState(false);
+  useEffect(() => {
+    const onError = () => setStorageError(true);
+    window.addEventListener("peptidpen-cart-storage-error", onError);
+    return () => window.removeEventListener("peptidpen-cart-storage-error", onError);
+  }, []);
   const [showStickyBar, setShowStickyBar] = useState(false);
   const [ageConfirmed, setAgeConfirmed] = useState(() => {
-    return localStorage.getItem("peptidpen_age_confirmed") === "true";
+    try { return localStorage.getItem("peptidpen_age_confirmed") === "true"; }
+    catch { return false; }
   });
 
   useEffect(() => {
@@ -42,7 +41,7 @@ export default function App() {
   }, []);
 
   const handleAgeConfirm = () => {
-    localStorage.setItem("peptidpen_age_confirmed", "true");
+    try { localStorage.setItem("peptidpen_age_confirmed", "true"); } catch { /* Session-only confirmation. */ }
     setAgeConfirmed(true);
   };
 
@@ -59,21 +58,11 @@ export default function App() {
   return (
     <>
       <SchemaOrg />
+      {storageError && <div role="alert" className="fixed top-0 left-0 right-0 z-[10000] bg-amber-100 text-slate-900 p-4">Dein Browser konnte die Auswahl nicht speichern. Bitte erlaube den lokalen Website-Speicher, bevor du weiter auswählst.</div>}
       {!ageConfirmed && <AgeGateModal onConfirm={handleAgeConfirm} />}
       {showStickyBar && <StickyCtaBar />}
 
-      <main>
-        <HeroSection />
-        <SystemExplainer />
-        <PenSystemBanner />
-        <TravelTubeSection />
-        <DiscountSection />
-        <ProductsSection />
-        <CheckoutSection />
-        <FaqSection />
-      </main>
-
-      <Footer />
+      <HomeContent />
       <WhatsAppFloat />
       <CookieBanner />
     </>

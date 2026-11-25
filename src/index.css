@@ -526,6 +526,9 @@
 .staging-product-caption strong { grid-column:2; grid-row:1 / span 2; align-self:center; white-space:nowrap; font:900 2rem "Barlow Condensed",sans-serif; }
 .staging-product-caption small { grid-column:1; grid-row:2; color:#a9c9eb; }
 .staging-thumbnails { display:flex; justify-content:flex-end; gap:.65rem; margin-top:1rem; }
+.staging-thumbnails button { border:2px solid transparent; padding:2px; border-radius:4px; }
+.staging-thumbnails button[aria-pressed="true"] { border-color:#1371c7; }
+.staging-thumbnails button:focus-visible { outline:3px solid #1371c7; outline-offset:3px; }
 .staging-thumbnails img { width:76px; height:76px; object-fit:contain; border:1px solid #b9cee4; background:#eaf3ff; mix-blend-mode:multiply; }
 
 .system-section { padding: 6rem 0; background: white; }

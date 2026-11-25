@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const faqs = [
+export const faqs = [
   {
     q: "Was ist eine 369 Plug&Play Patrone?",
     a: "Die 369 Plug&Play Patrone enthält Pulver und BAC-Wasser in zwei getrennten Kammern. Ein Klick verbindet beide Inhalte direkt in der Glaspatrone.",

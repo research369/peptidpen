@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { cartridgePreviewCatalog, type CartridgePreviewProduct } from "../lib/cartridgePreviewCatalog";
 import { addPreviewItem } from "../lib/previewCart";
+import { getCheckoutUrl } from "../lib/config";
 
 function ProductCard({ product }: { product: CartridgePreviewProduct }) {
   const [added, setAdded] = useState(false);
@@ -27,8 +28,8 @@ function ProductCard({ product }: { product: CartridgePreviewProduct }) {
 
         <p className="text-sm text-brand-blue">Bald erhältlich</p>
         <p className="text-sm text-slate-500 mt-2">Travel Tube kostenlos dabei</p>
-        <button className="staging-outline-button w-full mt-4" onClick={() => { addPreviewItem(product.id, product.name); setAdded(true); }}>{added ? "VORGEMERKT" : "VORMERKEN"}</button>
-        {added && <a className="block mt-3 text-brand-blue underline" href="/checkout">Auswahl ansehen</a>}
+        <button className="staging-outline-button w-full mt-4" onClick={() => setAdded(addPreviewItem(product.id, product.name))}>{added ? "VORGEMERKT" : "VORMERKEN"}</button>
+        {added && <a className="block mt-3 text-brand-blue underline" href={getCheckoutUrl()}>Auswahl ansehen</a>}
       </div>
     </article>
   );

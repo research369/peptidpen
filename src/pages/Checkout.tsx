@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { readPreviewCart, setPreviewCart, addPreviewItem, freeTravelTubeCount, TRAVEL_TUBE_UNIT_PRICE } from "../lib/previewCart";
+import { cartridgeDiscountPercent } from "../lib/commerceRules";
+import { withAttribution } from "../lib/config";
 import "../checkout.css";
 
 export default function Checkout() {
   const [items,setItems] = useState(readPreviewCart);
   const freeTubes = freeTravelTubeCount(items);
+  const discountPercent = cartridgeDiscountPercent(freeTubes);
   const [delivery,setDelivery] = useState("home");
   const [company,setCompany] = useState(false);
   const [payment,setPayment] = useState("bunq");
@@ -15,7 +18,7 @@ export default function Checkout() {
   const add = (id:string,name:string) => { addPreviewItem(id,name);setItems(readPreviewCart()); };
   const field = (label:string,type="text",autoComplete?:string) => <label className="checkout-v2-field"><span>{label}</span><input type={type} autoComplete={autoComplete} /></label>;
   return <main className="checkout-v2-shell">
-    <div className="checkout-v2-wrap"><a href="/#produkte" className="checkout-v2-back">Zurück zur Auswahl</a>
+    <div className="checkout-v2-wrap"><a href={withAttribution("/#produkte")} className="checkout-v2-back">Zurück zur Auswahl</a>
       <header className="checkout-v2-header"><div><p>369 Research · Checkout</p><h1>Präzise. Ruhig.<br /><span>Schritt für Schritt.</span></h1></div>
         <div className="checkout-v2-steps"><span className="active"><i>1</i>Auswahl</span><span><i>2</i>Lieferung</span><span><i>3</i>Abschluss</span></div>
       </header>
@@ -48,7 +51,7 @@ export default function Checkout() {
         {freeTubes>0 && <div className="checkout-v2-info mb-5"><p><strong>{freeTubes} × 369 Travel Tube · kostenlos</strong><br />Eine pro 369 Plug&amp;Play Patrone. Schützt deine Patrone beim Versand.</p></div>}
         {!items.some(i=>i.id==="preview-pen")&&<button className="staging-outline-button w-full mb-3" onClick={()=>add("preview-pen","369 Pen mit Case und 3 Pen-Nadeln")}>369 Pen ergänzen</button>}
         {!items.some(i=>i.id==="preview-travel-tube")&&<button className="staging-outline-button w-full mb-3" onClick={()=>add("preview-travel-tube","369 Travel Tube")}>Zusätzliche Travel Tube · 5 €</button>}
-        <div className="checkout-v2-totals"><p><span>Produktpreise</span><span>folgen</span></p><p><span>Versand</span><span>folgt</span></p><p className="total"><span>Gesamt</span><b>–</b></p></div>
+        <div className="checkout-v2-totals"><p><span>Produktpreise</span><span>folgen</span></p>{discountPercent>0 && <p><span>Rabattstaffel der Auswahl</span><span>{discountPercent} %</span></p>}<p><span>Versand</span><span>folgt</span></p><p className="total"><span>Gesamt</span><b>–</b></p></div>
         <div className="checkout-v2-summary-trust"><p>Die Vorschau speichert nur deine Produktauswahl auf diesem Gerät. Kontakt- und Adressdaten werden hier nicht gespeichert oder gesendet.</p></div>
       </aside></div>
     </div>

@@ -1,4 +1,5 @@
-import { config, getPenBuyUrl } from "../lib/config";
+import { config } from "../lib/config";
+import PenSelectionLink from "./PenSelectionLink";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,7 +25,7 @@ export default function Footer() {
               Schnellzugriff
             </div>
             <ul className="space-y-2 text-sm text-blue-200/70">
-              <li><a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Peptid-Pen kaufen</a></li>
+              <li><PenSelectionLink className="hover:text-white transition-colors">Peptid-Pen vormerken</PenSelectionLink></li>
               <li><a href="#produkte" className="hover:text-white transition-colors">Passende Patronen auswählen</a></li>
               <li>
                 <a

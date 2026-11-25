@@ -21,7 +21,7 @@ export const config = {
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER as string,
 
   /** Kanonische Site-URL */
-  siteUrl: import.meta.env.VITE_SITE_URL as string,
+  siteUrl: "https://peptidpen.de",
 } as const;
 
 /** Direkte URL zum Peptidpen-Produkt */
@@ -35,7 +35,7 @@ const ATTRIBUTION_PARAMS = [
 export function withAttribution(target: string): string {
   if (typeof window === "undefined") return target;
 
-  const destination = new URL(target);
+  const destination = new URL(target, window.location.origin);
   const source = new URLSearchParams(window.location.search);
   ATTRIBUTION_PARAMS.forEach((key) => {
     const value = source.get(key);
@@ -46,6 +46,10 @@ export function withAttribution(target: string): string {
 
 export function getPenBuyUrl(): string {
   return withAttribution(PEN_BUY_URL);
+}
+
+export function getCheckoutUrl(): string {
+  return withAttribution("/checkout");
 }
 
 /** Gibt die vollständige Produkt-URL im Hauptshop zurück */

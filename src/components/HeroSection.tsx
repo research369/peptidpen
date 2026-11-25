@@ -1,5 +1,7 @@
 import { useProducts } from "../hooks/useProducts";
-import { getPenBuyUrl } from "../lib/config";
+import PenSelectionLink from "./PenSelectionLink";
+import CartLink from "./CartLink";
+import { useState } from "react";
 
 const FALLBACK_PEN_PRICE = 49;
 const PEN_IMAGES = [
@@ -10,6 +12,7 @@ const PEN_IMAGES = [
 
 export default function HeroSection() {
   const { penProduct, loading } = useProducts();
+  const [activeImage, setActiveImage] = useState(0);
   const penPrice = penProduct?.price ?? FALLBACK_PEN_PRICE;
 
   return (
@@ -24,11 +27,8 @@ export default function HeroSection() {
             <a href="#system">PEN-SYSTEM ERKLÄRT</a>
             <a href="#rabatte">RABATTE</a>
             <a href="#produkte">PATRONEN</a>
-            <a href="/checkout">DEINE AUSWAHL</a>
           </nav>
-          <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="staging-outline-button">
-            PEN KAUFEN
-          </a>
+          <CartLink />
         </div>
       </header>
 
@@ -52,17 +52,19 @@ export default function HeroSection() {
           </div>
 
           <div className="staging-product-stage">
-            <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="staging-product-card">
-              <img src={PEN_IMAGES[0]} alt="369 Research Peptid-Pen mit Case und Zubehör" />
+            <PenSelectionLink className="staging-product-card">
+              <img src={PEN_IMAGES[activeImage]} alt="369 Research Peptid-Pen mit Case und Zubehör" />
               <div className="staging-product-caption">
                 <span>PEPTID-PEN SET</span>
                 <strong>{loading ? "49 €" : `${penPrice} €`}</strong>
                 <small>INKLUSIVE CASE UND 3 PEN-NADELN</small>
               </div>
-            </a>
+            </PenSelectionLink>
             <div className="staging-thumbnails" aria-label="Weitere Produktansichten">
-              {PEN_IMAGES.slice(1).map((src, index) => (
-                <img src={src} key={src} alt={`Peptid-Pen Ansicht ${index + 2}`} />
+              {PEN_IMAGES.map((src, index) => (
+                <button type="button" key={src} aria-label={`Peptid-Pen Ansicht ${index + 1} anzeigen`} aria-pressed={activeImage===index} onClick={()=>setActiveImage(index)}>
+                  <img src={src} alt="" />
+                </button>
               ))}
             </div>
           </div>

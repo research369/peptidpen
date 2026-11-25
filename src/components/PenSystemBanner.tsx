@@ -1,5 +1,5 @@
 import { useProducts } from "../hooks/useProducts";
-import { getPenBuyUrl } from "../lib/config";
+import PenSelectionLink from "./PenSelectionLink";
 
 export default function PenSystemBanner() {
   const { penProduct } = useProducts();
@@ -20,9 +20,7 @@ export default function PenSystemBanner() {
               <strong>{penPrice} €</strong>
               <small>inklusive Case und 3 Pen-Nadeln</small>
             </div>
-            <a href={getPenBuyUrl()} target="_blank" rel="noopener noreferrer" className="staging-light-button">
-              PEPTID-PEN KAUFEN
-            </a>
+            <PenSelectionLink className="staging-light-button">PEPTID-PEN VORMERKEN</PenSelectionLink>
           </div>
 
           <div className="pen-infographic">

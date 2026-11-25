@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useProducts } from "../hooks/useProducts";
-import { getPenBuyUrl } from "../lib/config";
+import PenSelectionLink from "./PenSelectionLink";
 
 export default function StickyCtaBar() {
   const [dismissed, setDismissed] = useState(false);
@@ -27,14 +27,11 @@ export default function StickyCtaBar() {
             >
               PATRONE WÄHLEN
             </a>
-            <a
-                href={getPenBuyUrl()}
-                target="_blank"
-                rel="noopener noreferrer"
+            <PenSelectionLink
                 className="hidden sm:flex btn-gold text-sm py-2 px-4 whitespace-nowrap"
               >
                 PEN · {penProduct?.price ?? 49} €
-              </a>
+              </PenSelectionLink>
             <button
               onClick={() => setDismissed(true)}
               className="text-white/40 hover:text-white/80 transition-colors p-1"
