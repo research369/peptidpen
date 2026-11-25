@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.peptidpen.de/sitemap.xml
+Disallow: /checkout
+
+Sitemap: https://peptidpen.de/sitemap.xml

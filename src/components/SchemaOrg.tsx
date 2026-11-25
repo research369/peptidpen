@@ -1,27 +1,27 @@
 import { useEffect } from "react";
 import { useProducts } from "../hooks/useProducts";
-import { config, getShopProductUrl } from "../lib/config";
+import { config } from "../lib/config";
+import { faqs } from "./FaqSection";
 
 export default function SchemaOrg() {
-  const { products, penProduct } = useProducts();
+  const { penProduct } = useProducts();
 
   useEffect(() => {
-    // Organization Schema
     const orgSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "369 Research",
+      name: "369 Research Sp. z o.o.",
+      legalName: "369 RESEARCH Spółka z ograniczoną odpowiedzialnością",
+      address: { "@type": "PostalAddress", streetAddress: "ul. Hoża 86/210", postalCode: "00-682", addressLocality: "Warszawa", addressCountry: "PL" },
       url: config.shopBaseUrl,
       sameAs: [config.shopBaseUrl],
-      description: "Europäischer Anbieter von Research Compounds und Peptiden. Entwickler des ersten wiederverwendbaren Peptid-Pens Europas.",
     };
 
-    // WebPage Schema
     const webPageSchema = {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      name: "Peptidpen & Plug&Play Patronen — Plug&Play Patrone für Peptide | 369 Research",
-      description: "Peptidpen kaufen: Fertig gemischte Plug&Play Patronen als Plug&Play Patrone für Peptide. Kein Mischen, kein Rechnen — sofort einsatzbereit. Entwickelt & produziert in Deutschland.",
+      name: "Der erste echte Peptid-Pen Europas | 369 Research",
+      description: "369 Peptid-Pen mit austauschbarer 369 Plug&Play Patrone. Ein Klick verbindet Pulver und BAC-Wasser direkt in der Patrone.",
       url: config.siteUrl,
       inLanguage: "de-DE",
       publisher: {
@@ -31,135 +31,54 @@ export default function SchemaOrg() {
       },
     };
 
-    // FAQ Schema
+    const faqItems = faqs.map(({ q, a }) => [q, a]);
+
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Was ist ein Peptidpen?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Ein Peptidpen ist ein wiederverwendbares Pen-System für fertig gemischte Plug&Play Patronen. Er ersetzt die klassische Insulinspritze und ermöglicht präzise Anwendung ohne Vorbereitung.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Was ist eine Plug&Play Patrone?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Eine Plug&Play Patrone ist eine 3-ml-Glaspatrone mit bereits rekonstituiertem Peptid in korrekter Konzentration. Direkt in den Forscherpen einsetzen — kein Mischen erforderlich.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Wie viel kostet der Aufpreis für eine Plug&Play Patrone?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: `Der Aufpreis für die Plug&Play Patrone beträgt ${config.plugplaySurcharge} € gegenüber dem Standard-Vial. Dieser Aufpreis deckt Reinraum-Abfüllung und pharmazeutische Verpackung ab.`,
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Sind die Produkte für den menschlichen Gebrauch bestimmt?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Nein. Alle Produkte sind ausschließlich für Forschungszwecke bestimmt (Research Use Only). Nicht zur menschlichen Anwendung.",
-          },
-        },
-      ],
+      mainEntity: faqItems.map(([name, text]) => ({
+        "@type": "Question",
+        name,
+        acceptedAnswer: { "@type": "Answer", text },
+      })),
     };
 
-    // Product Schemas for plug&play eligible products
-    const productSchemas = products.slice(0, 10).map((p) => ({
+    const penSchema = {
       "@context": "https://schema.org",
       "@type": "Product",
-      name: `Peptidpatrone ${p.name} — Plug&Play Patrone für Peptide | 369 Research`,
-      description: `${p.name} als fertig gemischte Peptidpatrone (Plug&Play Patrone für Peptide). Passend für den 369 Research Peptidpen. Research Use Only.`,
-      image: p.mockupImage ?? undefined,
-      url: getShopProductUrl(p.shopProductId),
-      brand: {
-        "@type": "Brand",
-        name: "369 Research",
-      },
-      offers: {
+      name: "369 Research Pen",
+      description: "369 Peptid-Pen inklusive Case und 3 Pen-Nadeln. Kompatibel mit der 369 Plug&Play Patrone. Research Use Only.",
+      image: penProduct?.mockupImage ?? "https://www.369research.eu/products/peptidpen-case-1.png",
+      url: `${config.shopBaseUrl}/product/forscherpen`,
+      brand: { "@type": "Brand", name: "369 Research" },
+      ...(penProduct ? { offers: {
         "@type": "Offer",
         priceCurrency: "EUR",
-        price: p.plugPlayPrice,
-        availability: p.inStock
-          ? "https://schema.org/InStock"
-          : "https://schema.org/OutOfStock",
-        url: getShopProductUrl(p.shopProductId),
-        seller: {
-          "@type": "Organization",
-          name: "369 Research",
-        },
-      },
-    }));
+        price: penProduct?.price ?? 49,
+        availability: penProduct?.inStock === false ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
+        url: `${config.shopBaseUrl}/product/forscherpen`,
+      } } : {}),
+    };
 
-    // Pen Product Schema
-    const penSchema = penProduct
-      ? {
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Plug&Play Patronen",
-          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Plug&Play Patronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
-          image: penProduct.mockupImage ?? undefined,
-          url: "https://www.369research.eu/plug-and-play",
-          brand: {
-            "@type": "Brand",
-            name: "369 Research",
-          },
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "EUR",
-            price: penProduct.price,
-            availability: penProduct.inStock
-              ? "https://schema.org/InStock"
-              : "https://schema.org/OutOfStock",
-            url: "https://www.369research.eu/plug-and-play",
-          },
-        }
-      : {
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Peptidpen 369 Research — Wiederverwendbarer Pen für Plug&Play Patronen",
-          description: "Der 369 Research Peptidpen: Wiederverwendbarer Pen für fertig gemischte Plug&Play Patronen (Plug&Play Patrone für Peptide). Entwickelt in Deutschland. Research Use Only.",
-          url: "https://www.369research.eu/plug-and-play",
-          brand: { "@type": "Brand", name: "369 Research" },
-          offers: {
-            "@type": "Offer",
-            priceCurrency: "EUR",
-            price: 39,
-            availability: "https://schema.org/InStock",
-            url: "https://www.369research.eu/plug-and-play",
-          },
-        };
+    // Preview cartridges are not saleable WaWi articles and must not expose offers.
+    const schemas = [orgSchema, webPageSchema, faqSchema, penSchema];
 
-    // Inject all schemas
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const schemas: any[] = [orgSchema, webPageSchema, faqSchema, ...productSchemas];
-    if (penSchema) schemas.push(penSchema);
-
-    schemas.forEach((schema, i) => {
-      const id = `schema-org-${i}`;
-      let el = document.getElementById(id) as HTMLScriptElement | null;
-      if (!el) {
-        el = document.createElement("script");
-        el.id = id;
-        el.type = "application/ld+json";
-        document.head.appendChild(el);
+    schemas.forEach((schema, index) => {
+      const id = `schema-org-${index}`;
+      let element = document.getElementById(id) as HTMLScriptElement | null;
+      if (!element) {
+        element = document.createElement("script");
+        element.id = id;
+        element.type = "application/ld+json";
+        document.head.appendChild(element);
       }
-      el.textContent = JSON.stringify(schema);
+      element.textContent = JSON.stringify(schema);
     });
 
     return () => {
-      schemas.forEach((_, i) => {
-        document.getElementById(`schema-org-${i}`)?.remove();
-      });
+      schemas.forEach((_, index) => document.getElementById(`schema-org-${index}`)?.remove());
     };
-  }, [products, penProduct]);
+  }, [penProduct]);
 
   return null;
 }

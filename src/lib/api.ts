@@ -8,6 +8,7 @@
  */
 
 import { config } from "./config";
+import { publicTrpcQuery } from "./publicTrpc";
 import { isPlugPlayEligible } from "./plugPlayConfig";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -54,25 +55,15 @@ async function trpcQuery<T>(
   path: string,
   input?: Record<string, unknown>
 ): Promise<T> {
-  const url = new URL(
-    `${config.apiBaseUrl}/api/trpc/${path}`
-  );
-  if (input) {
-    url.searchParams.set("input", JSON.stringify(input));
-  }
-  const res = await fetch(url.toString(), {
-    headers: { "Content-Type": "application/json" },
-  });
-  if (!res.ok) throw new Error(`API error: ${res.status}`);
-  const json = await res.json();
-  return json.result?.data?.json as T;
+  return publicTrpcQuery<T>(config.apiBaseUrl, path, input);
 }
 
 // ─── Products API ─────────────────────────────────────────────────────────────
 
 /**
  * Lädt alle Shop-Produkte und filtert auf Plug&Play-fähige Produkte.
- * Berechnet den Patronenpreis dynamisch (Basispreis + Aufpreis aus config).
+ * Verwendet ausschließlich den festen Produkt-/Variantenpreis aus der WaWi.
+ * Es gibt keinen pauschalen Patronen-Aufpreis.
  */
 export async function fetchPlugPlayProducts(): Promise<ShopProduct[]> {
   const raw = await trpcQuery<ShopProduct[]>("article.shopProducts");
@@ -82,11 +73,11 @@ export async function fetchPlugPlayProducts(): Promise<ShopProduct[]> {
     .map((p) => ({
       ...p,
       isPlugPlayEligible: true,
-      // Günstigste Variante als Basispreis, sonst Produktpreis
+      // Günstigster verbindlicher WaWi-Preis, ohne lokalen Aufschlag.
       plugPlayPrice:
         (p.variants && p.variants.length > 0
           ? Math.min(...p.variants.map((v) => v.price))
-          : p.price) + config.plugplaySurcharge,
+          : p.price),
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 }

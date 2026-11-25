@@ -18,7 +18,7 @@ export default function Datenschutz() {
             Datenschutzerklärung
           </h1>
           <p className="text-blue-200/60 mt-2 text-sm">
-            Stand: Juni 2025 · peptidpen.de
+            peptidpen.de · Vorschau
           </p>
         </div>
       </div>
@@ -33,8 +33,9 @@ export default function Datenschutz() {
               Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
             </p>
             <div className="mt-3 p-4 bg-gray-50 rounded-xl text-sm">
-              <strong>369 Research</strong><br />
-              Deutschland<br />
+              <strong>369 Research Sp. z o.o.</strong><br />
+              ul. Hoża 86/210, 00-682 Warszawa, Polen<br />
+              Kontakt: ben@369research.eu<br />
               Website: <a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a>
             </div>
           </section>
@@ -42,9 +43,11 @@ export default function Datenschutz() {
           <section>
             <h2 className="text-xl font-bold text-brand-dark mb-3">2. Allgemeines zur Datenverarbeitung</h2>
             <p>
-              Diese Website (peptidpen.de) ist eine reine Informations- und Weiterleitungsseite.
-              Es werden keine Bestellungen direkt auf dieser Website verarbeitet. Bestellungen
-              werden ausschließlich über den Hauptshop unter <a href="https://www.369research.eu" className="text-brand-blue hover:underline" target="_blank" rel="noopener noreferrer">www.369research.eu</a> abgewickelt.
+              Diese Vorschau enthält einen Produktkatalog und einen noch nicht freigeschalteten Checkout.
+              Es werden hier keine Bestellungen oder Zahlungen verarbeitet. Kontakt- und Adressfelder
+              bleiben nur während der geöffneten Vorschau im Arbeitsspeicher des Browsers; sie werden
+              nicht durch die Anwendung gespeichert oder übertragen. Die vorgemerkte Produktauswahl
+              wird im lokalen Speicher dieses Geräts hinterlegt und kann im Checkout entfernt werden.
             </p>
             <p className="mt-3">
               Wir erheben und verarbeiten personenbezogene Daten nur, soweit dies zur
@@ -70,7 +73,8 @@ export default function Datenschutz() {
             <p className="mt-3">
               Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
               (berechtigtes Interesse an der sicheren und stabilen Bereitstellung der Website).
-              Die Daten werden nach 30 Tagen automatisch gelöscht.
+              Die tatsächlich eingerichteten Aufbewahrungsfristen und die vertraglichen
+              Datenschutzgarantien des Hosting-Anbieters werden vor dem Verkaufsstart abschließend geprüft.
             </p>
           </section>
 
@@ -82,6 +86,7 @@ export default function Datenschutz() {
             </p>
             <ul className="mt-3 list-disc list-inside space-y-1 text-sm">
               <li>Speicherung der Altersverifikations-Bestätigung (localStorage: <code className="bg-gray-100 px-1 rounded">peptidpen_age_confirmed</code>)</li>
+              <li>Speicherung der vorgemerkten Produkte und Mengen, ohne Kontaktdaten oder Preise (localStorage: <code>peptidpen_preview_cart_v1</code>)</li>
             </ul>
             <p className="mt-3">
               Es werden keine Tracking-Cookies, Marketing-Cookies oder Cookies von
@@ -107,10 +112,14 @@ export default function Datenschutz() {
             <h3 className="text-base font-semibold text-brand-dark mt-4 mb-2">5.2 API-Verbindung zum Backend</h3>
             <p className="text-sm">
               Zur Anzeige von Produktinformationen und Preisen verbindet sich diese Website
-              mit unserem Backend-Server (Railway.app). Dabei werden keine personenbezogenen
-              Daten übertragen — es handelt sich ausschließlich um öffentlich zugängliche
-              Produktdaten (Preise, Namen, Beschreibungen).
+              mit unserem Backend-Server (Railway.app). Abgefragt werden öffentlich zugängliche
+              Produktdaten. Dabei fallen technisch bedingt Verbindungsdaten wie IP-Adresse
+              und Browserinformationen beim Server an. Es werden keine ausgefüllten
+              Checkout-Kontakt- oder Adressdaten an diesen Dienst gesendet.
             </p>
+            <h3 className="text-base font-semibold text-brand-dark mt-4 mb-2">5.3 Bilder und Schriftarten</h3>
+            <p className="text-sm">Schriftarten werden direkt über diese Website ausgeliefert, nicht über Google Fonts.
+              Einzelne Pen-Bilder werden von www.369research.eu geladen. Auch dort fallen bei einem Abruf technische Verbindungsdaten an.</p>
           </section>
 
           <section>
@@ -140,7 +149,7 @@ export default function Datenschutz() {
           <section>
             <h2 className="text-xl font-bold text-brand-dark mb-3">7. Aktualität und Änderungen</h2>
             <p>
-              Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Juni 2025.
+              Diese Hinweise beschreiben den Vorschauzustand vom 25. November 2026.
               Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund
               geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es
               notwendig werden, diese Datenschutzerklärung zu ändern.

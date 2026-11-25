@@ -117,7 +117,7 @@ Die zentrale Produktsektion. Zeigt alle Plug&Play-fähigen Plug&Play Patronen in
 - "Plug&Play Patrone kaufen"-Button pro Produkt → `getShopProductUrl(shopProductId)` aus `config.ts`
 - Fallback-Banner wenn API nicht erreichbar
 
-**Wichtig:** Produkte werden immer als "Plug&Play Patrone" dargestellt — nie als Vial oder Pulver. Der angezeigte Preis ist immer `Basispreis + plugplaySurcharge`.
+**Wichtig:** Produkte werden immer als "369 Plug&Play Patrone" dargestellt. Der angezeigte Preis stammt ohne lokalen Aufschlag aus der zentralen WaWi.
 
 ---
 
@@ -125,7 +125,7 @@ Die zentrale Produktsektion. Zeigt alle Plug&Play-fähigen Plug&Play Patronen in
 
 **Pfad:** `src/components/TrustSection.tsx`
 
-Zeigt Trust-Signale: Entwickelt in Deutschland, gekühlter Versand, Qualitätszertifikate, Kundenstimmen (keine gefälschten Reviews — nur allgemeine Trust-Aussagen).
+Zeigt ausschließlich belegbare Trust-Signale aus dem aktuellen Produkt- und Markenbestand.
 
 **Compliance:** Keine spezifischen Kundenbewertungen oder Testimonials mit Namen einfügen.
 

@@ -51,7 +51,7 @@ useProducts.ts (Hook)
               └─→ Railway Backend
                     └─→ Produktliste (alle Produkte)
                           └─→ Filter: isPlugPlayEligible()
-                                └─→ Preis + Aufpreis berechnen
+                                └─→ festen WaWi-Preis übernehmen
                                       └─→ ProductsSection.tsx
 ```
 
@@ -146,7 +146,6 @@ Alle Konfigurationswerte kommen aus Umgebungsvariablen und werden zentral in `sr
 export const config = {
   apiBaseUrl: import.meta.env.VITE_API_BASE_URL,
   shopBaseUrl: import.meta.env.VITE_SHOP_BASE_URL || "https://www.369research.eu",
-  plugplaySurcharge: Number(import.meta.env.VITE_PLUGPLAY_SURCHARGE ?? 15),
   penProductId: import.meta.env.VITE_PEN_PRODUCT_ID,
   whatsappNumber: import.meta.env.VITE_WHATSAPP_NUMBER,
   siteUrl: import.meta.env.VITE_SITE_URL,
